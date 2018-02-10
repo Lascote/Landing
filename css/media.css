@@ -1,0 +1,346 @@
+@media screen and (min-height: 900px) {
+    .options-container {
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .about-container {
+        padding: 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+
+    .burger {
+        display: block;
+    }
+
+
+    .scroll-bar {
+        display: none !important;
+    }
+
+    .benefits-content {
+        padding-top: 50px;
+    }
+
+    .benefits-text {
+        padding: 0 25px;
+    }
+
+    .benefits-table {
+        flex-direction: column;
+    }
+
+    .benefits-table-item {
+        padding: 50px 0 0 0;
+    }
+
+    .how-table {
+        padding-bottom: 20px;
+        width: 750px;
+    }
+
+    .how-table-title {
+        font-size: 18px;
+    }
+
+    .how-table-text {
+        max-width: 250px
+    }
+
+    .how-flex-item {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .partners-title {
+        font-size: 38px;
+    }
+
+    .partners-text {
+        font-size: 22px;
+        padding-top: 22px;
+        max-width: 585px;
+    }
+
+    .partners-container .active {
+        margin: auto;
+        width: 640px;
+    }
+
+    .item-img {
+        width: 25%;
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+    .contacts-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .contacts {
+        width: 100%;
+        height:50%;
+        padding: 35px;
+    }
+
+    .contacts-map {
+        width: 100%;
+        height: 50%;
+    }
+
+    .contacts-info {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contacts-title {
+        font-size: 26px;
+        padding-bottom: 24px;
+    }
+
+    .contacts-data {
+        font-size: 22px;
+    }
+
+    .contacts-address {
+        padding: 24px 0 24px 0;
+    }
+
+    .contacts-social {
+        padding-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .title {
+        font-size: 32px;
+    }
+
+    .description {
+        max-width: 550px;
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 20px;
+        box-sizing: border-box;
+    }
+
+    .about-subtitle {
+        font-size: 12px;
+    }
+
+    .about-title {
+        font-size: 30px;
+    }
+
+    .about-text {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .benefits-content p {
+        max-width: 375px;
+    }
+
+    .benefits-title {
+        font-size: 30px;
+    }
+
+    .benefits-text {
+        font-size: 16px;
+        line-height: 1.45;
+        padding: 25px 0 0px 0;
+    }
+
+    .benefits-table-title {
+        font-size: 16px;
+    }
+
+    .benefits-table {
+        padding: 0 25px;
+    }
+
+    .benefits-table-text {
+        font-size: 12px;
+    }
+
+    .how-table {
+        width: 100%;
+        padding-left: 50px;
+    }
+
+    .how-table-item {
+        padding: 0 0 50px 50px;
+    }
+
+    .how-table-title {
+        font-size: 18px;
+    }
+
+    .how-table-text {
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .how-table-item p {
+        max-width: 350px;
+        text-align: left;
+    }
+
+    .how-flex-item {
+        align-items: baseline;
+    }
+
+    .wrapper-line {
+        margin: 0;
+    }
+
+    .wrapper-circle {
+        margin: 0;
+        top: 83px;
+        left: -17px;
+    }
+
+    .flex-end {
+        align-items: flex-start;
+    }
+
+    .height-half {
+        height: 59% !important;
+    }
+
+    .bottom-half {
+        bottom: 54% !important;
+    }
+
+
+
+    .options-title {
+        font-size: 30px;
+    }
+
+    .options-text {
+        font-size: 20px;
+        line-height: 1.4;
+        padding-top: 20px;
+    }
+
+
+    .price {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .options-cost {
+        font-size: 24px;
+    }
+
+    .options-price-text {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+
+    .options-substrate {
+        width: 90%;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-container {
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        border-radius: 0;
+        z-index: 1000;
+    }
+
+    .form-content p:first-child {
+        font-size: 36px;
+    }
+
+    .contacts {
+        padding: 20px 0 0 20px;
+    }
+
+    .contacts-title {
+        font-size: 22px;
+        padding-bottom: 15px;
+    }
+
+    .contacts-data {
+        font-size: 18px;
+    }
+
+    .contacts-address {
+        padding: 15px 0 15px 0;
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 300px;
+    }
+
+    .partners-content {
+        padding: 40px 30px 25px 30px;
+    }
+
+    .partners-title {
+        font-size: 30px;
+    }
+
+    .partners-text {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .partners-container .active {
+        margin: auto;
+        max-width: 440px;
+    }
+
+    .item-img {
+        width: 30%;
+    }
+
+
+}
+@media screen and (max-width: 440px) {
+
+    .partners-text {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .partners-content {
+        padding: 40px 30px 20px 30px;
+    }
+
+    .partners-container .active {
+        margin: auto;
+        width: 300px
+    }
+
+}
+
+
+

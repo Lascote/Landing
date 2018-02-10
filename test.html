@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                let heights = [],
+                    blocks = $('.block');
+                console.log(blocks);
+                for (let i = 0; i<blocks.length; i++)
+                    heights.push(blocks[i].offsetHeight.toString());
+                console.log(heights);
+            });
+
+        });
+    </script>
+    <style>
+        .block{
+            display: block;
+            height: 150px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<p class="block">If you click on me, I will disappear.</p>
+<p class="block">Click me away!</p>
+<p class="block">Click me too!</p>
+
+</body>
+</html>
