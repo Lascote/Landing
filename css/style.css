@@ -205,9 +205,6 @@ body {
     line-height: 1.23;
 }
 
-.about-text {
-}
-
 /* benefits */
 
 .benefits-container {
@@ -839,8 +836,8 @@ ul a:hover .popover {
 .burger {
     display: none;
     position: fixed;
-    top: 5%;
-    right: 5%;
+    top: 1%;
+    right: 0%;
     z-index: 999;
     cursor: pointer;
     padding: 10px 12px;
@@ -913,6 +910,19 @@ ul a:hover .popover {
 .burger-content a:hover {
     color: #585858;
 }
+.how-flex-item {
+    width: 250px;
+}
 
+.how-table-item.flex-end {
+    width: 250px;
+}
 
+.how-table-item.flex-start {
+    width: 250px;
+}
+
+.how-table{
+    width: 3000px;
+}
 

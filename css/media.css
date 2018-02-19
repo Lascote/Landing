@@ -127,6 +127,10 @@
 
 @media screen and (max-width: 640px) {
 
+    #home.block{
+        align-content: center;
+    }
+
     .title {
         font-size: 32px;
     }
@@ -180,7 +184,7 @@
     }
 
     .how-table {
-        width: 100%;
+        width: 86%;
         padding-left: 50px;
     }
 
@@ -199,7 +203,7 @@
     }
 
     .how-table-item p {
-        max-width: 350px;
+        max-width: 250px;
         text-align: left;
     }
 
