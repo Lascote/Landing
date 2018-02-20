@@ -1,3 +1,4 @@
+
 @media screen and (min-height: 900px) {
     .options-container {
         justify-content: center;
@@ -32,15 +33,14 @@
     }
 
     .benefits-table {
-        flex-direction: column;
+        padding: 0 5%;
     }
 
     .benefits-table-item {
-        padding: 50px 0 0 0;
+        padding: 50px 5% 0 0;
     }
 
     .how-table {
-        padding-bottom: 20px;
         width: 750px;
     }
 
@@ -75,10 +75,6 @@
     .item-img {
         width: 25%;
     }
-
-
-
-
 }
 
 
@@ -128,15 +124,16 @@
 @media screen and (max-width: 640px) {
 
     .title {
-        font-size: 32px;
+        font-size: 64px;
+        margin: 0.2em 0;
     }
 
     .description {
         max-width: 550px;
-        font-size: 14px;
+        font-size: 24px;
         padding-left: 10px;
         padding-right: 10px;
-        line-height: 20px;
+        line-height: 32px;
         box-sizing: border-box;
     }
 
@@ -145,7 +142,7 @@
     }
 
     .about-title {
-        font-size: 30px;
+        font-size: 60px;
     }
 
     .about-text {
@@ -172,6 +169,7 @@
     }
 
     .benefits-table {
+        flex-direction: column;
         padding: 0 25px;
     }
 
@@ -326,6 +324,26 @@
 }
 @media screen and (max-width: 440px) {
 
+    .logo img {
+        height: 150px;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .description {
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 24px;
+        box-sizing: border-box;
+    }
+
+    .about-title {
+        font-size: 30px;
+    }
+
     .partners-text {
         font-size: 16px;
         line-height: 1.4;
@@ -341,6 +359,4 @@
     }
 
 }
-
-
 
