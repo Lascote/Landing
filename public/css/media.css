@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 1200px) {
     .about-container {
-        padding: 0 20px;
+        padding: 0 40px;
     }
 
 }
@@ -89,7 +89,7 @@
     .contacts {
         width: 100%;
         height:50%;
-        padding: 35px;
+        padding: 20px 35px;
     }
 
     .contacts-map {
@@ -112,7 +112,7 @@
     }
 
     .contacts-address {
-        padding: 24px 0 24px 0;
+        padding: 12px 0 12px 0;
     }
 
     .contacts-social {
@@ -161,7 +161,7 @@
     .benefits-text {
         font-size: 16px;
         line-height: 1.45;
-        padding: 25px 0 0px 0;
+        padding: 25px 10px 0;
     }
 
     .benefits-table-title {
@@ -183,7 +183,7 @@
     }
 
     .how-table-item {
-        padding: 0 0 50px 50px;
+        padding: 0 0 20px 50px;
     }
 
     .how-table-title {
@@ -203,6 +203,7 @@
 
     .how-flex-item {
         align-items: baseline;
+        width: 90%;
     }
 
     .wrapper-line {
@@ -211,8 +212,8 @@
 
     .wrapper-circle {
         margin: 0;
-        top: 83px;
-        left: -17px;
+        top: 95px;
+        left: -14px;
     }
 
     .flex-end {
@@ -227,7 +228,9 @@
         bottom: 54% !important;
     }
 
-
+    #options {
+        height: auto;
+    }
 
     .options-title {
         font-size: 30px;
