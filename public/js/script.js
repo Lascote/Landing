@@ -35,10 +35,7 @@ $(document).ready(function () {
         }, 500);
     });
 
-    // I have needed to do it because fullpage library set incorrect height
     const heigth = $(window).height();
-    $(".contacts-container").css("height", heigth);
-    $(".news-container img").css("height", heigth);
 
     /* slide show animation in carousel "partnersCarousel". */
     $('#partnersCarousel').bind('slide.bs.carousel', function (e) {
@@ -80,6 +77,11 @@ $(document).ready(function () {
     });
 
     $(".overlay").on("click", () => {
+        $(".overlay").fadeOut();
+        $(".form-container").fadeOut();
+    });
+
+    $(".close-button").on("click", () => {
         $(".overlay").fadeOut();
         $(".form-container").fadeOut();
     });

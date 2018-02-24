@@ -61,7 +61,8 @@ html {
 
 body {
     height: 100%;
-    background: url(../img/home/background8.png) repeat;
+    background: url(../img/home/background-3-01.png) repeat-y;
+    background-size: 100%;
     /*background-size: 640px 480px;
     background: #333333;*/
 }
@@ -116,12 +117,12 @@ body {
     -ms-justify-content: center;
     display: flex;
     justify-content: center;
-
+    margin: 30px 0;
 }
 
 .logo img {
     max-width: 100%;
-    height: 200px;
+    height: 150px;
 }
 
 .title {
@@ -144,13 +145,18 @@ body {
     color: #fff;
 }
 
+.arrow-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .arrow {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     background: url(../img/home/Strelka.png) no-repeat;
     position: absolute;
     bottom: 6%;
-    left: 50%;
     cursor: pointer;
 }
 
@@ -211,7 +217,7 @@ body {
 /* benefits */
 
 #benefits {
-    height: auto;
+    height: 100%;
 }
 
 .benefits-container {
@@ -572,6 +578,33 @@ body {
     z-index: 2;
 }
 
+.form-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-header-push {
+    height: 30px;
+    width: 30px;
+    margin: 30px;
+}
+
+.close-button {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.close-button p {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 50px;
+}
+
 .form-content {
     padding: 25px 0 50px 0;
     display: flex;
@@ -757,11 +790,16 @@ input[type=submit] {
 
 /* news */
 
+#newsCarousel {
+    height: 100%;
+}
+
 .news-container {
     height: 100%;
 }
 
 .news-container img {
+    height: 100%;
     max-width: 100%;
     width: 100%;
     margin: 0 auto;
