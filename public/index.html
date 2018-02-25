@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
 </head>
 <body>
-<section class="container" id="container>
+<section class="container" id="container">
     <section class="block" id="home">
         <section class="home-container">
             <section class="home-content">
@@ -269,21 +269,16 @@
                     <p class="options-price-text text-sm">Купить карточку на 6 месяцев.</p>
                     <a class="options-button"><p>Купить!</p></a>
                 </section>
-                <section class="options-substrate" id="card2">
-                    <p class="options-cost title-sm">4 BYN</p>
-                    <p class="options-price-text text-sm">Купить карточку на 6 месяцев.</p>
-                    <a class="options-button"><p>Купить!</p></a>
-                </section>
             </section>
         </section>
     </section>
 
     <section>
-        <section class="overlay"></section>
+        <section class="overlay" id="overlay">
         <section class="form-container">
-            <section class="close-button"><p>&times;</p></section>
             <section class="form-wrap">
                 <section class="form-header">
+                    <span class="close-button">&times;</span>
                     <section class="form-content">
                         <p class="title-md">Покупка карточки</p>
                         <p class="text-sm">Просто оставьте нам свои контакты.</p>
@@ -299,11 +294,14 @@
                         <div><label id="email-err" class="notification">error</label></div>
                         <input type="text" id="phone" placeholder="Номер телефона"/>
                         <div><label id="phone-err" class="notification">error</label></div>
+                        <input type="text" id="studyPlace" placeholder="Место учёбы"/>
+                        <div><label id="studyPlace-err" class="notification">error</label></div>
                         <input type="submit" class="form-button" value="Отправить"/>
                         <div><label id="form-button-err" class="notification">error</label></div>
                     </form>
                 </section>
             </section>
+        </section>
         </section>
     </section>
 
