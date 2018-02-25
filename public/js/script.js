@@ -196,7 +196,7 @@ $(document).ready(function () {
                 return;
         }
 
-        $.post('http://localhost:8080/api/addapplication', {
+        $.post('https://panel.unicard.by/api/addapplication', {
             surname: $("#surname")['0'].value,
             name: $("#name")['0'].value,
             email: $("#email")['0'].value,
