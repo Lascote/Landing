@@ -73,23 +73,25 @@ $(document).ready(function () {
     $(".options-button").on("click", (event) => {
         card = event.currentTarget.parentElement.id;
         $(".overlay").fadeIn();
-        $(".form-container").fadeIn();
     });
 
-    $(".overlay").on("click", () => {
-        $(".overlay").fadeOut();
-        $(".form-container").fadeOut();
+    $(window).on("click", (event) => {
+        let a = $(".overlay");
+        if (event.target === a['0']) {
+            a.fadeOut();
+        }
     });
 
     $(".close-button").on("click", () => {
         $(".overlay").fadeOut();
-        $(".form-container").fadeOut();
     });
 
     let validMap = new Map();
-    validMap.set('email', false);
+    validMap.set('surname', false);
     validMap.set('name', false);
+    validMap.set('email', false);
     validMap.set('phone', false);
+    validMap.set('studyPlace', false);
 
     $('input[type^="text"]').focusout((event) => {
         if (event === undefined)
@@ -110,6 +112,20 @@ $(document).ready(function () {
                 else {
                     valid = false;
                     message = "Неправильно указан адрес электронной почты";
+                }
+                break;
+            case "surname":
+                if (current.value === "") {
+                    valid = false;
+                    message = "Введите Вашу фамилию";
+                    break;
+                }
+                if (current.value.match(/^[- А-Яа-яЁёA-Za-z\s]*$/)) {
+                    valid = true;
+                }
+                else {
+                    valid = false;
+                    message = "Неправильно указана фамилия";
                 }
                 break;
             case "name":
@@ -140,6 +156,14 @@ $(document).ready(function () {
                     message = "Неправильно указан номер мобильного телефона";
                 }
                 break;
+            case "studyPlace":
+                if (current.value === "") {
+                    valid = false;
+                    message = "Введите Ваше место учёбы";
+                    break;
+                }
+                valid = true;
+                break;
             default:
                 return;
         }
@@ -160,7 +184,9 @@ $(document).ready(function () {
     });
 
     // sending data of form to server
-    $(".form-button").on('click', () => {
+    $(".form-button").on('click', (event) => {
+
+        event.preventDefault();
 
         checkEmptyness();
 
@@ -170,17 +196,19 @@ $(document).ready(function () {
                 return;
         }
 
-        $.post("http://localhost:3000", {
-            card: card,
-            email: email,
-            name: name,
-            phone: phone
+        $.post('http://localhost:8080/api/addapplication', {
+            surname: $("#surname")['0'].value,
+            name: $("#name")['0'].value,
+            email: $("#email")['0'].value,
+            phoneNumber: $("#phone")['0'].value,
+            studyPlace: $("#studyPlace")['0'].value,
+            chosenTariff: 6
         })
             .done(() => {
+                console.log("Success");
                 clearAllInputClasses();
                 $('#form')[0].reset();
                 $(".overlay").fadeOut();
-                $(".form-container").fadeOut();
             })
             .fail((err) => {
                 alert("Ошибка соединения с сервером.")
@@ -218,14 +246,20 @@ function checkEmptyness() {
             let label = $("#" + inputs[i].id + "-err"),
                 message = "";
             switch (inputs[i].id) {
-                case "email":
-                    message = "Введите Ваш адрес электронной почты";
+                case "surname":
+                    message = "Введите Вашу фамилию";
                     break;
                 case "name":
                     message = "Введите Ваше имя";
                     break;
+                case "email":
+                    message = "Введите Ваш адрес электронной почты";
+                    break;
                 case "phone":
                     message = "Введите Ваш мобильный телефон";
+                    break;
+                case "studyPlace":
+                    message = "Введите Ваше место учёбы";
                     break;
             }
             label.css("display","block");

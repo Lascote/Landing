@@ -4,13 +4,14 @@
     <title>UNI - скидочная карта</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Uni" href="img/favicon/favicon.ico">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/normalize.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/media.css"/>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
-
 </head>
 <body>
 <section class="container" id="container">
@@ -134,7 +135,7 @@
                         </section>
                     </section>
                     <section class="how-flex-item">
-                        <img src="img/howitworks/uni.png" alt=""/>
+                        <img class="img-fluid" src="img/howitworks/uni.png" alt=""/>
                         <p class="how-table-title title-sm">UNI</p>
                         <p class="how-table-text text-sm">Деньги вырученные с продажи скидочных карточек идут на
                             финансирование независимых студенческих организаций.</p>
@@ -269,21 +270,16 @@
                     <p class="options-price-text text-sm">Купить карточку на 6 месяцев.</p>
                     <a class="options-button"><p>Купить!</p></a>
                 </section>
-                <section class="options-substrate" id="card2">
-                    <p class="options-cost title-sm">4 BYN</p>
-                    <p class="options-price-text text-sm">Купить карточку на 6 месяцев.</p>
-                    <a class="options-button"><p>Купить!</p></a>
-                </section>
             </section>
         </section>
     </section>
 
     <section>
-        <section class="overlay"></section>
+        <section class="overlay" id="overlay">
         <section class="form-container">
-            <section class="close-button"><p>&times;</p></section>
             <section class="form-wrap">
                 <section class="form-header">
+                    <span class="close-button">&times;</span>
                     <section class="form-content">
                         <p class="title-md">Покупка карточки</p>
                         <p class="text-sm">Просто оставьте нам свои контакты.</p>
@@ -299,11 +295,14 @@
                         <div><label id="email-err" class="notification">error</label></div>
                         <input type="text" id="phone" placeholder="Номер телефона"/>
                         <div><label id="phone-err" class="notification">error</label></div>
+                        <input type="text" id="studyPlace" placeholder="Место учёбы"/>
+                        <div><label id="studyPlace-err" class="notification">error</label></div>
                         <input type="submit" class="form-button" value="Отправить"/>
                         <div><label id="form-button-err" class="notification">error</label></div>
                     </form>
                 </section>
             </section>
+        </section>
         </section>
     </section>
 
@@ -311,8 +310,7 @@
     <section class="block" id="contacts">
         <section class="contacts-container">
             <section class="contacts-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9407.36576750356!2d27.586162849999997!3d53.881246749999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xba80f8bf50f916d0!2z0JrQuNC90L7RgtC10LDRgtGAINCg0LDQutC10YLQsA!5e0!3m2!1sru!2sby!4v1501336586772"
-                        width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe  style="border:0; width:100%; height:100%" src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k" allowfullscreen></iframe>
             </section>
             <section class="contacts">
                 <section class="contacts-info">
@@ -520,8 +518,8 @@
             </li>
         </ul>
     </section>
-
 </section>
+<footer></footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -351,8 +351,7 @@ body {
 }
 
 .how-table img {
-    width: 100px;
-    height: 100px;
+    width: 50%;
 }
 
 .how-table-item {
@@ -493,7 +492,8 @@ body {
 
 .options-substrate {
     margin-bottom: 30px;
-    width: 47%;
+    width: 90%;
+    max-width: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -548,9 +548,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+    z-index: 4;
+    overflow: auto;
 }
 
 .burger-overlay {
@@ -559,47 +558,30 @@ body {
     height: 100%;
     background-color: rgba(0,0,0,0.65);
     position: fixed;
-    z-index: 1;
+    z-index: 2;
 }
 
 .form-container {
-    display: none;
     max-width: 628px;
-    max-height: 485px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
+    margin: 10% auto 10% auto;
+    width: 90%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     background-color: white;
     border-radius: 10px;
-    z-index: 2;
 }
 
 .form-header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-.form-header-push {
-    height: 30px;
-    width: 30px;
-    margin: 30px;
+    position: relative;
 }
 
 .close-button {
-    width: 50px;
-    height: 50px;
     cursor: pointer;
     position: absolute;
-    top: 20px;
     right: 20px;
-}
-
-.close-button p {
+    top: 20px;
     font-weight: 800;
     font-size: 50px;
     line-height: 50px;
@@ -808,7 +790,7 @@ input[type=submit] {
 /* slider */
 .scroll-bar {
     display: none;
-    z-index: 999;
+    z-index: 3;
     position: fixed;
     top: 50%;
     right: 2%;
@@ -887,7 +869,7 @@ ul a:hover .popover {
     position: fixed;
     top: 5%;
     right: 5%;
-    z-index: 999;
+    z-index: 3;
     cursor: pointer;
     padding: 10px 12px;
     background: rgba(200,200,200,0.5);
@@ -927,7 +909,7 @@ ul a:hover .popover {
     bottom: 0;
     left: 0;
     background-color: #000;
-    z-index: 990;
+    z-index: 2;
 }
 
 .burger-content {

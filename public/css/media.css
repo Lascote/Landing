@@ -266,21 +266,9 @@
         line-height: 1.45;
     }
 
-
-    .options-substrate {
-        width: 90%;
-    }
-
     .overlay {
-        position: fixed;
+        overflow: auto;
         width: 100%;
-        height: 100%;
-    }
-
-    .form-header-push {
-        height: 30px;
-        width: 30px;
-        margin: 10px;
     }
 
     .close-button {
@@ -290,14 +278,12 @@
     }
 
     .form-container {
-        position: fixed;
-        height: 100%;
+        overflow: scroll;
         width: 100%;
         max-height: none;
         max-width: none;
         margin: 0;
         border-radius: 0;
-        z-index: 1000;
     }
 
     .form-wrap {
@@ -307,8 +293,17 @@
         justify-content: center;
     }
 
+    .form-content {
+        padding: 25px 50px 25px;
+    }
+
     .form-content p:first-child {
         font-size: 36px;
+        line-height: 42px;
+    }
+
+    input {
+        width: 85%;
     }
 
     .contacts {
