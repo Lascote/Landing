@@ -23,11 +23,11 @@ $(document).ready(function () {
 
     /* arrow movement  */
     setInterval(function () {
-        $(arrow).animate({bottom: '-=20', opacity: '1'}, 1200)
+        $('.arrow-container').animate({bottom: '-=20', opacity: '1'}, 1200)
             .animate({bottom: '+=20', opacity: '.1'}, 1100);
     }, 0);
 
-    $(arrow).on('click', () => {
+    $('#arrow').on('click', () => {
         toggleCircle($(".active"));
         let el = $(this).attr('href');
         $('body').animate({
