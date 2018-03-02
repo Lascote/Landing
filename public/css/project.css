@@ -11,34 +11,68 @@ body {
     width:100%;
 }
 
-.cntr {
-    background: #fff;
-    width: 80%;
-    max-width: 960px;
-    margin: 50px auto;
+h1 {
+    text-align: center;
 }
 
-.bl {
+/* w3-override*/
+
+.w3-card {
+    background-color: #fff;
+}
+
+.w3-row {
     width: 100%;
-    height: 500px;
+}
+
+.cntr {
+    width: 80%;
+    max-width: 960px;
+    margin: 100px auto 0;
+}
+
+.crd {
+    width: 100%;
+    margin: 55px 0;
+    background-color: #f3f3f3;
+}
+
+.crd h1 {
+    font-size: 60px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 600;
+    padding: 20px;
+    margin: 0;
+}
+
+.half {
+    float: left;
+    width: 100%;
+}
+
+.third {
+    float: left;
+    width: 100%;
 }
 
 /* === NAVBAR === */
 
 #navbar {
-    background-color: #333;
+    overflow: hidden;
+    background-color: #B3D234;
     position: fixed;
     top: -55px;
     width: 100%;
     display: flex;
     justify-content: center;
-    transition: top 0.3s;
+    transition: top 0.2s;
+    z-index: 10;
 }
 
 #navbar a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #fff;
     text-align: center;
     padding: 15px;
     text-decoration: none;
@@ -46,8 +80,11 @@ body {
 }
 
 #navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #58585B;
+}
+
+#navbar .icon {
+    display: none;
 }
 
 /* === BLOCK #1 === */
@@ -118,4 +155,335 @@ body {
     background: url(../img/home/Strelka.png) no-repeat;
     background-size: contain;
     cursor: pointer;
+}
+
+/* === BLOCK #2 === */
+
+.cntr-02 {
+    padding: 10px 15px;
+    margin: 5%;
+}
+
+.icn-02 {
+    display: flex;
+    justify-content: center;
+}
+
+.icn-02 img{
+    height: 150px;
+}
+
+.txt-cntr-02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.h-02 {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 18px;
+    line-height: 1.35;
+    font-size: 22px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 600;
+    color: #000;
+}
+
+.txt-02 {
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+/* === BLOCK #3 === */
+
+.cntr-03 {
+    padding: 10px 15px;
+    margin: 5%;
+}
+
+.icn-03 {
+    display: flex;
+    justify-content: center;
+}
+
+.icn-03 img{
+    height: 150px;
+}
+
+.txt-cntr-03 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.h-03 {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 18px;
+    line-height: 1.35;
+    font-size: 22px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 600;
+    color: #000;
+}
+
+.txt-03 {
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+/* === BLOCK #4 === */
+
+.bl-04 {
+    min-height: 480px;
+    height: 150%;
+}
+
+.h-04 {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-04 h1 {
+    margin: 0;
+    line-height: 1.35;
+    font-size: 22px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 600;
+    color: #000;
+}
+
+.cntr-04 {
+    height: 90%;
+}
+
+.tp-cntr-04 {
+    height: 18%;
+    padding: 1% 0;
+    display: flex;
+    justify-content: center;
+}
+
+.md-cntr-04 {
+    height: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.md-cntr-04 img {
+    height: 100%;
+}
+
+.bt-cntr-04 {
+    height: 18%;
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tip-04 {
+    padding: 10px 15px;
+    width: 45%;
+    max-width: 360px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* === BLOCK #6 === */
+
+.how-container {
+
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+
+    display: -moz-flex;
+    -moz-flex-direction: center;
+    -moz-justify-content: center;
+    -moz-align-items: center;
+
+    display: -ms-flex;
+    -ms-flex-direction: column;
+    -ms-justify-content: center;
+    -ms-align-items: center;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.how-title p {
+    text-align: center;
+    padding: 40px 0 70px 0;
+}
+
+.height-half {
+    height: 50% !important;
+}
+
+.bottom-half {
+    bottom: 50% !important;
+}
+
+.padding-right {
+    padding-right: 74px;
+}
+
+.padding-left {
+    padding-left: 74px;
+}
+
+.how-table {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.how-table img {
+    width: 50%;
+}
+
+.how-table-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.how-table-item p {
+    text-align: center;
+}
+
+.wrapper-line {
+    height: 100%;
+    display: flex;
+    width: 2px;
+    background: #fff;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.wrapper-circle {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: #58585B;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.wrapper-number {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: 600;
+}
+
+.flex-start {
+    align-items: flex-start;
+}
+
+.flex-end {
+    align-items: flex-end;
+}
+
+.how-flex-item {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.how-table-title {
+    margin-top: 20px;
+}
+
+.how-table-text {
+    max-width: 335px;
+    margin-top: 18px;
+}
+
+/*
+========================
+==========MEDIA=========
+========================
+*/
+
+@media screen and (min-width: 961px) {
+    .third {
+        width: 33.333333%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .cntr {
+        width: 90%;
+    }
+
+    .cntr-03 {
+        padding: 10px 15px;
+        margin: 25px 5%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .half {
+        width: 49.999999%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (min-width: 641px) {
+}
+
+@media screen and (max-width: 640px) {
+    .crd h1 {
+        padding-top: 75px;
+    }
+
+    .crd {
+        margin: 0;
+    }
+
+    .cntr {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .cntr-02, .cntr-03 {
+        padding: 10px 10px;
+        margin: 5% 10%;
+    }
 }

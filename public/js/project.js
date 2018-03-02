@@ -30,4 +30,13 @@ $(document).ready(function () {
         }, 500);
     });
 
+    $('.icon').on('click', () => {
+        let x = $('#navbar');
+        if (x.className === "") {
+            x.className += "responsive";
+        } else {
+            x.className = "";
+        }
+    });
+
 });
