@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url(../fonts/Roboto-Light.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html {
     height: 100%;
 }
@@ -15,11 +34,34 @@ h1 {
     text-align: center;
 }
 
-/* w3-override*/
-
-.w3-card {
-    background-color: #fff;
+.title-md {
+    color: #fff;
+    font-family: "Roboto-Bold";
+    font-weight: 600;
+    font-size: 46px;
 }
+
+.title-sm {
+    font-family: "Roboto-Bold";
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.text-md {
+    font-family: 'Roboto-Regular';
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.text-sm {
+    font-family: 'Roboto-Regular';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* w3-override*/
 
 .w3-row {
     width: 100%;
@@ -57,7 +99,7 @@ h1 {
 
 /* === NAVBAR === */
 
-#navbar {
+.topnav {
     overflow: hidden;
     background-color: #B3D234;
     position: fixed;
@@ -69,21 +111,30 @@ h1 {
     z-index: 10;
 }
 
-#navbar a {
-    float: left;
+.topnav a {
     display: block;
     color: #fff;
     text-align: center;
-    padding: 15px;
+    padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
-#navbar a:hover {
-    background-color: #58585B;
+#menu-header {
+    display: none;
 }
 
-#navbar .icon {
+#menu-header:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.topnav a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.topnav .icon {
     display: none;
 }
 
@@ -129,9 +180,8 @@ h1 {
     margin: 30px 0;
 }
 
-.logo img {
-    max-width: 100%;
-    height: 150px;
+.responsive-logo {
+    max-height: 150px;
 }
 
 .description {
@@ -173,13 +223,13 @@ h1 {
     height: 150px;
 }
 
-.txt-cntr-02 {
+.txt-cntr-02, .txt-cntr-03 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.h-02 {
+.h-02, .h-03 {
     text-align: center;
     margin-bottom: 25px;
     margin-top: 18px;
@@ -192,8 +242,6 @@ h1 {
 
 .txt-02 {
     text-align: center;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 400;
     color: #000;
 }
 
@@ -213,27 +261,8 @@ h1 {
     height: 150px;
 }
 
-.txt-cntr-03 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.h-03 {
-    text-align: center;
-    margin-bottom: 25px;
-    margin-top: 18px;
-    line-height: 1.35;
-    font-size: 22px;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 600;
-    color: #000;
-}
-
 .txt-03 {
     text-align: center;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 400;
     color: #000;
 }
 
@@ -255,7 +284,7 @@ h1 {
     margin: 0;
     line-height: 1.35;
     font-size: 22px;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto-Regular';
     font-weight: 600;
     color: #000;
 }
@@ -278,7 +307,7 @@ h1 {
     justify-content: center;
 }
 
-.md-cntr-04 img {
+.responsive-image {
     height: 100%;
 }
 
@@ -300,136 +329,132 @@ h1 {
 
 /* === BLOCK #6 === */
 
-.how-container {
-
-    display: -webkit-flex;
-    -webkit-flex-direction: column;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-
-    display: -moz-flex;
-    -moz-flex-direction: center;
-    -moz-justify-content: center;
-    -moz-align-items: center;
-
-    display: -ms-flex;
-    -ms-flex-direction: column;
-    -ms-justify-content: center;
-    -ms-align-items: center;
-
+.h-06 {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    margin: 40px 10px 0;
 }
 
-.how-title p {
-    text-align: center;
-    padding: 40px 0 70px 0;
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.height-half {
-    height: 50% !important;
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: white;
+    top: 25px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
 }
 
-.bottom-half {
-    bottom: 50% !important;
-}
-
-.padding-right {
-    padding-right: 74px;
-}
-
-.padding-left {
-    padding-left: 74px;
-}
-
-.how-table {
-    display: flex;
-    flex-direction: column;
-    width: 850px;
-    height: auto;
-    margin-bottom: 100px;
-}
-
-.how-table img {
+/* Container around content */
+.cntr-06 {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
     width: 50%;
 }
 
-.how-table-item {
+/* The circles on the timeline */
+.cntr-06::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12px;
+    background-color: white;
+    border: 4px solid #B3D234;
+    top: 19px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left-06 {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right-06 {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-06::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-06::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-06::after {
+    left: -13px;
+}
+
+/* The actual content */
+.cnt-06 {
+    padding: 20px 30px;
+    background-color: white;
     position: relative;
+    border-radius: 6px;
+}
+
+.img-cntr-06 {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
-.how-table-item p {
-    text-align: center;
+.cnt-06 img {
+    height: 150px;
 }
 
-.wrapper-line {
+/* === BLOCK #7 === */
+
+.bl-07 {
+    background-color: #f3f3f3;
     height: 100%;
-    display: flex;
-    width: 2px;
-    background: #fff;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.wrapper-circle {
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    background-color: #58585B;
-    border-radius: 100%;
-    border: 2px solid #fff;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.wrapper-number {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    color: #fff;
-    font-weight: 600;
-}
-
-.flex-start {
-    align-items: flex-start;
-}
-
-.flex-end {
-    align-items: flex-end;
-}
-
-.how-flex-item {
-    width: 350px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 60px;
 }
 
-.how-table-title {
-    margin-top: 20px;
+.h-07 {
+    text-align: center;
 }
 
-.how-table-text {
-    max-width: 335px;
-    margin-top: 18px;
+.cntnt-07 {
+    text-align: center;
 }
 
 /*
@@ -462,12 +487,53 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
+    #menu-header {
+        display: block;
+    }
+
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        position: absolute;
+        right: 0;
+        display: block;
+    }
+
+    .topnav.responsive {
+        flex-direction: column;
+        align-items: center;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 641px) {
 }
 
 @media screen and (max-width: 640px) {
+    .logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .responsive-logo {
+        max-width: 423px;
+        width: 100%;
+        height: auto;
+    }
+
     .crd h1 {
         padding-top: 75px;
     }
@@ -485,5 +551,99 @@ h1 {
     .cntr-02, .cntr-03 {
         padding: 10px 10px;
         margin: 5% 10%;
+    }
+
+    .bl-04 {
+        height: 100%;
+    }
+
+    .h-04 {
+        height: 20%;
+    }
+
+    .cntr-04 {
+        height: 80%;
+    }
+
+    .tp-cntr-04, .bt-cntr-04 {
+        display: none;
+    }
+
+    .md-cntr-04 {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .responsive-image {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .cntr-06 {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .cntr-06::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left-06::after, .right-06::after {
+        left: 18px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right-06 {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 480px) {
+    .title-md {
+        font-size: 32px;
+        margin: 30px 0 10px;
+    }
+
+    .title-sm {
+        font-size: 18px;
+    }
+
+    .text-md {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .text-sm {
+        line-height: 1.5;
+    }
+
+    .crd h1 {
+        font-size: 40px;
+    }
+
+    .cntr-02, .cntr-03 {
+        padding: 10px 0;
+        margin: 5%;
+    }
+
+    .bl-07 {
+        padding: 60px 10px 10px;
     }
 }

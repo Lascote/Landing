@@ -3,19 +3,32 @@ $(document).ready(function () {
     const heigth = $(window).height();
 
     $(window).scroll(function() {
-
-        if ($(this).scrollTop() >= heigth) {
-            $('#navbar').css("top", 0);
+        let window = $(this), x = $('#myTopnav');
+        if (window.scrollTop() >= heigth) {
+            $('.topnav').css("top", 0);
         } else {
-            $('#navbar').css("top", '-55px');
+            $('.topnav').css("top", '-55px');
+            if (x['0'].className !== "topnav") {
+                x.removeClass("responsive");
+            }
         }
     });
 
     $('a[href^="#"]').click(function () {
         event.preventDefault();
         let id = $(this).attr('href'),
-            top = $(id).offset().top;
+            top = $(id).offset().top,
+            x = $('#myTopnav'),
+            menuHeader = $('#menu-header'),
+            link = $(this);
         $('body,html').animate({scrollTop: top}, 1000);
+        if (x['0'].className !== "topnav") {
+            x.removeClass("responsive");
+        }
+        if ($(this)['0'].className !== 'arrow-link') {
+            menuHeader.text(link.text());
+            menuHeader.attr('href', id);
+        }
     });
 
     setInterval(function () {
@@ -30,13 +43,13 @@ $(document).ready(function () {
         }, 500);
     });
 
-    $('.icon').on('click', () => {
-        let x = $('#navbar');
-        if (x.className === "") {
-            x.className += "responsive";
+    $('#topnavIcon').on('click', () => {
+        let x = $('#myTopnav'),
+            menuHeader = $('#menu-header');
+        if (x['0'].className === "topnav") {
+            x.addClass("responsive");
         } else {
-            x.className = "";
+            x.removeClass("responsive");
         }
     });
-
 });

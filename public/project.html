@@ -6,26 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon.png">
     <link rel="stylesheet" href="css/project.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/media.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-<header id="navbar">
+<header class="topnav" id="myTopnav">
+    <a href="#problems" id="menu-header">Проблемы</a>
     <a href="#problems">Проблемы</a>
     <a href="#solutions">Решения</a>
     <a href="#howitworks">Как это работает</a>
     <a href="#done">Что сделано</a>
     <a href="#willdo">Что сделаем</a>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon">&#9776;</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" id="topnavIcon">&#9776;</a>
 </header>
 <section class="bl-01">
     <section class="home-container">
         <section class="home-content">
             <section class="logo">
-                <img src="img/home/logo.png" alt="logo"/>
+                <img src="img/home/logo.png" alt="logo" class="responsive-logo" width="423" height="150"/>
             </section>
 
             <p class="description text-md">
@@ -34,7 +33,7 @@
         </section>
     </section>
     <section class="arrow-container">
-        <a href="#problems">
+        <a href="#problems" class="arrow-link">
             <section class="arrow" id="arrow"></section>
         </a>
     </section>
@@ -45,7 +44,7 @@
         <h1>Проблемы</h1>
         <div class="w3-row">
             <div class="half">
-                <div class="cntr-02 w3-card">
+                <div class="cntr-02">
                     <div class="icn-02">
                         <img src="img/project/no-money.png"/>
                     </div>
@@ -53,7 +52,7 @@
                         <div class="h-02">
                             Отсутствие независимого финансирования студенческих инициатив
                         </div>
-                        <div class="txt-02">
+                        <div class="txt-02 text-sm">
                             Первой проблемой и одной из основных причин создания проекта является отсутствие
                             независимого финансирования негосударственных и некоммерческих студенческих организаций.
                             В связи с этим независимые студенческие организации зависят от спонсорского финансирования
@@ -65,7 +64,7 @@
                 </div>
             </div>
             <div class="half">
-                <div class="cntr-02 w3-card">
+                <div class="cntr-02">
                     <div class="icn-02">
                         <img src="img/project/no-discount.png">
                     </div>
@@ -73,7 +72,7 @@
                         <div class="h-02">
                             Отсутствие системы льгот и скидок для беларусских студентов
                         </div>
-                        <div class="txt-02">
+                        <div class="txt-02 text-sm">
                             Второй, но не менее важной проблемой является отсутствие в Беларуси на данный момент
                             системы скидок и льгот для студентов как для слабо защищенной социальной группы.
                             Средняя стипендия в Беларуси составляет 76 BYN, а доля студентов, которые платят за своё
@@ -93,7 +92,7 @@
         <h1>Решения</h1>
         <div class="w3-row">
             <div class="third">
-                <div class="cntr-03 w3-card">
+                <div class="cntr-03">
                     <div class="icn-03">
                         <img src="img/project/percentage.png">
                     </div>
@@ -101,7 +100,7 @@
                         <div class="h-03">
                             Предоставление скидок студентам
                         </div>
-                        <div class="txt-03">
+                        <div class="txt-03 text-sm">
                             UNI создаст сотни скидочных и льготных возможостей для более 150 тысяч минских студентов.
                             Сэкономленные на покупках деньги студенты смогут потратить на более важные траты такие как:
                             покупка книг, оплата общежития и т.п.
@@ -111,7 +110,7 @@
             </div>
 
             <div class="third">
-                <div class="cntr-03 w3-card">
+                <div class="cntr-03">
                     <div class="icn-03">
                         <img src="img/project/money-bag.png">
                     </div>
@@ -119,7 +118,7 @@
                         <div class="h-03">
                             Независимое финасирование студенческих проектов и инициатив
                         </div>
-                        <div class="txt-03">
+                        <div class="txt-03 text-sm">
                             Значительная часть вырученых от реализации скидочных карт средств пойдёт на поддержку
                             студенческих проектов и инициатив по развитию неформального образования, увеливению
                             использования белорусского языка в сфере образования и другим социально важным темам.
@@ -129,7 +128,7 @@
             </div>
 
             <div class="third">
-                <div class="cntr-03 w3-card">
+                <div class="cntr-03">
                     <div class="icn-03">
                         <img src="img/project/add-user.png">
                     </div>
@@ -137,7 +136,7 @@
                         <div class="h-03">
                             Реализация социальной ответсвенности и реклама для бизнеса
                         </div>
-                        <div class="txt-03">
+                        <div class="txt-03 text-sm">
                             Компании, сотрудничающие с UNI, смогут продемонстрировать свою социальную ответственность и
                             на деле помочь студентам. Взамен компании получат бесплатное продвижение и рекламу, что
                             позволит привлечь новых клиентов.
@@ -155,18 +154,18 @@
     </section>
     <section class="cntr-04">
         <section class="tp-cntr-04">
-            <section class="tip-04">Студенты получают скидки от Партнеров проекта UNI и экономят на это десятки и
-                сотни тысяч рублей, которые они смогут потратить на что-то более важное.
+            <section class="tip-04 text-sm">Студенты получают скидки от Партнеров проекта UNI и экономят на это десятки
+                и сотни тысяч рублей, которые они смогут потратить на что-то более важное.
             </section>
         </section>
         <section class="md-cntr-04">
-            <img src="img/project/how-it-works.png">
+            <img src="img/project/how-it-works.png" alt="how-it-works" class="responsive-image">
         </section>
         <section class="bt-cntr-04">
-            <section class="tip-04">Компании-пртнеры привлекают новых клиентов, а тажке реализуют свою социальную
-                ответственность.
+            <section class="tip-04 text-sm">Компании-партнеры привлекают новых клиентов, а тажке реализуют свою
+                социальную ответственность.
             </section>
-            <section class="tip-04">Полученные от реализации скидочных карт деньги UNI будет использовать для
+            <section class="tip-04 text-sm">Полученные от реализации скидочных карт деньги UNI будет использовать для
                 финансирования независимых студенческих проектов, инициатив и организаций.
             </section>
         </section>
@@ -178,7 +177,7 @@
         <h1>Что сделано</h1>
         <div class="w3-row">
             <div class="third">
-                <div class="cntr-03 w3-card">
+                <div class="cntr-03">
                     <div class="icn-03">
                         <img src="img/project/server.png">
                     </div>
@@ -187,15 +186,15 @@
                             Разработана база данных
                         </div>
                         <div class="txt-03">
-                            База данных предназначена для учёта подавших заявку на приобретение карточки, существующих
-                            пользователей и партнёров проекта.
+                            База данных предназначена для учёта подавших заявку на приобретение карточки и уже
+                            существующих Клиентов, а также Партнёров проекта.
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="third">
-                <div class="cntr-03 w3-card">
+                <div class="cntr-03">
                     <div class="icn-03">
                         <img src="img/project/smartphone-black.png">
                     </div>
@@ -213,7 +212,7 @@
             </div>
 
             <div class="third">
-                <div class="cntr-03 w3-card">
+                <div class="cntr-03">
                     <div class="icn-03">
                         <img src="img/project/deal.png">
                     </div>
@@ -232,75 +231,65 @@
     </section>
 </section>
 <div id="willdo"></div>
-<section class="bl bl-06">
-    <section class="how-container">
-        <section class="how-title">
-            <p class="title-md">Что сделаем</p>
-        </section>
-        <section class="how-table">
-            <section class="how-table-item flex-start">
-                <section class="how-table-wrapper">
-                    <section class="wrapper-line height-half"></section>
-                    <section class="wrapper-circle">
-                        <section class="wrapper-number">1</section>
-                    </section>
-                </section>
-                <section class="how-flex-item border-right padding-right">
-                    <img src="img/project/website.png" alt=""/>
-                    <p class="how-table-title title-sm">Сайт</p>
-                    <p class="how-table-text text-sm">Окончание разработки сайта, создание категорий товаров и услуг, а
-                        также user-friendly интерфейса.
-                    </p>
-                </section>
-            </section>
-            <section class="how-table-item flex-end">
-                <section class="how-table-wrapper">
-                    <section class="wrapper-line"></section>
-                    <section class="wrapper-circle">
-                        <section class="wrapper-number">2</section>
-                    </section>
-                </section>
-                <section class="how-flex-item border-left padding-left">
-                    <img src="img/project/team.png" alt=""/>
-                    <p class="how-table-title title-sm">Команда для работы над проектом</p>
-                    <p class="how-table-text text-sm">Будет собрана инициативная команда для расширения возможностей по
-                        договорённостям с бизнесом (до 30 шт.), а также распространения информации о проекте в
-                        студенческой среде
-                    </p>
-                </section>
-            </section>
-            <section class="how-table-item flex-start">
-                <section class="how-table-wrapper">
-                    <section class="wrapper-line"></section>
-                    <section class="wrapper-circle">
-                        <section class="wrapper-number">3</section>
-                    </section>
-                </section>
-                <section class="how-flex-item border-left padding-left">
-                    <img src="img/project/customer.png" alt=""/>
-                    <p class="how-table-title title-sm">Первые пользователи</p>
-                    <p class="how-table-text text-sm">Официальный запуск проекта, начало эмиссии карточек и реализации
-                        их через распространителей в университетах, в среде студенческих организаций и инициатив.
-                    </p>
-                </section>
-            </section>
-            <section class="how-table-item flex-end">
-                <section class="how-table-wrapper">
-                    <section class="wrapper-line bottom-half height-half"></section>
-                    <section class="wrapper-circle">
-                        <section class="wrapper-number">4</section>
-                    </section>
-                </section>
-                <section class="how-flex-item">
-                    <img src="img/project/smartphone.png" alt=""/>
-                    <p class="how-table-title title-sm">Android приложение</p>
-                    <p class="how-table-text text-sm">Создание Android приложения, которое позволит упростить и улучшить
-                        процесс получения скидки.</p>
-                </section>
-            </section>
-        </section>
+<section class="bl-06">
+    <section class="h-06">
+        <p class="title-md">Что сделаем</p>
+    </section>
+    <div class="timeline">
+        <div class="cntr-06 left-06">
+            <div class="cnt-06">
+                <div class="img-cntr-06">
+                    <img src="img/project/website-black.png" alt=""/>
+                </div>
+                <p class="title-sm">Сайт</p>
+                <p class="text-sm">Окончание разработки сайта, создание категорий товаров и услуг, а также user-friendly
+                    интерфейса.</p>
+            </div>
+        </div>
+        <div class="cntr-06 right-06">
+            <div class="cnt-06">
+                <div class="img-cntr-06">
+                    <img src="img/project/team-black.png" alt=""/>
+                </div>
+                <p class="title-sm">Команда для работы над проектом</p>
+                <p class="text-sm">Будет собрана инициативная команда для расширения возможностей по договорённостям с
+                    бизнесом (до 30 шт.), а также распространения информации о проекте в студенческой среде</p>
+            </div>
+        </div>
+        <div class="cntr-06 left-06">
+            <div class="cnt-06">
+                <div class="img-cntr-06">
+                    <img src="img/project/customer-black.png" alt=""/>
+                </div>
+                <p class="title-sm">Первые Клиенты</p>
+                <p class="text-sm">Официальный запуск проекта, начало эмиссии карточек и реализации их через
+                    распространителей в университетах, в среде студенческих организаций и инициатив.</p>
+            </div>
+        </div>
+        <div class="cntr-06 right-06">
+            <div class="cnt-06">
+                <div class="img-cntr-06">
+                    <img src="img/project/smartphone-black.png" alt=""/>
+                </div>
+                <p class="title-md">Android приложение</p>
+                <p class="text-sm">Создание Android приложения, которое позволит упростить и улучшить процесс получения
+                    скидки.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bl-07">
+    <section class="h-07">
+        <p class="title-md" style="color: #000">Связаться с нами</p>
+    </section>
+    <section class="cntnt-07">
+        <p class="text-md">Если у вас остались вопросы, вы можете написать нам на почту <a
+                href="mailto:Danik9000@gmail.com">Danik9000@gmail.com</a></p>
+        <p class="text-md">Если вы хотите связаться прямо сейчас - не вопрос, просто позвоните одному из авторов
+            проекта: <br>+375 29 182 87 84 (Данила)</p>
     </section>
 </section>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/project.js" type="text/javascript"></script>
