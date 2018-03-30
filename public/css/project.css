@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background: url(../img/home/background1200х750.png) repeat-y fixed;
+    background: url(../img/home/background1200x750.png) repeat-y fixed;
     background-size: 100%;
     margin: 0;
     padding:0;
@@ -466,7 +466,7 @@ h1 {
 
 @media screen and (min-width: 1200px) {
     body {
-        background: url(../img/home/background1200х750.png) repeat fixed;
+        background: url(../img/home/background1200x750.png) repeat fixed;
     }
 }
 
@@ -531,8 +531,7 @@ h1 {
 
 @media screen and (max-width: 640px) {
     body {
-        background: url(../img/home/background640х400.png) repeat-y fixed;
-        background-size: 100%;
+        background: url(../img/home/background480x300.png) repeat fixed;
     }
 
     .logo {
@@ -628,11 +627,6 @@ h1 {
 }
 
 @media screen and (max-width: 480px) {
-    body {
-        background: url(../img/home/background480х300.png) repeat-y fixed;
-        background-size: 100%;
-    }
-
     .title-md {
         font-size: 32px;
         margin: 30px 0 10px;
