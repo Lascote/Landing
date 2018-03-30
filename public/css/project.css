@@ -22,8 +22,8 @@ html {
 }
 
 body {
-    background: url(../img/home/background1200x750.png) repeat-y fixed;
-    background-size: 100%;
+    background: url("../img/home/background1200x750.png") repeat-y fixed;
+    background-size: contain;
     margin: 0;
     padding:0;
     height:100%;
@@ -532,6 +532,7 @@ h1 {
 @media screen and (max-width: 640px) {
     body {
         background: url(../img/home/background480x300.png) repeat fixed;
+        background-size: auto;
     }
 
     .logo {
