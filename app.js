@@ -8,6 +8,10 @@ app.get('/project', (req, res) => {
     res.sendFile('project.html', { root: __dirname + '/public/'});
 });
 
+app.get('/partners', (req, res) => {
+    res.sendFile('partners.html', { root: __dirname + '/public/'});
+});
+
 app.listen(8081, function () {
   console.log('App listening on port 8081!');
 });

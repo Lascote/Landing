@@ -1,16 +1,13 @@
 @font-face {
-    font-family: 'Roboto-Bold';
-    src: url(../fonts/Roboto-Bold.ttf);
+    font-family: 'a_FuturaRound Bold', arial;
 }
 
 @font-face {
-    font-family: 'Roboto-Regular';
-    src: url(../fonts/Roboto-Regular.ttf);
+    font-family: 'a_FuturaRoundDemi', arial;
 }
 
 @font-face {
-    font-family: 'Roboto-Light';
-    src: url(../fonts/Roboto-Light.ttf);
+    font-family: 'a_FuturaRound', arial;
 }
 
 p {
@@ -23,33 +20,33 @@ html {
 }
 
 .title-lr {
-    font-family: "Roboto-Bold";
+    font-family: "a_FuturaRound Bold";
     font-weight: 600;
     font-size: 80px;
 }
 
 
 .title-md {
-    font-family: "Roboto-Bold";
+    font-family: "a_FuturaRound Bold";
     font-weight: 600;
     font-size: 46px;
 }
 
 .title-sm {
-    font-family: "Roboto-Bold";
+    font-family: "a_FuturaRoundDemi";
     font-weight: 600;
     font-size: 24px;
 }
 
 .text-md {
-    font-family: 'Roboto-Light';
+    font-family: 'a_FuturaRoundDemi';
     font-size: 24px;
     font-weight: 300;
     line-height: 1.5;
 }
 
 .text-sm {
-    font-family: 'Roboto-Light';
+    font-family: 'a_FuturaRound';
     font-size: 14px;
     font-weight: 300;
     line-height: 1.8;
@@ -199,7 +196,7 @@ body {
 }
 
 .about-subtitle {
-    font-family: "Roboto-Bold";
+    font-family: "a_FuturaRound Bold";
     padding-bottom: 40px;
     font-size: 14px;
     text-transform: uppercase;
@@ -533,6 +530,7 @@ body {
 
 .options-button p {
     color: #fff;
+    font-family: 'a_FuturaRound Bold';
     text-align: center;
     line-height: 3;
     font-size: 15px;
@@ -822,6 +820,7 @@ input[type=submit] {
     right: 40px;
     background: #292929;
     border-radius: 3px;
+    font-family: 'a_FuturaRoundDemi';
     font-size: 14px;
     font-weight: 600;
     transform: translateX(-20%) translateY(-50%);
@@ -932,7 +931,7 @@ ul a:hover .popover {
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
-    font-family: 'Roboto-Regular';
+    font-family: 'a_FuturaRoundDemi';
     font-size: 26px;
     font-weight: 300;
     line-height: 1.5;

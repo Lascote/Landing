@@ -1,16 +1,13 @@
 @font-face {
-    font-family: 'Roboto-Bold';
-    src: url(../fonts/Roboto-Bold.ttf);
+    font-family: 'a_FuturaRound Bold', arial;
 }
 
 @font-face {
-    font-family: 'Roboto-Regular';
-    src: url(../fonts/Roboto-Regular.ttf);
+    font-family: 'a_FuturaRoundDemi', arial;
 }
 
 @font-face {
-    font-family: 'Roboto-Light';
-    src: url(../fonts/Roboto-Light.ttf);
+    font-family: 'a_FuturaRound', arial;
 }
 
 * {
@@ -42,26 +39,26 @@ h1 {
 
 .title-md {
     color: #fff;
-    font-family: "Roboto-Bold";
+    font-family: "a_FuturaRound Bold";
     font-weight: 600;
     font-size: 46px;
 }
 
 .title-sm {
-    font-family: "Roboto-Bold";
+    font-family: "a_FuturaRoundDemi";
     font-weight: 600;
     font-size: 24px;
 }
 
 .text-md {
-    font-family: 'Roboto-Regular';
+    font-family: 'a_FuturaRoundDemi';
     font-size: 24px;
     font-weight: 300;
     line-height: 1.5;
 }
 
 .text-sm {
-    font-family: 'Roboto-Regular';
+    font-family: 'a_FuturaRound';
     font-size: 14px;
     font-weight: 300;
     line-height: 1.8;
@@ -87,8 +84,7 @@ h1 {
 
 .crd h1 {
     font-size: 60px;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 600;
+    font-family: 'a_FuturaRound Bold';
     padding: 20px;
     margin: 0;
 }
@@ -122,6 +118,7 @@ h1 {
     color: #fff;
     text-align: center;
     padding: 14px 16px;
+    font-family: a_FuturaRoundDemi;
     text-decoration: none;
     font-size: 17px;
 }
@@ -241,8 +238,7 @@ h1 {
     margin-top: 18px;
     line-height: 1.35;
     font-size: 22px;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 600;
+    font-family: 'a_FuturaRound Bold';
     color: #000;
 }
 
@@ -290,7 +286,7 @@ h1 {
     margin: 0;
     line-height: 1.35;
     font-size: 22px;
-    font-family: 'Roboto-Regular';
+    font-family: 'a_FuturaRoundDemi';
     font-weight: 600;
     color: #000;
 }
@@ -432,6 +428,10 @@ h1 {
     background-color: white;
     position: relative;
     border-radius: 6px;
+}
+
+.cnt-06 p {
+    margin: 16px 0 0;
 }
 
 .img-cntr-06 {
