@@ -1,0 +1,116 @@
+            <section class="block" id="partners">
+                <section class="partners-container">
+                    <section class="partners-content">
+                        <p class="title-md">Наши Партнёры</p>
+                        <p class="partners-text text-md">Если вы хотите стать нашим Партнером, пожалуйста, напишите нам сюда:
+                            partners@unicard.by.</p>
+                    </section>
+                    <div ng-controller="Api">
+                    <input type="text" ng-model="search" />
+                        <ul>
+                        <li ng-repeat="partners in partnersApi | orderBy: 'name' | filter: search">{{partners.name}} username : {{partners.username}}</li>
+                    </ul>               
+                    </div> 
+        
+                    <div id="partnersCarousel" class="carousel carousel-fade" data-interval="false"
+                        data-ride="partnersCarousel">
+        
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="1">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="2s">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="3">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="4">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="5">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="6">
+                                </section>
+        
+                            </div>
+        
+                            <div class="item">
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                            </div>
+        
+                            <div class="item">
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                                <section class="item-img">
+                                    <img src="https://static.tildacdn.com/tild3533-3037-4231-b839-316335636436/blob.png"
+                                        alt="Los Angeles">
+                                </section>
+                            </div>
+                        </div>
+        
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#partnersCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Предыдущий</span>
+                        </a>
+                        <a class="right carousel-control" href="#partnersCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Следующий</span>
+                        </a>
+                    </div>
+        
+        
+                </section>
+            </section>
