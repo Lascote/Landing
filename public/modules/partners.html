@@ -5,13 +5,18 @@
                         <p class="partners-text text-md">Если вы хотите стать нашим Партнером, пожалуйста, напишите нам сюда:
                             partners@unicard.by.</p>
                     </section>
-                    <div ng-controller="Api">
-                    <input type="text" ng-model="search" />
-                        <ul>
-                        <li ng-repeat="partners in partnersApi | orderBy: 'name' | filter: search">{{partners.name}} username : {{partners.username}}</li>
-                    </ul>               
-                    </div> 
-        
+                    <div class="contnent">
+                        <div ng-controller="Api">
+                            <button ng-click="order = 'name'" class="btn btn-primary"> Отсортировать по имени</button>
+                            <button ng-click="order = 'belt'" class="btn btn-primary"> Отсортировать по belt</button>
+                        <input type="text" ng-model="search" placeholder="Поиск по нашим партнерам"/>
+                            <ul>
+                            <li ng-repeat="partners in partnersApi | orderBy: order | filter: search" ng-show="true">
+                                <h3>{{partners.name}}</h3>
+                            </li>
+                        </ul>               
+                        </div> 
+                    </div>
                     <div id="partnersCarousel" class="carousel carousel-fade" data-interval="false"
                         data-ride="partnersCarousel">
         
