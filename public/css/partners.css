@@ -1,13 +1,16 @@
 @font-face {
-    font-family: 'a_FuturaRound Bold', arial;
+    font-family: 'futuraroundbold';
+    src: url('../fonts/a_futuraround-bold.ttf');
 }
 
 @font-face {
-    font-family: 'a_FuturaRoundDemi', arial;
+    font-family: 'futurarounddemi';
+    src: url('../fonts/a_futurarounddemi.ttf');
 }
 
 @font-face {
-    font-family: 'a_FuturaRound', arial;
+    font-family: 'futuraround';
+    src: url('../fonts/a_futuraround.ttf');
 }
 
 * {
@@ -28,26 +31,26 @@ body {
 
 .title-md {
     color: #fff;
-    font-family: "a_FuturaRound Bold";
+    font-family: futuraroundbold;
     font-weight: 600;
     font-size: 46px;
 }
 
 .title-sm {
-    font-family: "a_FuturaRound Bold";
+    font-family: futuraroundbold;
     font-weight: 600;
     font-size: 24px;
 }
 
 .text-md {
-    font-family: 'a_FuturaRoundDemi';
+    font-family: futurarounddemi;
     font-size: 24px;
     font-weight: 300;
     line-height: 1.5;
 }
 
 .text-sm {
-    font-family: 'a_FuturaRound';
+    font-family: futuraround;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.6;
@@ -67,7 +70,7 @@ body {
 
 .cards-container h1 {
     font-size: 60px;
-    font-family: 'a_FuturaRound';
+    font-family: futuraround;
     font-weight: 600;
     padding: 20px;
     margin: 0;
@@ -173,7 +176,7 @@ body {
     margin: 0;
     line-height: 1.35;
     font-size: 22px;
-    font-family: 'a_FuturaRoundDemi';
+    font-family: futurarounddemi;
     font-weight: 600;
     color: #000;
 }
@@ -251,7 +254,7 @@ body {
     margin-top: 18px;
     line-height: 1.35;
     font-size: 22px;
-    font-family: 'a_FuturaRound',sans-serif;
+    font-family: futuraround;
     font-weight: 600;
     color: #000;
 }
@@ -439,7 +442,7 @@ body {
 
 .t-btn {
     display: inline-block;
-    font-family: 'a_FuturaRound';
+    font-family: futuraround;
     height: 60px;
     border: 0 none;
     text-decoration: none;

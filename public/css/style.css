@@ -1,13 +1,16 @@
 @font-face {
-    font-family: 'a_FuturaRound Bold', arial;
+    font-family: 'futuraroundbold';
+    src: url('../fonts/a_futuraround-bold.ttf');
 }
 
 @font-face {
-    font-family: 'a_FuturaRoundDemi', arial;
+    font-family: 'futurarounddemi';
+    src: url('../fonts/a_futurarounddemi.ttf');
 }
 
 @font-face {
-    font-family: 'a_FuturaRound', arial;
+    font-family: 'futuraround';
+    src: url('../fonts/a_futuraround.ttf');
 }
 
 p {
@@ -20,33 +23,33 @@ html {
 }
 
 .title-lr {
-    font-family: "a_FuturaRound Bold";
+    font-family: futuraroundbold;
     font-weight: 600;
     font-size: 80px;
 }
 
 
 .title-md {
-    font-family: "a_FuturaRound Bold";
+    font-family: futuraroundbold;
     font-weight: 600;
     font-size: 46px;
 }
 
 .title-sm {
-    font-family: "a_FuturaRoundDemi";
+    font-family: futurarounddemi;
     font-weight: 600;
     font-size: 24px;
 }
 
 .text-md {
-    font-family: 'a_FuturaRoundDemi';
+    font-family: futurarounddemi;
     font-size: 24px;
     font-weight: 300;
     line-height: 1.5;
 }
 
 .text-sm {
-    font-family: 'a_FuturaRound';
+    font-family: futuraround;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.8;
@@ -196,7 +199,7 @@ body {
 }
 
 .about-subtitle {
-    font-family: "a_FuturaRound Bold";
+    font-family: futuraroundbold;
     padding-bottom: 40px;
     font-size: 14px;
     text-transform: uppercase;
@@ -530,7 +533,7 @@ body {
 
 .options-button p {
     color: #fff;
-    font-family: 'a_FuturaRound Bold';
+    font-family: futuraroundbold;
     text-align: center;
     line-height: 3;
     font-size: 15px;
@@ -820,7 +823,7 @@ input[type=submit] {
     right: 40px;
     background: #292929;
     border-radius: 3px;
-    font-family: 'a_FuturaRoundDemi';
+    font-family: futurarounddemi;
     font-size: 14px;
     font-weight: 600;
     transform: translateX(-20%) translateY(-50%);
@@ -931,7 +934,7 @@ ul a:hover .popover {
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
-    font-family: 'a_FuturaRoundDemi';
+    font-family: futurarounddemi;
     font-size: 26px;
     font-weight: 300;
     line-height: 1.5;
