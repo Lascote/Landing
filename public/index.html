@@ -12,36 +12,37 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <section class="container" id="container">
     <section class="block" id="home">
-        <section class="home-container">
+        <section class="home-container" id="home-container">
             <section class="home-content">
                 <section class="logo">
-                    <img src="img/home/logo.png" class="img-fluid"alt="logo"/>
+                    <img src="img/home/logo.png" alt="logo" class="responsive-logo" id="logo"/>
                 </section>
-
-                <p class="description text-md">
-                    Уникальная скидочная система для беларусских студентов от национального студенческого союза (ЗБС).
+                <section style="height: 48px; margin: 40px auto 0;" id="layoutmotto"></section>
+                <p class="description text-md" id="motto">
+                    Плати меньше, получай больше!
                 </p>
             </section>
         </section>
-        <section class="arrow-container">
-            <a href="#howitworks">
-                <section class="arrow" id="arrow"></section>
+        <section class="arrow-container" >
+            <a href="#about">
+                <i style="font-size: 80px" class="fa fa-angle-double-down arrow" id="arrow"></i>
             </a>
         </section>
     </section>
 
-    <!--
+
     <section class="block" id="about">
         <section class="about-container">
-            <p class="about-title title-lr">Кто мы</p>
-            <p class="about-text text-md">
-                Мы простые беларусские студенты. Мы создаём льготы и скидки для вас и нас — одной из наиболее малообеспечнной социальной группы
-                населения! Карта «Юни» позволяет сэкономить сотни рублей, а вырученные средства идут на поддержку
-                проекта и независимого студенческого сектора.
+            <p class="about-title title-lr">Что это такое?</p>
+            <p class="about-text text-sm">
+                UNI - это уникальная для Беларуси студенческая скидочная система. Благодаря UNI ты можешь сэкономить на
+                ежедневных покупках и потратить эти деньги с умом. А можешь и без &#x1f609.<br>
+                Подробнее о том что такое UNI ты можешь прочитать <a target="_blank" href="https://unicard.by/project">тут</a>.
             </p>
         </section>
     </section>
@@ -51,97 +52,81 @@
     <section class="block" id="benefits">
         <section class="benefits-container">
             <section class="benefits-content">
-                <p class="title-md">We love our clients</p>
+                <p class="title-md">И что я получаю?</p>
                 <p class="benefits-text text-md">
-                    Our favourite customers share their impressions.
-                    Got one? Leave a review!
+                    За очень небольшие деньги ты получаешь скидки от 10% до 50% от наших <a href="#partners">Партнеров</a>.
+                    <br>Если хочешь узнать о наших преимуществах, то вот они:
                 </p>
             </section>
 
             <section class="benefits-table">
                 <div class="benefits-table-item">
-                    <img src="img/benefits/money-bag.png" alt="">
-                    <p class="benefits-table-title title-sm">Sell pictures</p>
+                    <img src="img/partners/deal.png" alt="">
+                    <p class="benefits-table-title title-sm">Более 20 Партнеров</p>
                     <p class="benefits-table-text text-sm">
-                        A picture is worth a thousand words. Capture, annotate and share a screenshot - all
-                        without cluttering up your desktop.
+                        Уже сейчас, в самом начале, у нас есть более 20 Партнеров, которые предоставляют вам скидки от
+                        10% до 50%!
                     </p>
                 </div>
 
                 <div class="benefits-table-item">
-                    <img src="img/benefits/money-bag.png" alt="">
-                    <p class="benefits-table-title title-sm">Sell pictures</p>
+                    <img src="img/partners/deal.png" alt="">
+                    <p class="benefits-table-title title-sm">По цене чизбургера</p>
                     <p class="benefits-table-text text-sm">
-                        A picture is worth a thousand words. Capture, annotate and share a screenshot - all
-                        without cluttering up your desktop.
+                        Да-да, карточка UNI стоит всего 1<sup>99</sup> руб, что почти равно цене чизбургера!
                     </p>
                 </div>
 
                 <div class="benefits-table-item">
-                    <img src="img/benefits/money-bag.png" alt="">
-                    <p class="benefits-table-title title-sm">Sell pictures</p>
+                    <img src="img/partners/deal.png" alt="">
+                    <p class="benefits-table-title title-sm">Преимущество 3</p>
                     <p class="benefits-table-text text-sm">
-                        A picture is worth a thousand words. Capture, annotate and share a screenshot - all
-                        without cluttering up your desktop.
+                        Упс... Похоже третьего преимущества мы пока не придумали. А нет, придумали, <a href="#partners">вот оно</a>.
                     </p>
                 </div>
             </section>
         </section>
     </section>
-    -->
 
     <section class="block" id="howitworks">
         <section class="how-container">
             <section class="how-title">
-                <p class="title-md">Как это работает</p>
+                <p class="title-md">И что я должен сделать?</p>
+                <p style="padding: 0 0 50px" class="text-md">Порядок очень простой. Листай вниз</p>
             </section>
 
-
-            <section class="how-table">
-
-                <section class="how-table-item flex-start">
-                    <section class="how-table-wrapper">
-                        <section class="wrapper-line height-half"></section>
-                        <section class="wrapper-circle">
-                            <section class="wrapper-number">1</section>
-                        </section>
-                    </section>
-                    <section class="how-flex-item border-right padding-right">
-                        <img src="img/howitworks/cap.png" alt=""/>
-                        <p class="how-table-title title-sm">Студенты</p>
-                        <p class="how-table-text text-sm">Студенты получают скидки от Партнёров и экономят сотни рублей.</p>
-                    </section>
-                </section>
-                <section class="how-table-item flex-end">
-                    <section class="how-table-wrapper">
-                        <section class="wrapper-line"></section>
-                        <section class="wrapper-circle">
-                            <section class="wrapper-number">2</section>
-                        </section>
-                    </section>
-                    <section class="how-flex-item border-left padding-left">
-                        <img src="img/howitworks/shop.png" alt=""/>
-                        <p class="how-table-title title-sm">Бизнес</p>
-                        <p class="how-table-text text-sm">Наши Партнёры полуают тысячи новых клиентов и положительный
-                            социальный имидж.</p>
-                    </section>
-
-                </section>
-                <section class="how-table-item flex-start">
-                    <section class="how-table-wrapper">
-                        <section class="wrapper-line bottom-half height-half"></section>
-                        <section class="wrapper-circle">
-                            <section class="wrapper-number">3</section>
-                        </section>
-                    </section>
-                    <section class="how-flex-item">
-                        <img class="img-fluid" src="img/howitworks/uni.png" alt=""/>
-                        <p class="how-table-title title-sm">Мы</p>
-                        <p class="how-table-text text-sm">Деньги вырученные с продажи скидочных карточек идут на
-                            финансирование независимых студенческих организаций.</p>
-                    </section>
-                </section>
-            </section>
+            <div class="how-timeline">
+                <div class="how-timeline-container left one" id="action1">
+                    <div class="how-timeline-content">
+                        <div class="how-timeline-image-container">
+                            <img class="how-timeline-image" src="img/partners/deal.png" alt=""/>
+                        </div>
+                        <p class="how-table-title title-sm">Заполняешь заявку</p>
+                        <p class="how-table-text text-sm">В первую очередь нужно заполнить и отправить нам заявку.
+                            Это можно сделать <a href="#options">внизу</a>.</p>
+                    </div>
+                </div>
+                <div class="how-timeline-container right two" id="action2">
+                    <div class="how-timeline-content">
+                        <div class="how-timeline-image-container">
+                            <img class="how-timeline-image" src="img/partners/deal.png" alt=""/>
+                        </div>
+                        <p class="how-table-title title-sm">Мы обрабатываем заявку</p>
+                        <p class="how-table-text text-sm">Далее мы обрабатываем заявку, связываемся с тобой и уточняем
+                            где тебе удобнее всего забрать карточку UNI.</p>
+                    </div>
+                </div>
+                <div class="how-timeline-container left three" id="action3">
+                    <div class="how-timeline-content">
+                        <div class="how-timeline-image-container">
+                            <img class="how-timeline-image" src="img/partners/deal.png" alt=""/>
+                        </div>
+                        <p class="how-table-title title-sm">Готово!</p>
+                        <p class="how-table-text text-sm">Забираешь свою карточку и ты готов получать от этой жизни
+                            максимум!</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </section>
 
@@ -150,8 +135,7 @@
         <section class="partners-container">
             <section class="partners-content">
                 <p class="title-md">Наши Партнёры</p>
-                <p class="partners-text text-md">Если вы хотите стать нашим Партнером, пожалуйста, напишите нам сюда:
-                    partners@unicard.by.</p>
+                <p class="partners-text text-md">Хотите стать нашим Партнером?<br>Тогда вам <a style="color: #B3D234; text-decoration: none"; href="https://unicard.by/partners">сюда</a></p>
             </section>
 
             <div id="partnersCarousel" class="carousel carousel-fade" data-interval="false"
@@ -262,13 +246,14 @@
         <section class="options-container">
             <section class="options-content">
                 <p class="title-md">Варианты карт</p>
-                <p class="options-text text-md">Купите нашу карточку и начните экономить прямо сейчас!</p>
+                <p class="options-text text-md" style="color: #B3D234">А что, есть выбор?</p>
+                <p class="options-text text-md">Справедливо. Пока что мы предлагаем карточки только на год. Но скоро станут достпны карточки и на полгода и даже на два!</p>
             </section>
             <section class="price">
-                <section class="options-substrate" id="card1">
-                    <p class="options-cost title-sm">2 BYN</p>
-                    <p class="options-price-text text-sm">Купить карточку на 6 месяцев.</p>
-                    <a class="options-button"><p>Купить!</p></a>
+                <section class="options-substrate" id="yearcard">
+                    <p class="options-cost title-sm">1<sup>99</sup> BYN</p>
+                    <p class="options-price-text text-sm">Купить карточку на год!</p>
+                    <a class="options-button"><p>Нажми меня</p></a>
                 </section>
             </section>
         </section>
@@ -314,16 +299,14 @@
             </section>
             <section class="contacts">
                 <section class="contacts-info">
-                    <p class="contacts-title title-sm">Контакты:</p>
-                    <p class="text-md">+375 29 182 87 84<br>info@unicard.by</p>
-                    <p class="contacts-address text-sm">КOMNATA 3/0/2, ул. Ленина, 50-302, Минск<br>
-                        Мы находимся в здании отеля в конце ул. Октябрьской
+                    <p class="contacts-title title-sm">Контакты</p>
+                    <p class="text-md">+375 29 182 87 84<br><a style="color: white" href="mailto:unicard.minsk@gmail.com">unicard.minsk@gmail.com</a></p>
+                    <p class="contacts-address text-sm">КOMNATA 3/0/2, ул. Ленина, 50-302, Минск
                     </p>
-                    <section class="contacts-social">
-                        <a href="#"><img src="img/contacts/facebook.png" alt="facebook"/></a>
-                        <a href="#"><img src="img/contacts/twitter.png" alt="twitter"/></a>
+                    <!--<section class="contacts-social">
+                        <a href="#"><img src="img/contacts/vk.png" alt="vk"/></a>
                         <a href="#"><img src="img/contacts/instagram.png" alt="instagram"/></a>
-                    </section>
+                    </section>-->
                 </section>
             </section>
         </section>
@@ -389,11 +372,10 @@
                 <div class="circle"></div>
             </a>
         </li>
-        <!--
         <li data-menuanchor="about">
             <a href="#about">
                 <div class="popover">
-                    О проекте
+                    Что это такое?
                 </div>
                 <div class="circle" id="circle-about"></div>
             </a>
@@ -401,16 +383,15 @@
         <li data-menuanchor="benefits">
             <a href="#benefits">
                 <div class="popover">
-                    Преимущества
+                    И что я получаю?
                 </div>
                 <div class="circle"></div>
             </a>
         </li>
-        -->
         <li data-menuanchor="howitworks">
             <a href="#howitworks">
                 <div class="popover trans">
-                    Как это работает
+                    И что я должен сделать?
                 </div>
                 <div class="circle"></div>
             </a>
@@ -418,7 +399,7 @@
         <li data-menuanchor="partners">
             <a href="#partners">
                 <div class="popover">
-                    Наши партнёры
+                    Наши Партнёры
                 </div>
                 <div class="circle"></div>
             </a>
@@ -467,33 +448,31 @@
                     </div>
                 </a>
             </li>
-            <!--
             <li data-menuanchor="about">
                 <a href="#about">
                     <div class="">
-                        О проекте
+                        Что это такое?
                     </div>
                 </a>
             </li>
             <li data-menuanchor="benefits">
                 <a href="#benefits">
                     <div class="">
-                        Преимущества
+                        И что я получаю?
                     </div>
                 </a>
             </li>
-            -->
             <li data-menuanchor="howitworks">
                 <a href="#howitworks">
                     <div class="">
-                        Как это работает
+                        И что я должен сделать?
                     </div>
                 </a>
             </li>
             <li data-menuanchor="partners">
                 <a href="#partners">
                     <div class="">
-                        Наши партнёры
+                        Наши Партнёры
                     </div>
                 </a>
             </li>

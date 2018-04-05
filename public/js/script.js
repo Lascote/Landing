@@ -1,9 +1,23 @@
 $(document).ready(function () {
 
     let heights = [],
-        blocks = $('.block');
+        blocks = $('.block'),
+        cards = [{block: $("#action1")},
+            {block: $("#action2")},
+            {block: $("#action3")}];
     for (let i = 0; i < blocks.length; i++)
         heights.push({height: $("#"+blocks[i].id).offset().top, id: blocks[i].id});
+    for (let i = 0; i < cards.length; i++){
+        cards[i].top = cards[i].block.offset().top;
+        if (i === 0) continue;
+        cards[i].block.slideUp();
+    }
+
+    $("#home-container").fadeIn(3000).css("display","flex");
+    $("#logo").delay(3000).fadeIn(1500);
+    $("#layoutmotto").delay(5000).fadeOut(1);
+    $("#motto").delay(5001).fadeIn(749);
+    $("#arrow").delay(6000).fadeIn(1000);
 
     $('a[href^="#"]').click(function () {
         event.preventDefault();
@@ -51,6 +65,16 @@ $(document).ready(function () {
                 break;
             }
         }
+
+        if (scroll >= heights[3].height && scroll < heights[4].height) {
+            for (let i = cards.length - 1; i > 0; i--) {
+                if (scroll >= cards[i - 1].top + heigth/2)
+                    cards[i].block.slideDown(200);
+                else if (scroll < cards[i - 1].top + heigth/2)
+                    cards[i].block.slideUp(200);
+            }
+        }
+
 
         if (scroll < heigth) {
             $(".scroll-bar").fadeOut();
@@ -202,7 +226,7 @@ $(document).ready(function () {
             email: $("#email")['0'].value,
             phoneNumber: $("#phone")['0'].value,
             studyPlace: $("#studyPlace")['0'].value,
-            chosenTariff: 6
+            chosenTariff: card === "yearcard" ? 12 : 6,
         })
             .done(() => {
                 console.log("Success");

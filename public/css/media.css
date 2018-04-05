@@ -19,30 +19,22 @@
         display: block;
     }
 
-    .logo img {
-        width: 76%;
-        height: 100%;
-    }
-
-
     .scroll-bar {
         display: none !important;
     }
 
-    .benefits-content {
-        padding-top: 50px;
-    }
-
     .benefits-text {
-        padding: 0 25px;
+        padding: 20px 25px 0;
+        font-size: 22px;
+        line-height: 1.2;
     }
 
     .benefits-table {
         padding: 0 5%;
     }
 
-    .benefits-table-item {
-        padding: 50px 5% 0 0;
+    .how-title {
+        background-image: radial-gradient(#58585a 60%, transparent 70%);
     }
 
     .how-table {
@@ -80,10 +72,74 @@
     .item-img {
         width: 25%;
     }
+
+    .contacts-info {
+        padding: 60px 10%;
+    }
 }
 
+@media screen and (max-width: 768px) {
+    #about {
+        background-image: radial-gradient(#58585a 60%, rgba(0,0,0,0) 70%);
+    }
+
+    #benefits {
+        padding-bottom: 20px;
+    }
+
+    .benefits-table {
+        flex-direction: column;
+        padding: 0 25px;
+    }
+
+    .benefits-table-item {
+        margin: 0 0 32px;
+    }
+}
 
 @media screen and (max-width: 750px) {
+
+    /* Place the timelime to the left */
+    .how-timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .how-timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        margin-bottom: 20px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .how-timeline-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 11px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0;
+    }
+
+    .how-table-title {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .how-table-text {
+        max-width: 480px;
+        font-size: 18px;
+        margin-top: 12px;
+    }
 
     .contacts-container {
         display: flex;
@@ -105,6 +161,7 @@
     .contacts-info {
         width: 100%;
         height: 100%;
+        padding: 20px;
     }
 
     .contacts-title {
@@ -147,24 +204,30 @@
     }
 
     .about-title {
-        font-size: 60px;
+        font-size: 48px;
     }
 
     .about-text {
-        font-size: 20px;
-        line-height: 1.4;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 500;
     }
 
     #benefits {
         height: auto;
     }
 
+    .benefits-content {
+        padding: 80px 40px;
+    }
+
     .benefits-content p {
         max-width: 375px;
     }
 
-    .benefits-title {
-        font-size: 30px;
+    .benefits-content .title-md {
+        font-size: 38px;
+        line-height: 1;
     }
 
     .benefits-text {
@@ -177,13 +240,12 @@
         font-size: 16px;
     }
 
-    .benefits-table {
-        flex-direction: column;
-        padding: 0 25px;
-    }
-
     .benefits-table-text {
         font-size: 12px;
+    }
+
+    .how-timeline{
+        height: 1152px;
     }
 
     .how-table {
@@ -271,7 +333,7 @@
         width: 100%;
     }
 
-    .close-button {
+    .close-buftton {
         position: fixed;
         top: 15px;
         right: 15px;
@@ -308,10 +370,15 @@
 
     .contacts {
         padding: 20px 0 0 20px;
+        background: #58585a;
+    }
+
+    .contacts-info {
+        padding: 20px 10%;
     }
 
     .contacts-title {
-        font-size: 22px;
+        font-size: 24px;
         padding-bottom: 15px;
     }
 
@@ -347,12 +414,15 @@
     .item-img {
         width: 30%;
     }
-
-
 }
+
+@media screen and (max-width: 535px) {
+    .benefits-content {
+        padding: 40px;
+    }
+}
+
 @media screen and (max-width: 440px) {
-
-
     .title {
         font-size: 48px;
     }
@@ -365,8 +435,48 @@
         box-sizing: border-box;
     }
 
+    .home-container {
+        background: linear-gradient(to bottom, transparent 25%, #58585a 35%, #58585a 65%, transparent 75%);
+    }
+
+    #about {
+        background: linear-gradient(to bottom, transparent 10%, #58585a 30%, #58585a 70%, transparent 90%);
+    }
+
+    .about-container {
+        padding: 0 20px;
+    }
+
     .about-title {
-        font-size: 30px;
+        font-size: 38px;
+        padding-bottom: 20px;
+    }
+
+    .about-text {
+        font-size: 20px;
+    }
+
+    .benefits-content {
+        padding: 40px 20px;
+        background: linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
+    }
+
+    .benefits-content .title-md {
+        line-height: 1;
+    }
+
+    .benefits-text {
+        padding: 15px 10px 0;
+    }
+
+    .how-timeline{
+        height: 1202px;
+    }
+
+    .how-timeline-image-container {
+        width: 150px;
+        height: 150px;
+        margin: auto;
     }
 
     .partners-text {
@@ -383,5 +493,12 @@
         width: 300px
     }
 
+    .contacts-info {
+        padding: 20px;
+    }
+
+    .contacts-info .text-md {
+        font-size: 18px;
+    }
 }
 

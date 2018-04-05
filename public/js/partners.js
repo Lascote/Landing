@@ -4,7 +4,8 @@ $(document).ready(function () {
         $('.active img').fadeTo(700, 1);
     });
 
-    $.post('https://panel.unicard.by/api/getpartners')
+    /*TODO: Change path!!!*/
+    $.post('http://localhost:8080/api/getpartners')
         .done((data) => {
         $('#partnersCounter').text(data.partners.length);
         })
