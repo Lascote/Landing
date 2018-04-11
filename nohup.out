@@ -1,0 +1,42 @@
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+[91m[main 8:12:05 PM][0m [VS Code]: render process crashed!
+[91m[main 8:12:08 PM][0m [VS Code]: render process crashed!
+[91m[main 8:12:12 PM][0m [VS Code]: render process crashed!
+[91m[main 8:12:13 PM][0m [VS Code]: render process crashed!
+module.js:472
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ilya/Documents/projects/landing'
+    at Function.Module._resolveFilename (module.js:470:15)
+    at Function.Module._load (module.js:418:25)
+    at Module.runMain (module.js:605:10)
+    at run (bootstrap_node.js:431:7)
+    at startup (bootstrap_node.js:155:9)
+    at bootstrap_node.js:551:3
+module.js:472
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ilya/Documents/projects/landing'
+    at Function.Module._resolveFilename (module.js:470:15)
+    at Function.Module._load (module.js:418:25)
+    at Module.runMain (module.js:605:10)
+    at run (bootstrap_node.js:431:7)
+    at startup (bootstrap_node.js:155:9)
+    at bootstrap_node.js:551:3
+module.js:472
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ilya/Documents/projects/landing'
+    at Function.Module._resolveFilename (module.js:470:15)
+    at Function.Module._load (module.js:418:25)
+    at Module.runMain (module.js:605:10)
+    at run (bootstrap_node.js:431:7)
+    at startup (bootstrap_node.js:155:9)
+    at bootstrap_node.js:551:3
+App listening on port 8081!

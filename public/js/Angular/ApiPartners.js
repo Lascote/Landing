@@ -5,5 +5,4 @@ app.controller('Api', function($scope, $http){
     .then(function(response) {
         $scope.partnersApi = response.data; 
     });
-
 });
