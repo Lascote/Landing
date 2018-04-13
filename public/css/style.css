@@ -221,12 +221,12 @@ body {
 
 .about-title {
     padding-bottom: 40px;
-    line-height: 1.23;
+    line-height: 1;
 }
 
 .about-text {
     font-size: 20px;
-    font-weight: 600;
+    line-height: 1.6;
 }
 
 /* benefits */
@@ -234,6 +234,10 @@ body {
 #benefits {
     height: auto;
     padding-bottom: 80px;
+}
+
+#benefit-1-mobile {
+    display: none;
 }
 
 .benefits-container {
@@ -262,7 +266,7 @@ body {
 
 .benefits-content {
     background-image: radial-gradient(#58585a 60%, transparent 70%);
-    padding: 80px;
+    padding: 60px 80px 30px;
 }
 
 .benefits-content p {
@@ -274,6 +278,11 @@ body {
 
 .benefits-text {
     padding-top: 26px;
+}
+
+.benefits-title {
+    font-size: 60px;
+    line-height: 1;
 }
 
 .benefits-table {
@@ -318,6 +327,8 @@ body {
 .benefits-table-text {
     max-width: 360px;
     margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .notice {
@@ -620,7 +631,9 @@ body {
 }
 
 .options-content {
-    padding: 40px 0 60px 0;
+    padding: 40px 0;
+    margin: 0 40px;
+    max-width: 640px;
 }
 
 .options-content p {
@@ -629,15 +642,19 @@ body {
     color: #000;
 }
 
+.options-title {
+    line-height: 1;
+}
+
 .options-text {
     padding-top: 18px;
-    max-width: 640px;
+    line-height: 1.4;
 }
 
 .options-price-text {
     padding-top: 22px;
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
     max-width: 300px;
     font-size: 16px;
     line-height: 1.55;
@@ -659,13 +676,12 @@ body {
     margin-bottom: 30px;
     width: 90%;
     max-width: 500px;
+    height: 250px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    justify-content: center;
     background-color: #ffffff;
-    border-color: #e6e6e6;
     border-radius: 15px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.10);
 }
@@ -1112,3 +1128,26 @@ ul a:hover .popover {
     color: #585858;
 }
 
+.logo img{
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card-container {
+    padding: 2px 16px;
+}
+
+.card-container p {
+    color: #000;
+}

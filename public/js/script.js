@@ -7,11 +7,12 @@ $(document).ready(function () {
             {block: $("#action3")}];
     for (let i = 0; i < blocks.length; i++)
         heights.push({height: $("#"+blocks[i].id).offset().top, id: blocks[i].id});
+    /*
     for (let i = 0; i < cards.length; i++){
         cards[i].top = cards[i].block.offset().top;
         if (i === 0) continue;
         cards[i].block.slideUp();
-    }
+    }*/
 
     $("#home-container").fadeIn(3000).css("display","flex");
     $("#logo").delay(3000).fadeIn(1500);
@@ -43,10 +44,6 @@ $(document).ready(function () {
 
     $('#arrow').on('click', () => {
         toggleCircle($(".active"));
-        let el = $(this).attr('href');
-        $('body').animate({
-            scrollTop: $(el).offset().top
-        }, 500);
     });
 
     const heigth = $(window).height();
@@ -65,7 +62,7 @@ $(document).ready(function () {
                 break;
             }
         }
-
+/*
         if (scroll >= heights[3].height && scroll < heights[4].height) {
             for (let i = cards.length - 1; i > 0; i--) {
                 if (scroll >= cards[i - 1].top + heigth/2)
@@ -74,7 +71,7 @@ $(document).ready(function () {
                     cards[i].block.slideUp(200);
             }
         }
-
+*/
 
         if (scroll < heigth) {
             $(".scroll-bar").fadeOut();

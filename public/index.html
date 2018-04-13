@@ -23,9 +23,11 @@
                 <section class="logo">
                     <img src="img/home/logo.png" alt="logo" class="responsive-logo" id="logo"/>
                 </section>
-                <section style="height: 48px; margin: 40px auto 0;" id="layoutmotto"></section>
+                <p class="description text-md" id="layoutmotto" style="color: transparent">
+                    Халява пришла!
+                </p>
                 <p class="description text-md" id="motto">
-                    Плати меньше, получай больше!
+                    Халява пришла!
                 </p>
             </section>
         </section>
@@ -40,10 +42,10 @@
     <section class="block" id="about">
         <section class="about-container">
             <p class="about-title title-lr">Что это такое?</p>
-            <p class="about-text text-sm">
+            <p class="about-text text-md">
                 UNI - это уникальная для Беларуси студенческая скидочная система. Благодаря UNI ты можешь сэкономить на
-                ежедневных покупках и потратить эти деньги с умом. А можешь и без &#x1f609.<br>
-                Подробнее о том что такое UNI ты можешь прочитать <a target="_blank" href="https://unicard.by/project">тут</a>.
+                ежедневных покупках и потратить эти деньги с умом. А можешь и без &#x1f609. Подробнее о том что такое
+                UNI ты можешь прочитать <a target="_blank" href="https://unicard.by/project">тут</a>.
             </p>
         </section>
     </section>
@@ -53,42 +55,46 @@
     <section class="block" id="benefits">
         <section class="benefits-container">
             <section class="benefits-content">
-                <p class="title-md">И что я получаю?</p>
-                <p class="benefits-text text-md">
-                    За очень небольшие деньги ты получаешь скидки от 10% до 50% от наших <a href="#partners">Партнеров</a>.
-                    <br>Если хочешь узнать о наших преимуществах, то вот они:
-                </p>
+                <p class="benefits-title title-lr">И что я получаю?</p>
             </section>
 
             <section class="benefits-table">
-                <div class="benefits-table-item">
-                    <img src="img/partners/deal.png" alt="">
-                    <p class="benefits-table-title title-sm">Более 20 Партнеров</p>
+                <div class="benefits-table-item" id="benefit-1-mobile">
+                    <img src="img/benefits/question.png" alt="">
+                    <p class="benefits-table-title title-sm">Скидки до 50%!</p>
                     <p class="benefits-table-text text-sm">
-                        Уже сейчас, в самом начале, у нас есть более 20 Партнеров, которые предоставляют вам скидки от
-                        10% до 50%!
+                        Наши Партнёры предоставляют тебе скидку вплоть до 50%.
                     </p>
                 </div>
 
                 <div class="benefits-table-item">
-                    <img src="img/partners/deal.png" alt="">
+                    <img src="img/benefits/partners.png" alt="">
+                    <p class="benefits-table-title title-sm">Более 30 Партнеров</p>
+                    <p class="benefits-table-text text-sm">
+                        Уже сейчас у тебя есть возможность поулчить скидку в более чем 30 местах.
+                    </p>
+                </div>
+
+                <div class="benefits-table-item" id="benefit-1-desktop">
+                    <img src="img/benefits/question.png" alt="">
+                    <p class="benefits-table-title title-sm">Скидки до 50%!</p>
+                    <p class="benefits-table-text text-sm">
+                        И в этих местах ты получишь скидки от 5% до целых 50%.
+                    </p>
+                </div>
+
+                <div class="benefits-table-item">
+                    <img src="img/benefits/cheeseburger.png" alt="">
                     <p class="benefits-table-title title-sm">По цене чизбургера</p>
                     <p class="benefits-table-text text-sm">
                         Да-да, карточка UNI стоит всего 1<sup>99</sup> руб, что почти равно цене чизбургера!
-                    </p>
-                </div>
-
-                <div class="benefits-table-item">
-                    <img src="img/partners/deal.png" alt="">
-                    <p class="benefits-table-title title-sm">Преимущество 3</p>
-                    <p class="benefits-table-text text-sm">
-                        Упс... Похоже третьего преимущества мы пока не придумали. А нет, придумали, <a href="#partners">вот оно</a>.
                     </p>
                 </div>
             </section>
         </section>
     </section>
 
+    <!--
     <section class="block" id="howitworks">
         <section class="how-container">
             <section class="how-title">
@@ -130,7 +136,7 @@
             </div>
         </section>
     </section>
-
+    -->
 
     <section class="block" id="partners">
         <section class="partners-container">
@@ -246,7 +252,7 @@
     <section class="block" id="options">
         <section class="options-container">
             <section class="options-content">
-                <p class="title-md">Варианты карт</p>
+                <p class="options-title title-md">Варианты карт</p>
                 <p class="options-text text-md" style="color: #B3D234">А что, есть выбор?</p>
                 <p class="options-text text-md">Справедливо. Пока что мы предлагаем карточки только на год. Но скоро станут достпны карточки и на полгода и даже на два!</p>
             </section>
@@ -376,7 +382,7 @@
         <li data-menuanchor="about">
             <a href="#about">
                 <div class="popover">
-                    Что это такое?
+                    О нас
                 </div>
                 <div class="circle" id="circle-about"></div>
             </a>
@@ -384,19 +390,19 @@
         <li data-menuanchor="benefits">
             <a href="#benefits">
                 <div class="popover">
-                    И что я получаю?
+                    Преимущества
                 </div>
                 <div class="circle"></div>
             </a>
         </li>
-        <li data-menuanchor="howitworks">
+        <!--<li data-menuanchor="howitworks">
             <a href="#howitworks">
                 <div class="popover trans">
                     И что я должен сделать?
                 </div>
                 <div class="circle"></div>
             </a>
-        </li>
+        </li>-->
         <li data-menuanchor="partners">
             <a href="#partners">
                 <div class="popover">
@@ -452,24 +458,24 @@
             <li data-menuanchor="about">
                 <a href="#about">
                     <div class="">
-                        Что это такое?
+                        О нас
                     </div>
                 </a>
             </li>
             <li data-menuanchor="benefits">
                 <a href="#benefits">
                     <div class="">
-                        И что я получаю?
+                        Преимущества
                     </div>
                 </a>
             </li>
-            <li data-menuanchor="howitworks">
+            <!--<li data-menuanchor="howitworks">
                 <a href="#howitworks">
                     <div class="">
                         И что я должен сделать?
                     </div>
                 </a>
-            </li>
+            </li>-->
             <li data-menuanchor="partners">
                 <a href="#partners">
                     <div class="">

@@ -24,9 +24,9 @@
     }
 
     .benefits-text {
-        padding: 20px 25px 0;
-        font-size: 22px;
-        line-height: 1.2;
+        padding: 30px 25px 0;
+        font-size: 20px;
+        line-height: 1.4;
     }
 
     .benefits-table {
@@ -94,6 +94,14 @@
 
     .benefits-table-item {
         margin: 0 0 32px;
+    }
+
+    #benefit-1-mobile {
+        display: flex;
+    }
+
+    #benefit-1-desktop {
+        display: none;
     }
 }
 
@@ -192,7 +200,7 @@
 
     .description {
         max-width: 550px;
-        font-size: 24px;
+        margin: 0 auto;
         padding-left: 10px;
         padding-right: 10px;
         line-height: 32px;
@@ -205,12 +213,6 @@
 
     .about-title {
         font-size: 48px;
-    }
-
-    .about-text {
-        font-size: 18px;
-        line-height: 1.2;
-        font-weight: 500;
     }
 
     #benefits {
@@ -231,17 +233,9 @@
     }
 
     .benefits-text {
-        font-size: 16px;
-        line-height: 1.45;
+        font-size: 18px;
+        line-height: 1.25;
         padding: 25px 10px 0;
-    }
-
-    .benefits-table-title {
-        font-size: 16px;
-    }
-
-    .benefits-table-text {
-        font-size: 12px;
     }
 
     .how-timeline{
@@ -303,8 +297,8 @@
         height: auto;
     }
 
-    .options-title {
-        font-size: 30px;
+    .options-content {
+        margin: 0 20px;
     }
 
     .options-text {
@@ -324,8 +318,8 @@
     }
 
     .options-price-text {
-        font-size: 12px;
-        line-height: 1.45;
+        font-size: 18px;
+        line-height: 1.25;
     }
 
     .overlay {
@@ -428,15 +422,18 @@
     }
 
     .description {
-        font-size: 18px;
         padding-left: 10px;
         padding-right: 10px;
-        line-height: 24px;
+        line-height: 1;
         box-sizing: border-box;
     }
 
     .home-container {
         background: linear-gradient(to bottom, transparent 25%, #58585a 35%, #58585a 65%, transparent 75%);
+    }
+
+    .home-content {
+        padding: 0 20px;
     }
 
     #about {
@@ -453,7 +450,7 @@
     }
 
     .about-text {
-        font-size: 20px;
+        line-height: 1.4;
     }
 
     .benefits-content {
@@ -467,6 +464,16 @@
 
     .benefits-text {
         padding: 15px 10px 0;
+    }
+
+    .benefits-title {
+        font-size: 48px;
+    }
+
+    .benefits-table-text {
+        margin-top: 8px;
+        font-size: 18px;
+        line-height: 1.4;
     }
 
     .how-timeline{
@@ -502,3 +509,12 @@
     }
 }
 
+@media screen and (max-width: 359px) {
+    .about-text {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 24px;
+    }
+}
