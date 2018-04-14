@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js\Angular\ApiPartners.js"></script>
 </head>
 <body>
 <section class="container" id="container">
@@ -140,17 +142,11 @@
 
     <section class="block" id="partners">
         <section class="partners-container">
-            <section class="partners-content">
-                <p class="title-md">Наши Партнёры</p>
-                <p class="partners-text text-md">Хотите стать нашим Партнером?<br>Тогда вам <a style="color: #B3D234; text-decoration: none"; href="https://unicard.by/partners">сюда</a></p>
-            </section>
-
-            
-
-
+                <div ng-app="ApiPartners">
+                    <div ng-include="'modules/partners.html'"></div>
+                </div>
         </section>
     </section>
-
 
     <section class="block" id="options">
         <section class="options-container">
