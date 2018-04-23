@@ -1,31 +1,10 @@
-            <section class="block" id="partners">
-                <section class="partners-container">
-                    <section class="partners-content">
-                        <p class="title-md">Наши Партнёры</p>
-                        <p class="partners-text text-md">Если вы хотите стать нашим Партнером, пожалуйста, напишите нам сюда:
-                            partners@unicard.by.</p>
-                    </section>
-                    <div class="contnent">
-                            <div ng-controller="Api">
-                            <input type="text" ng-model="search" placeholder="Поиск по нашим партнерам" style="width:100%;"/>
-                                <ul>
-                                <li ng-repeat="categories in partnersApi | orderBy: order | filter: search" ng-show="true">
-                                    <h3>{{categories.name}}</h3>
-                                </li>
-                            </ul>               
-                            </div> 
-        
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#partnersCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Предыдущий</span>
-                        </a>
-                        <a class="right carousel-control" href="#partnersCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Следующий</span>
-                        </a>
-                    </div>
-        
-        
-                </section>
-            </section>
+<div class="card"
+     ng-repeat="partners in partnersApi | orderBy: order | filter: search"
+     ng-show="true"
+>
+    <div class="card-inner">
+        <h4><b>{{partners.title}}</b></h4>
+        <p>{{partners.address}}</p>
+        <h2>{{partners.discountValue}}</h2>
+    </div>
+</div>

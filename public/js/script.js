@@ -7,18 +7,12 @@ $(document).ready(function () {
             {block: $("#action3")}];
     for (let i = 0; i < blocks.length; i++)
         heights.push({height: $("#"+blocks[i].id).offset().top, id: blocks[i].id});
-    /*
-    for (let i = 0; i < cards.length; i++){
-        cards[i].top = cards[i].block.offset().top;
-        if (i === 0) continue;
-        cards[i].block.slideUp();
-    }*/
 
-    $("#home-container").fadeIn(3000).css("display","flex");
-    $("#logo").delay(3000).fadeIn(1500);
-    $("#layoutmotto").delay(5000).fadeOut(1);
-    $("#motto").delay(5001).fadeIn(749);
-    $("#arrow").delay(6000).fadeIn(1000);
+    $("#home-container").fadeIn(1500).css("display","flex");
+    $("#logo").fadeIn(1500);
+    $("#layoutmotto").delay(2500).fadeOut(1);
+    $("#motto").delay(2500).fadeIn(750);
+    $("#arrow").delay(3500).fadeIn(1000);
 
     $('a[href^="#"]').click(function () {
         event.preventDefault();
@@ -46,6 +40,14 @@ $(document).ready(function () {
         toggleCircle($(".active"));
     });
 
+    $('#slide-back').on('click', () => {
+        $('#slider-container').delay(1000).animate({'left': '0'},700);
+    });
+
+    $('#slide-forward').on('click', () => {
+        $('#slider-container').delay(1000).animate({'left': '-100%'},700);
+    });
+
     const heigth = $(window).height();
 
     /* slide show animation in carousel "partnersCarousel". */
@@ -62,16 +64,6 @@ $(document).ready(function () {
                 break;
             }
         }
-/*
-        if (scroll >= heights[3].height && scroll < heights[4].height) {
-            for (let i = cards.length - 1; i > 0; i--) {
-                if (scroll >= cards[i - 1].top + heigth/2)
-                    cards[i].block.slideDown(200);
-                else if (scroll < cards[i - 1].top + heigth/2)
-                    cards[i].block.slideUp(200);
-            }
-        }
-*/
 
         if (scroll < heigth) {
             $(".scroll-bar").fadeOut();
@@ -80,6 +72,15 @@ $(document).ready(function () {
             $(".scroll-bar").fadeIn();
         }
     });
+
+    $.post('https://panel.unicard.by/api/showclientscount')
+        .done((data) => {
+            console.log(data.count);
+            $('#count').text(500-data.count);
+        })
+        .fail((err) => {
+            console.error("Ошибка соединения с сервером.")
+        });
 
     $(".circle").click(function (event) {
         const circles = $(".circle");
@@ -113,6 +114,16 @@ $(document).ready(function () {
     validMap.set('email', false);
     validMap.set('phone', false);
     validMap.set('studyPlace', false);
+
+    $('#defaultCheck1').on("click", (event) => {
+        let isChecked = event.currentTarget.checked,
+            submit = $('input[type="submit"]');
+        submit.prop('disabled', !isChecked);
+        if (isChecked)
+            submit.removeClass('disabled');
+        else
+            submit.addClass('disabled');
+    });
 
     $('input[type^="text"]').focusout((event) => {
         if (event === undefined)
@@ -178,11 +189,6 @@ $(document).ready(function () {
                 }
                 break;
             case "studyPlace":
-                if (current.value === "") {
-                    valid = false;
-                    message = "Введите Ваше место учёбы";
-                    break;
-                }
                 valid = true;
                 break;
             default:
@@ -226,10 +232,10 @@ $(document).ready(function () {
             chosenTariff: card === "yearcard" ? 12 : 6,
         })
             .done(() => {
-                console.log("Success");
-                clearAllInputClasses();
                 $('#form')[0].reset();
-                $(".overlay").fadeOut();
+                clearAllInputClasses();
+                $('#fh1, #f1').css("display",'none');
+                $('#fh2, #wicf').css("display",'flex');
             })
             .fail((err) => {
                 alert("Ошибка соединения с сервером.")
@@ -299,4 +305,36 @@ function clearAllInputClasses() {
     for (let i = 0; i < labels.length; i++) {
         $("#"+labels[i].id).css("display", "none");
     }
+}
+
+function clearAllInputClass() {
+    let wt = [];
+    for (let i = 0; i < days.length; i++) {
+        days[i].sort();
+        for (let j = 0; j < days[i].length; j++) {
+            wt[days[i][j]][0] = from[i] ? from[i] : "empty";
+            wt[days[i][j]][1] = to[i] ? to[i] : "empty";
+        }
+    }
+}
+
+function openModal(number) {
+    let id = 13;
+    switch (id){
+        case 1: id = '5326418161'; break;
+        case 2: id = "5ad4c0b22c1f956a42bc2bd4"; break;
+        case 3: id = '5326418161'; break;
+        case 4: id = '5326418161'; break;
+        case 5: id = '5326418161'; break;
+        case 6: id = '5326418161'; break;
+        case 7: id = '5326418161'; break;
+        case 8: id = '5326418161'; break;
+        case 9: id = '5326418161'; break;
+        case 10: id = '5326418161'; break;
+        case 11: id = '5326418161'; break;
+        case 12: id = '5326418161'; break;
+        default: break;
+    }
+    if (id !== undefined)
+        $("#modal"+id).modal();
 }

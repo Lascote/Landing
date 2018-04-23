@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>UNI - скидочная карта</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118065662-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118065662-1');
+    </script>
+    <title>UNI — студенческая скидочная карточка</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="B5zVZDrDblw_3xX9dt_J-z_Pe0iwZcTQ1U_dQmrAAwM" />
+    <meta name="google-site-verification" content="B5zVZDrDblw_3xX9dt_J-z_Pe0iwZcTQ1U_dQmrAAwM"/>
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon.png">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/normalize.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/media.css"/>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="js\Angular\ApiPartners.js"></script>
 </head>
 <body>
-<section class="container" id="container">
+<section class="main-container" id="container">
     <section class="block" id="home">
         <section class="home-container" id="home-container">
             <section class="home-content">
@@ -33,7 +42,7 @@
                 </p>
             </section>
         </section>
-        <section class="arrow-container" >
+        <section class="arrow-container">
             <a href="#about">
                 <i style="font-size: 80px" class="fa fa-angle-double-down arrow" id="arrow"></i>
             </a>
@@ -45,13 +54,12 @@
         <section class="about-container">
             <p class="about-title title-lr">Что это такое?</p>
             <p class="about-text text-md">
-                UNI - это уникальная для Беларуси студенческая скидочная система. Благодаря UNI ты можешь сэкономить на
-                ежедневных покупках и потратить эти деньги с умом. А можешь и без &#x1f609. Подробнее о том что такое
-                UNI ты можешь прочитать <a target="_blank" href="https://unicard.by/project">тут</a>.
+                UNI — это уникальная студенческая скидочная система. С помощью UNI ты можешь сэкономить на
+                ежедневных покупках и потратить эти деньги в своё удовольствие. Подробности
+                <a target="_blank" href="https://unicard.by/project">тут</a>.
             </p>
         </section>
     </section>
-
 
 
     <section class="block" id="benefits">
@@ -62,7 +70,7 @@
 
             <section class="benefits-table">
                 <div class="benefits-table-item" id="benefit-1-mobile">
-                    <img src="img/benefits/question.png" alt="">
+                    <img src="img/benefits/50percent.svg" alt="">
                     <p class="benefits-table-title title-sm">Скидки до 50%!</p>
                     <p class="benefits-table-text text-sm">
                         Наши Партнёры предоставляют тебе скидку вплоть до 50%.
@@ -71,14 +79,14 @@
 
                 <div class="benefits-table-item">
                     <img src="img/benefits/partners.png" alt="">
-                    <p class="benefits-table-title title-sm">Более 30 Партнеров</p>
+                    <p class="benefits-table-title title-sm">Более 20 Партнеров</p>
                     <p class="benefits-table-text text-sm">
-                        Уже сейчас у тебя есть возможность поулчить скидку в более чем 30 местах.
+                        Уже сейчас у тебя есть возможность поулчить скидку в более чем 20 местах.
                     </p>
                 </div>
 
                 <div class="benefits-table-item" id="benefit-1-desktop">
-                    <img src="img/benefits/question.png" alt="">
+                    <img src="img/benefits/50percent.svg" alt="">
                     <p class="benefits-table-title title-sm">Скидки до 50%!</p>
                     <p class="benefits-table-text text-sm">
                         И в этих местах ты получишь скидки от 5% до целых 50%.
@@ -86,7 +94,7 @@
                 </div>
 
                 <div class="benefits-table-item">
-                    <img src="img/benefits/cheeseburger.png" alt="">
+                    <img src="img/benefits/cheeseburger.svg" alt="">
                     <p class="benefits-table-title title-sm">По цене чизбургера</p>
                     <p class="benefits-table-text text-sm">
                         Да-да, карточка UNI стоит всего 1<sup>99</sup> руб, что почти равно цене чизбургера!
@@ -96,70 +104,234 @@
         </section>
     </section>
 
-    <!--
-    <section class="block" id="howitworks">
-        <section class="how-container">
-            <section class="how-title">
-                <p class="title-md">И что я должен сделать?</p>
-                <p style="padding: 0 0 50px" class="text-md">Порядок очень простой. Листай вниз</p>
-            </section>
+    <section style="height: auto;" class="block" id="partners">
+        <section class="partners-container">
+            <p class="title-md">Наши Партнёры</p>
+            <div class="slider-wrapper">
+                <div class="slider-container" id="slider-container">
+                    <div class="first-slide-container">
+                        <p class="text-md">Тут ты можешь выбрать скидку на свой вкус у наших партнеров.</p>
+                        <div class="partners-row">
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon" onclick="openModal(1)">
+                                    <img src="img/partners-logos/coffeeberry.jpg">
+                                    <div style="height: 100%; display: block; border-radius: 50%;" class="hover-discount">
+                                        <div class="hover-discount-text">Скоро</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/symbalby.png">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(2)">10%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>10%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/lesante.png">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(3)">до 30%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>до 30%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/buterbrodnaya.png">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(4)">10%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>10%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/dreamcafe.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(5)">10%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>10%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/coffeevarium.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(6)">20%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>20%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/eroticon.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(7)">10%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>10%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/karman.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(8)">10%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>10%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/monadonerkebab.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(9)">13%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>13%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/mona.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(10)">13%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>13%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/myway.jpg">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(11)">20%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>20%</p></div>
+                                </div>
+                            </div>
+                            <div class="partner-icon-wrapper">
+                                <div class="partner-icon">
+                                    <img src="img/partners-logos/shaurma.png">
+                                    <div class="hover-discount">
+                                        <div class="hover-discount-text" onclick="openModal(12)">до 20%</div>
+                                    </div>
+                                    <div class="strip-discount-text"><p>до 20%</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-forward-container">
+                            <a id="slide-forward" href="#partners">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="second-slide-container" ng-app="ApiPartners" ng-controller="Api">
+                        <p class="partners-text text-md">Халява пришла, теперь ты можешь:</p>
+                        <div class="categories-container">
+                            <div class="category-background" id="cat-1">
+                                <div class="category-card" ng-click="getpartners(1)">
+                                    <div class="category-name"><p>Модно приодеться</p></div>
+                                </div>
+                            </div>
+                            <div class="category-background" id="cat-2">
+                                <div class="category-card" ng-click="getpartners(2)">
+                                    <div class="category-name"><p>Заняться собой</p></div>
+                                </div>
+                            </div>
+                            <div class="category-background" id="cat-3">
+                                <div class="category-card" ng-click="getpartners(3)">
+                                    <div class="category-name"><p>Найти гаджет</p></div>
+                                </div>
+                            </div>
+                            <div class="category-background" id="cat-4">
+                                <div class="category-card" ng-click="getpartners(4)">
+                                    <div class="category-name"><p>Поесть и выпить</p></div>
+                                </div>
+                            </div>
+                            <div class="category-background" id="cat-5">
+                                <div class="category-card" ng-click="getpartners(5)">
+                                    <div class="category-name"><p>Отдохнуть</p></div>
+                                </div>
+                            </div>
+                            <div class="category-background" id="cat-6">
+                                <div class="category-card" ng-click="getpartners(6)">
+                                    <div class="category-name"><p>Купить подарок</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-list">
+                            <div class="grid-row">
+                                <div class="card-wrapper"
+                                     ng-repeat="partner in partnersApi"
+                                     ng-show="true"
+                                >
+                                    <div class="partner-card" ng-click="openPartnerModal(partner.id)">
+                                        <div class="image-container">
+                                            <img src={{"https://panel.unicard.by/partner/"+partner.image}}>
+                                        </div>
+                                        <div class="partner-title-container">
+                                            <p>{{partner.title}}</p>
+                                        </div>
+                                        <div class="discount-container">
+                                            <span>{{partner.discountValues[1] ? "до " + partner.discountValues[0].value + "%" : partner.discountValues[0].value + "%"}}</span>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id={{"modal"+partner.id}} tabindex="-1"
+                                         role="dialog" aria-labelledby="exampleModalLongTitle"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div>
+                                                        <h4>{{partner.title}}</h4>
+                                                        <p>{{partner.description}}</p>
+                                                        <p>{{partner.website}}</p>
+                                                    </div>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
 
-            <div class="how-timeline">
-                <div class="how-timeline-container left one" id="action1">
-                    <div class="how-timeline-content">
-                        <div class="how-timeline-image-container">
-                            <img class="how-timeline-image" src="img/partners/deal.png" alt=""/>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="how-table-title title-sm">Заполняешь заявку</p>
-                        <p class="how-table-text text-sm">В первую очередь нужно заполнить и отправить нам заявку.
-                            Это можно сделать <a href="#options">внизу</a>.</p>
-                    </div>
-                </div>
-                <div class="how-timeline-container right two" id="action2">
-                    <div class="how-timeline-content">
-                        <div class="how-timeline-image-container">
-                            <img class="how-timeline-image" src="img/partners/deal.png" alt=""/>
+                        <div class="slide-back-container">
+                            <a id="slide-back" href="#partners">Ой, нет, сложнааа!</a>
                         </div>
-                        <p class="how-table-title title-sm">Мы обрабатываем заявку</p>
-                        <p class="how-table-text text-sm">Далее мы обрабатываем заявку, связываемся с тобой и уточняем
-                            где тебе удобнее всего забрать карточку UNI.</p>
-                    </div>
-                </div>
-                <div class="how-timeline-container left three" id="action3">
-                    <div class="how-timeline-content">
-                        <div class="how-timeline-image-container">
-                            <img class="how-timeline-image" src="img/partners/deal.png" alt=""/>
-                        </div>
-                        <p class="how-table-title title-sm">Готово!</p>
-                        <p class="how-table-text text-sm">Забираешь свою карточку и ты готов получать от этой жизни
-                            максимум!</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </section>
-    -->
-
-    <section class="block" id="partners">
-        <section class="partners-container">
-                <div ng-app="ApiPartners">
-                    <div ng-include="'modules/partners.html'"></div>
-                </div>
+            <p style="line-height: 1" class="partners-text text-md">Хотите стать нашим Партнером?<br>Тогда вам
+                <a href="https://unicard.by/partners">сюда</a></p>
         </section>
     </section>
 
     <section class="block" id="options">
         <section class="options-container">
             <section class="options-content">
-                <p class="options-title title-md">Варианты карт</p>
-                <p class="options-text text-md" style="color: #B3D234">А что, есть выбор?</p>
-                <p class="options-text text-md">Справедливо. Пока что мы предлагаем карточки только на год. Но скоро станут достпны карточки и на полгода и даже на два!</p>
+                <p class="options-title title-md">Закажи карту</p>
+                <p class="options-text text-md">
+                    Успей купить карточку UNI по супер крутой цене! Предложение ограничено, только первые 500 карточек
+                    доступны по цене 1<sup>99</sup> рублей.
+                </p>
+                <p class="options-text text-md">Осталось <strong id="count">500</strong> карточек со скидкой 50%!</p>
             </section>
             <section class="price">
                 <section class="options-substrate" id="yearcard">
                     <p class="options-cost title-sm">1<sup>99</sup> BYN</p>
                     <p class="options-price-text text-sm">Купить карточку на год!</p>
-                    <a class="options-button"><p>Нажми меня</p></a>
+                    <a class="options-button"><p>Нажми меня!</p></a>
                 </section>
             </section>
         </section>
@@ -167,112 +339,189 @@
 
     <section>
         <section class="overlay" id="overlay">
-        <section class="form-container">
-            <section class="form-wrap">
-                <section class="form-header">
-                    <span class="close-button">&times;</span>
-                    <section class="form-content">
-                        <p class="title-md">Покупка карточки</p>
-                        <p class="text-sm">Просто оставьте нам свои контакты.</p>
+            <section class="form-container">
+                <section class="form-wrap">
+                    <section id="fh1" class="form-header">
+                        <span class="close-button">&times;</span>
+                        <section class="form-content">
+                            <p class="title-md">Покупка карточки</p>
+                            <p class="text-sm">Просто оставьте нам свои контакты.</p>
+                        </section>
+                    </section>
+                    <section id="f1" class="form">
+                        <form id="form">
+                            <input type="text" id="surname" placeholder="Фамилия"/>
+                            <div><label id="surname-err" class="notification">error</label></div>
+                            <input type="text" id="name" placeholder="Имя"/>
+                            <div><label id="name-err" class="notification">error</label></div>
+                            <input type="text" id="studyPlace" placeholder="Место учёбы"/>
+                            <div><label id="studyPlace-err" class="notification">error</label></div>
+                            <input type="text" id="email" placeholder="Email"/>
+                            <div><label id="email-err" class="notification">error</label></div>
+                            <input type="text" id="phone" placeholder="Номер телефона"/>
+                            <div><label id="phone-err" class="notification">error</label></div>
+                            <div class="check-box-container">
+                                <input title="" class="check-box" type="checkbox" id="defaultCheck1">
+                                <span class="check-box-label">
+                                    Я прочитал и принимаю <a href="https://drive.google.com/file/d/1WDwFRUCDy4I-LREheWU9tesh9oNPYQ-H/view?usp=sharing">Пользовательское соглашение</a>
+                                </span>
+                            </div>
+                            <input disabled type="submit" class="form-button disabled" value="Отправить"/>
+                            <div><label id="form-button-err" class="notification">error</label></div>
+                        </form>
+                    </section>
+                    <section id="fh2" class="form-header">
+                        <span class="close-button">&times;</span>
+                        <section class="form-content">
+                            <p class="title-md">Готово!</p>
+                            <p class="text-sm">Теперь осталось забрать свою карточку.<br>Это можно сделать двумя способами:</p>
+                        </section>
+                    </section>
+                    <section id="wicf" class="form">
+                        <p class="title-sm">Первый способ</p>
+                        <p class="text-sm">Ты можешь забрать карточку у нас в офисе по адресу:<br>
+                            г. Минск, ул. Ленина, 50, оф. 302
+                        </p>
+                        <section class="contacts-map">
+                            <iframe style="border:0; width:100%; height:100%"
+                                    src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k"
+                                    allowfullscreen></iframe>
+                        </section>
+                        <p class="title-sm">Второй способ</p>
+                        <p class="text-sm">Ты можешь забрать карточку у распространителя у тебя в университете.</p>
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            БГУ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="title-sm">Место №1</p>
+                                        <strong>Где?</strong> Факультет журналистики, у печатного автомата<br>
+                                        <strong>Когда?</strong> Пн-Пт, 15:00-16:00<br>
+                                        <strong>У кого?</strong> Катя, +375447541307<br>
+                                        <p class="title-sm">Место №2</p>
+                                        <strong>Где?</strong> Общежитие №4, к. 804 Б<br>
+                                        <strong>Когда?</strong> Пн-Пт, 21:00-22:00<br>
+                                        <strong>У кого?</strong> Катя, +375447541307<br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            БГЭУ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="title-sm">Место №1</p>
+                                        <strong>Когда?</strong> Пн-Пт, 12:30-13:30<br>
+                                        <strong>У кого?</strong> Ваня, +375447841066<br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            МИУ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="title-sm">Место №1</p>
+                                        <strong>Когда?</strong> Пн, Чт, Сб<br>
+                                        <strong>У кого?</strong> Илья, +375333511075<br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            БГМУ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="title-sm">Место №1</p>
+                                        <strong>Где?</strong> Возле столовой<br>
+                                        <strong>Когда?</strong> Пн-Пт, 08:30-09:30<br>
+                                        <strong>У кого?</strong> Алана, +375299087662<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </section>
-                <section class="form">
-                    <form id="form">
-                        <input type="text" id="surname" placeholder="Фамилия"/>
-                        <div><label id="surname-err" class="notification">error</label></div>
-                        <input type="text" id="name" placeholder="Имя"/>
-                        <div><label id="name-err" class="notification">error</label></div>
-                        <input type="text" id="email" placeholder="Email"/>
-                        <div><label id="email-err" class="notification">error</label></div>
-                        <input type="text" id="phone" placeholder="Номер телефона"/>
-                        <div><label id="phone-err" class="notification">error</label></div>
-                        <input type="text" id="studyPlace" placeholder="Место учёбы"/>
-                        <div><label id="studyPlace-err" class="notification">error</label></div>
-                        <input type="submit" class="form-button" value="Отправить"/>
-                        <div><label id="form-button-err" class="notification">error</label></div>
-                    </form>
-                </section>
-            </section>
-        </section>
-        </section>
-    </section>
-
-
-    <section class="block" id="contacts">
-        <section class="contacts-container">
-            <section class="contacts-map">
-                <iframe  style="border:0; width:100%; height:100%" src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k" allowfullscreen></iframe>
-            </section>
-            <section class="contacts">
-                <section class="contacts-info">
-                    <p class="contacts-title title-sm">Контакты</p>
-                    <p class="text-md">+375 29 182 87 84<br><a style="color: white" href="mailto:unicard.minsk@gmail.com">unicard.minsk@gmail.com</a></p>
-                    <p class="contacts-address text-sm">КOMNATA 3/0/2, ул. Ленина, 50-302, Минск
-                    </p>
-                    <!--<section class="contacts-social">
-                        <a href="#"><img src="img/contacts/vk.png" alt="vk"/></a>
-                        <a href="#"><img src="img/contacts/instagram.png" alt="instagram"/></a>
-                    </section>-->
-                </section>
             </section>
         </section>
     </section>
-<!--
-    <section class="block" id="news">
-        <section class="news-container">
-            <div id="newsCarousel" class="carousel slide" data-interval="false" data-ride="newsCarousel">
+    <!--
+        <section class="block" id="news">
+            <section class="news-container">
+                <div id="newsCarousel" class="carousel slide" data-interval="false" data-ride="newsCarousel">
 
-                <ol class="carousel-indicators">
-                    <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#newsCarousel" data-slide-to="1"></li>
-                    <li data-target="#newsCarousel" data-slide-to="2"></li>
-                    <li data-target="#newsCarousel" data-slide-to="3"></li>
-                    <li data-target="#newsCarousel" data-slide-to="4"></li>
-                </ol>
+                    <ol class="carousel-indicators">
+                        <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#newsCarousel" data-slide-to="1"></li>
+                        <li data-target="#newsCarousel" data-slide-to="2"></li>
+                        <li data-target="#newsCarousel" data-slide-to="3"></li>
+                        <li data-target="#newsCarousel" data-slide-to="4"></li>
+                    </ol>
 
 
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="img/news/slide1.jpg" alt="Los Angeles">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/news/slide1.jpg" alt="Los Angeles">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/news/slide1.jpg" alt="Chicago">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/news/slide1.jpg" alt="New York">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/news/slide1.jpg" alt="Chicago">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/news/slide1.jpg" alt="New York">
+                        </div>
                     </div>
 
-                    <div class="item">
-                        <img src="img/news/slide1.jpg" alt="Chicago">
-                    </div>
 
-                    <div class="item">
-                        <img src="img/news/slide1.jpg" alt="New York">
-                    </div>
-
-                    <div class="item">
-                        <img src="img/news/slide1.jpg" alt="Chicago">
-                    </div>
-
-                    <div class="item">
-                        <img src="img/news/slide1.jpg" alt="New York">
-                    </div>
+                    <a class="left carousel-control" href="#newsCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Предыдущая</span>
+                    </a>
+                    <a class="right carousel-control" href="#newsCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Следующая</span>
+                    </a>
                 </div>
-
-
-                <a class="left carousel-control" href="#newsCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Предыдущая</span>
-                </a>
-                <a class="right carousel-control" href="#newsCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Следующая</span>
-                </a>
-            </div>
+            </section>
         </section>
-    </section>
-    -->
+        -->
 </section>
 
 <section class="scroll-bar">
     <ul id="navigation">
         <li data-menuanchor="home">
             <a href="#home">
-                <div class="popover">
+                <div class="myPopover">
                     Главная
                 </div>
                 <div class="circle"></div>
@@ -280,7 +529,7 @@
         </li>
         <li data-menuanchor="about">
             <a href="#about">
-                <div class="popover">
+                <div class="myPopover">
                     О нас
                 </div>
                 <div class="circle" id="circle-about"></div>
@@ -288,23 +537,15 @@
         </li>
         <li data-menuanchor="benefits">
             <a href="#benefits">
-                <div class="popover">
+                <div class="myPopover">
                     Преимущества
                 </div>
                 <div class="circle"></div>
             </a>
         </li>
-        <!--<li data-menuanchor="howitworks">
-            <a href="#howitworks">
-                <div class="popover trans">
-                    И что я должен сделать?
-                </div>
-                <div class="circle"></div>
-            </a>
-        </li>-->
         <li data-menuanchor="partners">
             <a href="#partners">
-                <div class="popover">
+                <div class="myPopover">
                     Наши Партнёры
                 </div>
                 <div class="circle"></div>
@@ -312,16 +553,8 @@
         </li>
         <li data-menuanchor="options">
             <a href="#options">
-                <div class="popover">
+                <div class="myPopover">
                     Варианты карт
-                </div>
-                <div class="circle"></div>
-            </a>
-        </li>
-        <li data-menuanchor="contacts">
-            <a href="#contacts">
-                <div class="popover">
-                    Контакты
                 </div>
                 <div class="circle"></div>
             </a>
@@ -368,13 +601,6 @@
                     </div>
                 </a>
             </li>
-            <!--<li data-menuanchor="howitworks">
-                <a href="#howitworks">
-                    <div class="">
-                        И что я должен сделать?
-                    </div>
-                </a>
-            </li>-->
             <li data-menuanchor="partners">
                 <a href="#partners">
                     <div class="">
@@ -386,13 +612,6 @@
                 <a href="#options">
                     <div class="">
                         Варианты карт
-                    </div>
-                </a>
-            </li>
-            <li data-menuanchor="contacts">
-                <a href="#contacts">
-                    <div class="">
-                        Контакты
                     </div>
                 </a>
             </li>
@@ -411,8 +630,9 @@
 <footer></footer>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 <script src="js/script.js" type="text/javascript"></script>
 
 
