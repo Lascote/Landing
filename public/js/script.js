@@ -1,10 +1,7 @@
 $(document).ready(function () {
 
     let heights = [],
-        blocks = $('.block'),
-        cards = [{block: $("#action1")},
-            {block: $("#action2")},
-            {block: $("#action3")}];
+        blocks = $('.block');
     for (let i = 0; i < blocks.length; i++)
         heights.push({height: $("#" + blocks[i].id).offset().top, id: blocks[i].id});
 
@@ -15,10 +12,9 @@ $(document).ready(function () {
     $("#arrow").delay(3500).fadeIn(1000);
 
     $('a[href^="#"]').click(function () {
-        event.preventDefault();
         let id = $(this).attr('href'),
             top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1000);
+        $('html, body').animate({scrollTop: top}, 1000);
     });
 
     const burgerLinks = $(".burger-content > ul > li > a");
@@ -124,7 +120,9 @@ $(document).ready(function () {
             submit.addClass('disabled');
     });
 
-    $('input[type^="text"]').focusin((event) => {
+    let inputs = $('input[type^="text"]');
+
+    inputs.focusin((event) => {
         if (event === undefined)
             return;
         let current = event.currentTarget,
@@ -154,7 +152,7 @@ $(document).ready(function () {
         label.text(message);
     });
 
-    $('input[type^="text"]').focusout((event) => {
+    inputs.focusout((event) => {
         if (event === undefined)
             return;
         let current = event.currentTarget,
@@ -181,7 +179,7 @@ $(document).ready(function () {
                     message = "Введите Вашу фамилию";
                     break;
                 }
-                if (current.value.match(/^[- А-Яа-яЁё\s]*$/)) {
+                if (current.value.match(/^[- А-Яа-яЁё]{1,64}$/)) {
                     valid = true;
                 }
                 else {
@@ -195,7 +193,7 @@ $(document).ready(function () {
                     message = "Введите Ваше имя";
                     break;
                 }
-                if (current.value.match(/^[А-Яа-яЁё\s]*$/)) {
+                if (current.value.match(/^[- А-Яа-яЁё]{1,64}$/)) {
                     valid = true;
                 }
                 else {
@@ -305,6 +303,8 @@ function toggleIcon(burger) {
 function checkEmptyness() {
     const inputs = $('input[type^="text"]');
     for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].id === 'studyPlace')
+            continue;
         if (inputs[i].value === "") {
             let label = $("#" + inputs[i].id + "-msg"),
                 message = "";
@@ -321,11 +321,9 @@ function checkEmptyness() {
                 case "phone":
                     message = "Введите Ваш мобильный телефон";
                     break;
-                case "studyPlace":
-                    message = "Введите Ваше место учёбы";
-                    break;
             }
             label.css("display","block");
+            label.css("color","red");
             label.text(message);
             $("#" + inputs[i].id).addClass("error-input");
         }

@@ -822,13 +822,6 @@ form {
     margin-bottom: 6px;
 }
 
-.int span {
-    font-family: sans-serif;
-    font-size: 16px;
-    margin-bottom: 6px;
-    color: #afafaf;
-}
-
 .form-container p {
     color: #000;
     text-align: center;
@@ -837,6 +830,9 @@ form {
 .check-box-container {
     height: auto;
     margin-bottom: 15px;
+    width: 75%;
+    font-family: futuraround;
+    font-size: 16px;
 }
 
 #defaultCheck1 {
@@ -870,31 +866,49 @@ input {
     box-shadow: 0 0 2px 1px green;
 }
 
-.notification{
-    color: red;
-    font-family: sans-serif;
-    font-size: 14px;
-    margin: 2px 0 4px 5px;
-    display: none;
-}
-
 input:focus{
     box-shadow: 0 0 2px 1px skyblue;
     outline: none;
 }
 
+#phone + .int {
+    margin: 0;
+}
+
 input[type=submit] {
     cursor: pointer;
 }
+
 .form-button {
     color: #fff;
     background-color: #B3D234;
     transition: all 0.3s ease-in-out;
+    font-size: 24px;
+}
+
+.form-button + .int {
+    margin-bottom: 40px;
 }
 
 #form .disabled {
     background-color: rgba(179, 210, 52, 0.50);
     cursor: default;
+}
+
+#form input {
+    font-family: futuraround;
+}
+
+#form input[type=submit] {
+    font-family: futurarounddemi;
+}
+
+.notification {
+    font-family: futuraround;
+    font-size: 12px;
+    text-align: left;
+    width: 75%;
+    color: #afafaf;
 }
 
 #fh2 {
