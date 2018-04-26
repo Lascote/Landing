@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118065662-1"></script>
@@ -24,7 +24,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="js\Angular\ApiPartners.js"></script>
+    <script src="js/Angular/ApiPartners.js"></script>
 </head>
 <body>
 <section class="main-container" id="container">
@@ -115,7 +115,7 @@
                             <div class="partner-icon-wrapper">
                                 <div class="partner-icon" onclick="openModal(1)">
                                     <img src="img/partners-logos/coffeeberry.jpg">
-                                    <div style="height: 100%; display: block; border-radius: 50%;" class="hover-discount">
+                                    <div style="display: block" class="hover-discount">
                                         <div class="hover-discount-text">Скоро</div>
                                     </div>
                                 </div>
@@ -350,16 +350,17 @@
                     </section>
                     <section id="f1" class="form">
                         <form id="form">
-                            <input type="text" id="surname" placeholder="Фамилия"/>
-                            <div><label id="surname-err" class="notification">error</label></div>
-                            <input type="text" id="name" placeholder="Имя"/>
-                            <div><label id="name-err" class="notification">error</label></div>
+                            <div class="int"><label style="display: block">* Обязатльные поля</label></div>
+                            <input type="text" id="surname" placeholder="Фамилия *"/>
+                            <div class="int"><label id="surname-msg">error</label></div>
+                            <input type="text" id="name" placeholder="Имя *"/>
+                            <div class="int"><label id="name-msg">error</label></div>
                             <input type="text" id="studyPlace" placeholder="Место учёбы"/>
-                            <div><label id="studyPlace-err" class="notification">error</label></div>
-                            <input type="text" id="email" placeholder="Email"/>
-                            <div><label id="email-err" class="notification">error</label></div>
-                            <input type="text" id="phone" placeholder="Номер телефона"/>
-                            <div><label id="phone-err" class="notification">error</label></div>
+                            <div class="int"><label id="studyPlace-msg">error</label></div>
+                            <input type="text" id="email" placeholder="Email *"/>
+                            <div class="int"><label id="email-msg">error</label></div>
+                            <input type="text" id="phone" placeholder="Номер телефона *"/>
+                            <div class="int"><label id="phone-msg">error</label></div>
                             <div class="check-box-container">
                                 <input title="" class="check-box" type="checkbox" id="defaultCheck1">
                                 <span class="check-box-label">
@@ -367,7 +368,7 @@
                                 </span>
                             </div>
                             <input disabled type="submit" class="form-button disabled" value="Отправить"/>
-                            <div><label id="form-button-err" class="notification">error</label></div>
+                            <div class="int"><label id="form-button-msg">error</label></div>
                         </form>
                     </section>
                     <section id="fh2" class="form-header">

@@ -6,9 +6,9 @@ $(document).ready(function () {
             {block: $("#action2")},
             {block: $("#action3")}];
     for (let i = 0; i < blocks.length; i++)
-        heights.push({height: $("#"+blocks[i].id).offset().top, id: blocks[i].id});
+        heights.push({height: $("#" + blocks[i].id).offset().top, id: blocks[i].id});
 
-    $("#home-container").fadeIn(1500).css("display","flex");
+    $("#home-container").fadeIn(1500).css("display", "flex");
     $("#logo").fadeIn(1500);
     $("#layoutmotto").delay(2500).fadeOut(1);
     $("#motto").delay(2500).fadeIn(750);
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     $('a[href^="#"]').click(function () {
         event.preventDefault();
-        let id  = $(this).attr('href'),
+        let id = $(this).attr('href'),
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1000);
     });
@@ -41,11 +41,11 @@ $(document).ready(function () {
     });
 
     $('#slide-back').on('click', () => {
-        $('#slider-container').delay(1000).animate({'left': '0'},700);
+        $('#slider-container').delay(1000).animate({'left': '0'}, 700);
     });
 
     $('#slide-forward').on('click', () => {
-        $('#slider-container').delay(1000).animate({'left': '-100%'},700);
+        $('#slider-container').delay(1000).animate({'left': '-100%'}, 700);
     });
 
     const heigth = $(window).height();
@@ -56,9 +56,9 @@ $(document).ready(function () {
         $('.active img').fadeTo(700, 1);
     });
 
-    $(window).scroll(function() {
-        let scroll = $(this).scrollTop()+(heigth/2);
-        for (let i = heights.length-1; i >= 0; i--) {
+    $(window).scroll(function () {
+        let scroll = $(this).scrollTop() + (heigth / 2);
+        for (let i = heights.length - 1; i >= 0; i--) {
             if (scroll >= heights[i].height) {
                 toggleCircle(heights[i].id);
                 break;
@@ -75,8 +75,7 @@ $(document).ready(function () {
 
     $.post('https://panel.unicard.by/api/showclientscount')
         .done((data) => {
-            console.log(data.count);
-            $('#count').text(500-data.count);
+            $('#count').text(500 - data.count);
         })
         .fail((err) => {
             console.error("Ошибка соединения с сервером.")
@@ -125,6 +124,36 @@ $(document).ready(function () {
             submit.addClass('disabled');
     });
 
+    $('input[type^="text"]').focusin((event) => {
+        if (event === undefined)
+            return;
+        let current = event.currentTarget,
+            message = "";
+        switch (current.id) {
+            case "email":
+                message = "Например, ivanov.ivan@mail.ru или ivan.ivanov@gmail.com";
+                break;
+            case "surname":
+                message = "Например, Иванов";
+                break;
+            case "name":
+                message = "Например, Иван";
+                break;
+            case "phone":
+                message = "Например, +375291234567 или +375337654321";
+                break;
+            case "studyPlace":
+                message = "Например, БГУ или БГПУ";
+                break;
+            default:
+                return;
+        }
+        let label = $("#" + current.id + "-msg");
+        label.slideDown(300,"linear");
+        label.css("color", "skyblue");
+        label.text(message);
+    });
+
     $('input[type^="text"]').focusout((event) => {
         if (event === undefined)
             return;
@@ -152,7 +181,7 @@ $(document).ready(function () {
                     message = "Введите Вашу фамилию";
                     break;
                 }
-                if (current.value.match(/^[- А-Яа-яЁёA-Za-z\s]*$/)) {
+                if (current.value.match(/^[- А-Яа-яЁё\s]*$/)) {
                     valid = true;
                 }
                 else {
@@ -166,7 +195,7 @@ $(document).ready(function () {
                     message = "Введите Ваше имя";
                     break;
                 }
-                if (current.value.match(/^[- А-Яа-яЁёA-Za-z\s]*$/)) {
+                if (current.value.match(/^[А-Яа-яЁё\s]*$/)) {
                     valid = true;
                 }
                 else {
@@ -180,7 +209,7 @@ $(document).ready(function () {
                     message = "Введите Ваш мобильный телефон";
                     break;
                 }
-                if (current.value.match(/^(\+375|80)\s?(29|25|44|33)\s?(\d{3})\s?(\d{2})\s?(\d{2})$/)) {
+                if (current.value.match(/^(\+375)(29|25|44|33)(\d{7})$/)) {
                     valid = true;
                 }
                 else {
@@ -195,17 +224,18 @@ $(document).ready(function () {
                 return;
         }
         let input = $("#" + current.id),
-            label = $("#" + current.id + "-err");
+            label = $("#" + current.id + "-msg");
         if (valid === true) {
             validMap.set(current.id, true);
             input.removeClass('error-input');
             input.addClass('okay');
-            label.css("display", "none");
+            label.slideUp(300,"linear");
         }
         else {
             input.addClass('error-input');
             input.removeClass('okay');
-            label.css("display", "block");
+            label.slideDown(300,"linear");
+            label.css("color", "red");
             label.text(message);
         }
     });
@@ -229,16 +259,22 @@ $(document).ready(function () {
             email: $("#email")['0'].value,
             phoneNumber: $("#phone")['0'].value,
             studyPlace: $("#studyPlace")['0'].value,
-            chosenTariff: card === "yearcard" ? 12 : 6,
+            chosenTariff: 12,
         })
-            .done(() => {
-                $('#form')[0].reset();
-                clearAllInputClasses();
-                $('#fh1, #f1').css("display",'none');
-                $('#fh2, #wicf').css("display",'flex');
-            })
-            .fail((err) => {
-                alert("Ошибка соединения с сервером.")
+            .done((data) => {
+                let fbe = $('#form-button-msg');
+                if (data.result) {
+                    fbe.slideUp(300, "linear");
+                    $('#form')[0].reset();
+                    clearAllInputClasses();
+                    $('#fh1, #f1').css("display", 'none');
+                    $('#fh2, #wicf').css("display", 'flex');
+                }
+                else {
+                    fbe.slideDown(300, "linear");
+                    fbe.css("color", "red");
+                    fbe.text(data.message);
+                }
             })
     });
 });
@@ -270,7 +306,7 @@ function checkEmptyness() {
     const inputs = $('input[type^="text"]');
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value === "") {
-            let label = $("#" + inputs[i].id + "-err"),
+            let label = $("#" + inputs[i].id + "-msg"),
                 message = "";
             switch (inputs[i].id) {
                 case "surname":
