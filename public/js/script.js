@@ -147,7 +147,7 @@ $(document).ready(function () {
                 return;
         }
         let label = $("#" + current.id + "-msg");
-        label.slideDown(300,"linear");
+        label.parent().slideDown(300,"linear");
         label.css("color", "skyblue");
         label.text(message);
     });
@@ -227,12 +227,12 @@ $(document).ready(function () {
             validMap.set(current.id, true);
             input.removeClass('error-input');
             input.addClass('okay');
-            label.slideUp(300,"linear");
+            label.parent().slideUp(300,"linear");
         }
         else {
             input.addClass('error-input');
             input.removeClass('okay');
-            label.slideDown(300,"linear");
+            label.parent().slideDown(300,"linear");
             label.css("color", "red");
             label.text(message);
         }
@@ -262,14 +262,14 @@ $(document).ready(function () {
             .done((data) => {
                 let fbe = $('#form-button-msg');
                 if (data.result) {
-                    fbe.slideUp(300, "linear");
+                    fbe.parent().slideUp(300,"linear");
                     $('#form')[0].reset();
                     clearAllInputClasses();
                     $('#fh1, #f1').css("display", 'none');
                     $('#fh2, #wicf').css("display", 'flex');
                 }
                 else {
-                    fbe.slideDown(300, "linear");
+                    fbe.parent().slideDown(300,"linear");
                     fbe.css("color", "red");
                     fbe.text(data.message);
                 }

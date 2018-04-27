@@ -110,7 +110,7 @@
             <div class="slider-wrapper">
                 <div class="slider-container" id="slider-container">
                     <div class="first-slide-container">
-                        <p class="text-md">Тут ты можешь выбрать скидку на свой вкус у наших партнеров.</p>
+                        <p class="partners-text text-md">Тут ты можешь выбрать скидку на свой вкус у наших партнеров.</p>
                         <div class="partners-row">
                             <div class="partner-icon-wrapper">
                                 <div class="partner-icon" onclick="openModal(1)">
@@ -135,7 +135,7 @@
                                     <div class="hover-discount">
                                         <div class="hover-discount-text" onclick="openModal(3)">до 30%</div>
                                     </div>
-                                    <div class="strip-discount-text"><p>до 30%</p></div>
+                                    <div class="strip-discount-text"><p>35%</p></div>
                                 </div>
                             </div>
                             <div class="partner-icon-wrapper">
@@ -258,6 +258,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="restore" class="restore-category">
+                            Сбросить
+                        </div>
                         <div class="grid-list">
                             <div class="grid-row">
                                 <div class="card-wrapper"
@@ -282,10 +285,31 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <div>
-                                                        <h4>{{partner.title}}</h4>
-                                                        <p>{{partner.description}}</p>
-                                                        <p>{{partner.website}}</p>
+                                                    <div class="modal-header-left-container">
+                                                        <div class="modal-header-image-container">
+                                                            <img src={{"https://panel.unicard.by/partner/"+partner.image}}>
+                                                        </div>
+                                                        <div class="modal-header-website">
+                                                            <a href={{"http://"+partner.website}}>
+                                                                <span>{{partner.website}}</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="modal-header-discounts">
+                                                            <div ng-repeat="discount in partner.discountValues">
+                                                                <p><strong>{{discount.value}}%</strong> - {{discount.description}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-header-right-container">
+                                                        <div class="modal-header-title">
+                                                            <h3>{{partner.title}}</h3>
+                                                        </div>
+                                                        <div class="modal-header-category">
+                                                            <p>{{partner.category.name}}</p>
+                                                        </div>
+                                                        <div class="modal-header-description">
+                                                            <span>{{partner.description}}</span>
+                                                        </div>
                                                     </div>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
@@ -293,11 +317,49 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-
+                                                    <div ng-repeat="branch in branchesApi" class="branch-card">
+                                                        <div class="branch-card-image-container">
+                                                            <img src={{"https://panel.unicard.by/branch/"+branch.image}}>
+                                                        </div>
+                                                        <div class="branch-card-text-container">
+                                                            <div class="branch-card-title">
+                                                                <h4>{{branch.title}}</h4>
+                                                            </div>
+                                                            <div class="branch-card-address">
+                                                                <a target="_blank" href={{branch.addressURL}}>
+                                                                    <span>{{branch.address}}</span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="branch-card-bottom-container">
+                                                                <table class="branch-card-working-time">
+                                                                    <tr ng-repeat="wt in branch.workingTimeParsed">
+                                                                        <td><strong>{{wt.day}}:</strong></td>
+                                                                        <td>{{wt.time}}</td>
+                                                                    </tr>
+                                                                </table>
+                                                                <div class="branch-card-phone-numbers">
+                                                                    <div ng-repeat="pn in branch.phoneNumbersParsed" ng-switch="pn.carrier">
+                                                                        <div ng-switch-when="0">
+                                                                            <span><img src="img/carriers/phone.svg"> {{pn.number}}</span>
+                                                                        </div>
+                                                                        <div ng-switch-when="1">
+                                                                            <span><img src="img/carriers/velcom.png"> {{pn.number}}</span>
+                                                                        </div>
+                                                                        <div ng-switch-when="2">
+                                                                            <span><img src="img/carriers/mts.svg"> {{pn.number}}</span>
+                                                                        </div>
+                                                                        <div ng-switch-when="3">
+                                                                            <span><img src="img/carriers/life.png"> {{pn.number}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close
+                                                            data-dismiss="modal">Закрыть
                                                     </button>
                                                 </div>
                                             </div>

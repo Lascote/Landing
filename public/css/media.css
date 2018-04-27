@@ -18,6 +18,10 @@
 
 @media screen and (max-width: 960px) {
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     .burger {
         display: block;
     }
@@ -77,6 +81,7 @@
 
     .hover-discount {
         display: none;
+        height: 100%;
     }
 
     .strip-discount-text {
@@ -171,6 +176,16 @@
 
     .partner-icon {
         width: 150px;
+    }
+
+    .strip-discount-text {
+        height: 70px;
+        border: 17px solid #B3D234;
+        border-bottom-color: transparent;
+    }
+
+    .strip-discount-text p {
+        font-size: 16px;
     }
 }
 
@@ -630,6 +645,20 @@
 
     .partner-icon {
         width: 120px;
+    }
+
+    .hover-discount-text {
+        font-size: 36px;
+    }
+
+    .strip-discount-text {
+        height: 60px;
+        border: 15px solid #B3D234;
+        border-bottom-color: transparent;
+    }
+
+    .strip-discount-text p {
+        font-size: 14px;
     }
 
     .partners-text {
