@@ -11,6 +11,7 @@
         gtag('config', 'UA-118065662-1');
     </script>
     <title>UNI — студенческая скидочная карточка</title>
+    <link rel="manifest" href="./manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="B5zVZDrDblw_3xX9dt_J-z_Pe0iwZcTQ1U_dQmrAAwM"/>
@@ -82,7 +83,7 @@
                     <img src="img/benefits/partners.png" alt="">
                     <p class="benefits-table-title title-sm">Более 20 Партнеров</p>
                     <p class="benefits-table-text text-sm">
-                        Уже сейчас у тебя есть возможность поулчить скидку в более чем 20 местах.
+                        Уже сейчас у тебя есть возможность получить скидку в более чем 20 местах.
                     </p>
                 </div>
 
@@ -268,7 +269,7 @@
                                      ng-repeat="partner in partnersApi"
                                      ng-show="true"
                                 >
-                                    <div class="partner-card" ng-click="openPartnerModal(partner.id)">
+                                    <div class="partner-card" ng-click="openPartnerModal(partner)">
                                         <div class="image-container">
                                             <img src={{"https://panel.unicard.by/partner/"+partner.image}}>
                                         </div>
@@ -279,110 +280,121 @@
                                             <span>{{partner.discountValues[1] ? "до " + partner.discountValues[0].value + "%" : partner.discountValues[0].value + "%"}}</span>
                                         </div>
                                     </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id={{"modal"+partner.id}} tabindex="-1"
-                                         role="dialog" aria-labelledby="exampleModalLongTitle"
-                                         aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <div class="modal-header-left-container">
-                                                        <div class="modal-header-image-container">
-                                                            <img src={{"https://panel.unicard.by/partner/"+partner.image}}>
-                                                        </div>
-                                                        <div class="modal-header-website">
-                                                            <a href={{"http://"+partner.website}}>
-                                                                <span>{{partner.website}}</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="modal-header-discounts">
-                                                            <div ng-repeat="discount in partner.discountValues">
-                                                                <p><strong>{{discount.value}}%</strong> - {{discount.description}}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-header-right-container">
-                                                        <div class="modal-header-title">
-                                                            <h3>{{partner.title}}</h3>
-                                                        </div>
-                                                        <div class="modal-header-category">
-                                                            <p>{{partner.category.name}}</p>
-                                                        </div>
-                                                        <div class="modal-header-description">
-                                                            <span>{{partner.description}}</span>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div ng-repeat="branch in branchesApi" class="branch-card">
-                                                        <div class="branch-card-image-container">
-                                                            <img src={{"https://panel.unicard.by/branch/"+branch.image}}>
-                                                        </div>
-                                                        <div class="branch-card-text-container">
-                                                            <div class="branch-card-title">
-                                                                <h4>{{branch.title}}</h4>
-                                                            </div>
-                                                            <div class="branch-card-address">
-                                                                <a target="_blank" href={{branch.addressURL}}>
-                                                                    <span>{{branch.address}}</span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="branch-card-bottom-container">
-                                                                <div class="card">
-                                                                    <div ng-click="toggleWT(branch._id)" class="branch-card-working-time-header">
-                                                                        {{branch.todayParsed.day + ": " + branch.todayParsed.time}}
-                                                                    </div>
-                                                                    <div id="wta{{branch._id}}" class="wta">
-                                                                        <table class="branch-card-working-time">
-                                                                            <tr ng-repeat="wt in branch.workingTimeParsed">
-                                                                                <td><strong>{{wt.day}}:</strong></td>
-                                                                                <td>{{wt.time}}</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card ">
-                                                                    <div ng-click="togglePN(branch._id)" class="branch-card-phone-numbers-header">
-                                                                        Номера телефонов
-                                                                    </div>
-                                                                    <div id="pna{{branch._id}}" class="branch-card-phone-numbers pna">
-                                                                        <div ng-repeat="pn in branch.phoneNumbersParsed" ng-switch="pn.carrier">
-                                                                            <div ng-switch-when="0">
-                                                                                <span><img src="img/carriers/phone.svg"> {{pn.number}}</span>
-                                                                            </div>
-                                                                            <div ng-switch-when="1">
-                                                                                <span><img src="img/carriers/velcom.png"> {{pn.number}}</span>
-                                                                            </div>
-                                                                            <div ng-switch-when="2">
-                                                                                <span><img src="img/carriers/mts.svg"> {{pn.number}}</span>
-                                                                            </div>
-                                                                            <div ng-switch-when="3">
-                                                                                <span><img src="img/carriers/life.png"> {{pn.number}}</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Закрыть
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="slide-back-container">
                             <a id="slide-back" href="#partners">Ой, нет, сложнааа!</a>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="partnerModal" tabindex="-1"
+                         role="dialog" aria-labelledby="exampleModalLongTitle"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="my-modal-header">
+                                    <div class="modal-header-left-container">
+                                        <div class="modal-header-image-container">
+                                            <img src={{"https://panel.unicard.by/partner/"+curPartner.image}}>
+                                        </div>
+                                        <div class="modal-header-website">
+                                            <a href={{"http://"+curPartner.website}}>
+                                                <span>{{curPartner.website}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="modal-header-discounts">
+                                            <div ng-repeat="discount in curPartner.discountValues">
+                                                <p><strong>{{discount.value}}%</strong> - {{discount.description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-header-right-container">
+                                        <div class="modal-header-title">
+                                            <h3>{{curPartner.title}}</h3>
+                                        </div>
+                                        <div class="modal-header-category">
+                                            <p>{{curPartner.category.name}}</p>
+                                        </div>
+                                        <div class="modal-header-description">
+                                            <span>{{curPartner.description}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-header-website">
+                                        <a href={{"http://"+curPartner.website}}>
+                                            <span>{{curPartner.website}}</span>
+                                        </a>
+                                    </div>
+                                    <div class="modal-header-discounts">
+                                        <div ng-repeat="discount in curPartner.discountValues">
+                                            <p><strong>{{discount.value}}%</strong> - {{discount.description}}</p>
+                                        </div>
+                                    </div>
+                                    <span class="close-button" data-dismiss="modal"
+                                            aria-label="Close">
+                                        &times;
+                                    </span>
+                                </div>
+                                <div class="modal-body">
+                                    <div ng-repeat="branch in branchesApi" class="branch-card">
+                                        <div class="branch-card-image-container">
+                                            <img src={{"https://panel.unicard.by/branch/"+branch.image}}>
+                                        </div>
+                                        <div class="branch-card-text-container">
+                                            <div class="branch-card-title">
+                                                <h4>{{branch.title}}</h4>
+                                            </div>
+                                            <div class="branch-card-address">
+                                                <a target="_blank" href={{branch.addressURL}}>
+                                                    <span>{{branch.address}}</span>
+                                                </a>
+                                            </div>
+                                            <div class="branch-card-bottom-container">
+                                                <div class="card">
+                                                    <div ng-click="branch.toggleWT()" class="branch-card-working-time-header">
+                                                        {{branch.todayParsed.day + ": " + branch.todayParsed.time}}
+                                                        <i id="wthi{{branch._id}}" class="material-icons">keyboard_arrow_down</i>
+                                                    </div>
+                                                    <div id="wta{{branch._id}}" class="wta">
+                                                        <table class="branch-card-working-time">
+                                                            <tr ng-repeat="wt in branch.workingTimeParsed">
+                                                                <td><strong>{{wt.day}}:</strong></td>
+                                                                <td>{{wt.time}}</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="card ">
+                                                    <div ng-click="branch.togglePN()" class="branch-card-phone-numbers-header">
+                                                        Номера телефонов
+                                                        <i id="pnhi{{branch._id}}" class="material-icons">keyboard_arrow_down</i>
+                                                    </div>
+                                                    <div id="pna{{branch._id}}" class="branch-card-phone-numbers pna">
+                                                        <div ng-repeat="pn in branch.phoneNumbersParsed" ng-switch="pn.carrier">
+                                                            <div ng-switch-when="0">
+                                                                <span><img src="img/carriers/phone.svg"> {{pn.number}}</span>
+                                                            </div>
+                                                            <div ng-switch-when="1">
+                                                                <span><img src="img/carriers/velcom.png"> {{pn.number}}</span>
+                                                            </div>
+                                                            <div ng-switch-when="2">
+                                                                <span><img src="img/carriers/mts.svg"> {{pn.number}}</span>
+                                                            </div>
+                                                            <div ng-switch-when="3">
+                                                                <span><img src="img/carriers/life.png"> {{pn.number}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Закрыть
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -397,7 +409,7 @@
             <section class="options-content">
                 <p class="options-title title-md">Закажи карту</p>
                 <p class="options-text text-md">
-                    Успей купить карточку UNI по супер крутой цене! Предложение ограничено, только первые 500 карточек
+                    Успей купить карточку UNI по суперкрутой цене! Предложение ограничено, только первые 500 карточек
                     доступны по цене 1<sup>99</sup> рублей.
                 </p>
                 <p class="options-text text-md">Осталось <strong id="count">500</strong> карточек со скидкой 50%!</p>
@@ -457,8 +469,10 @@
                     <section id="wicf" class="form">
                         <p class="title-sm">Первый способ</p>
                         <p class="text-sm">Ты можешь забрать карточку у нас в офисе по адресу:<br>
-                            г. Минск, ул. Ленина, 50, оф. 302
+                            г. Минск, ул. Ленина, 50, оф. 302<br>
+                            Время работы: Пн-Вс 11:00-17:00 (начиная со 2-го мая)
                         </p>
+                        <p class="title-sm">Обязательно возьми свой студенческий!</p>
                         <section class="contacts-map">
                             <iframe style="border:0; width:100%; height:100%"
                                     src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k"
@@ -466,6 +480,7 @@
                         </section>
                         <p class="title-sm">Второй способ</p>
                         <p class="text-sm">Ты можешь забрать карточку у распространителя у тебя в университете.</p>
+                        <p class="title-sm">Не забудь о студенческом, это важно!</p>
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-header" id="headingOne">

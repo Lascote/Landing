@@ -79,9 +79,10 @@ app.controller('Api', function($scope, $http) {
         }
     };
 
-    $scope.openPartnerModal = function (id) {
-        if (id !== undefined) {
-            $http.post('https://panel.unicard.by/api/getbranchesbypartneranon', {id: id})
+    $scope.openPartnerModal = function (partner) {
+        if (partner !== undefined) {
+            $scope.curPartner = partner;
+            $http.post('https://panel.unicard.by/api/getbranchesbypartneranon', {id: partner.id})
                 .then(function (response) {
                     $scope.branchesApi = response.data.branches;
                     $scope.branchesApi.forEach((item) => {
@@ -89,23 +90,28 @@ app.controller('Api', function($scope, $http) {
                         item.workingTimeParsed = parseWT(item.workingTime);
                         item.phoneNumbersParsed = parsePN(item.phoneNumbers);
                         item.todayParsed = item.workingTimeParsed.shift();
+                    });
+                    $("#partnerModal").modal();
+                    $scope.branchesApi.forEach((item) => {
                         item.toggleWT = function () {
+                            let wthi = $("#wthi" + item._id);
                             $("#wta" + item._id).slideToggle(300).css('display','flex');
+                            if (wthi.text() === 'keyboard_arrow_down')
+                                wthi.text('keyboard_arrow_up');
+                            else
+                                wthi.text('keyboard_arrow_down');
                         };
                         item.togglePN = function () {
+                            let pnhi = $("#pnhi" + item._id);
                             $("#pna" + item._id).slideToggle(300).css('display','flex');
+                            if (pnhi.text() === 'keyboard_arrow_down')
+                                pnhi.text('keyboard_arrow_up');
+                            else
+                                pnhi.text('keyboard_arrow_down');
                         };
                     });
                 });
-            $("#modal" + id).modal();
         }
-    };
-
-    $scope.toggleWT = function (id) {
-        $("#wta" + id).slideToggle(300).css('display','flex');
-    };
-    $scope.togglePN = function (id) {
-        $("#pna" + id).slideToggle(300).css('display','flex');
     };
 });
 

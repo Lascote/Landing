@@ -1362,6 +1362,30 @@ button.close {
     font-size: 50px;
 }
 
+.my-modal-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.my-modal-header > .modal-header-website,
+.my-modal-header > .modal-header-discounts {
+    display: none;
+}
+
+#partnerModal .close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    opacity: .5;
+}
+
 .modal-header-left-container {
     float: left;
     /* background-color: red; */
@@ -1497,10 +1521,17 @@ button.close {
     text-align: center;
     font-family: futurarounddemi;
     font-size: 18px;
+    position: relative;
+}
+
+.branch-card-working-time-header i {
+    font-size: 24px;
+    position: absolute;
+    top: 20%;
 }
 
 .wta {
-    display: flex;
+    display: none;
     padding-bottom: 6px;
     justify-content: center;
 }
@@ -1510,10 +1541,17 @@ button.close {
     text-align: center;
     font-family: futurarounddemi;
     font-size: 18px;
+    position: relative;
+}
+
+.branch-card-phone-numbers-header i {
+    font-size: 24px;
+    position: absolute;
+    top: 20%;
 }
 
 .pna {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     padding-bottom: 6px;

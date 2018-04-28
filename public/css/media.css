@@ -566,6 +566,34 @@
         padding: 0 10px;
         margin: 0;
     }
+
+    .my-modal-header {
+        flex-direction: column;
+    }
+
+    .my-modal-header .modal-header-website,
+    .my-modal-header .modal-header-discounts {
+        display: block;
+    }
+
+    .modal-header-left-container {
+        width: 100%;
+    }
+
+    .modal-header-right-container {
+        margin-left: 0;
+    }
+
+    .modal-header-left-container .modal-header-website,
+    .modal-header-left-container .modal-header-discounts {
+        display: none;
+    }
+
+    .modal-header-image-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 440px) {
