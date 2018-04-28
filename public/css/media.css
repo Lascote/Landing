@@ -42,6 +42,9 @@
 
     .how-title {
         background-image: radial-gradient(#58585a 60%, transparent 70%);
+        background-image: -webkit-radial-gradient(#58585a 60%, transparent 70%);
+        background-image: -moz-radial-gradient(#58585a 60%, transparent 70%);
+        background-image: -ms-radial-gradient(#58585a 60%, transparent 70%);
     }
 
     .how-table {
@@ -141,6 +144,9 @@
 @media screen and (max-width: 768px) {
     #about {
         background-image: radial-gradient(#58585a 60%, rgba(0,0,0,0) 70%);
+        background-image: -webkit-radial-gradient(#58585a 60%, rgba(0,0,0,0) 70%);
+        background-image: -moz-radial-gradient(#58585a 60%, rgba(0,0,0,0) 70%);
+        background-image: -ms-radial-gradient(#58585a 60%, rgba(0,0,0,0) 70%);
     }
 
     #benefits {
@@ -532,9 +538,6 @@
 }
 
 @media screen and (max-width: 560px) {
-    .grid-list {
-
-    }
 
     .card-wrapper {
         width: 100%;
@@ -579,6 +582,9 @@
 
     .home-container {
         background: linear-gradient(to bottom, transparent 25%, #58585a 35%, #58585a 65%, transparent 75%);
+        background: -webkit-linear-gradient(to bottom, transparent 25%, #58585a 35%, #58585a 65%, transparent 75%);
+        background: -moz-linear-gradient(to bottom, transparent 25%, #58585a 35%, #58585a 65%, transparent 75%);
+        background: -ms-linear-gradient(to bottom, transparent 25%, #58585a 35%, #58585a 65%, transparent 75%);
     }
 
     .home-content {
@@ -587,6 +593,9 @@
 
     #about {
         background: linear-gradient(to bottom, transparent 10%, #58585a 30%, #58585a 70%, transparent 90%);
+        background: -webkit-linear-gradient(to bottom, transparent 10%, #58585a 30%, #58585a 70%, transparent 90%);
+        background: -moz-linear-gradient(to bottom, transparent 10%, #58585a 30%, #58585a 70%, transparent 90%);
+        background: -ms-linear-gradient(to bottom, transparent 10%, #58585a 30%, #58585a 70%, transparent 90%);
     }
 
     .about-title {
@@ -601,6 +610,9 @@
     .benefits-content {
         padding: 40px 20px;
         background: linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
+        background: -webkit-linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
+        background: -moz-linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
+        background: -ms-linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
     }
 
     .benefits-content .title-md {

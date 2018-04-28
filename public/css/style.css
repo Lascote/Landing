@@ -125,7 +125,10 @@ body {
 
 .home-container {
     height: 100%;
-    background-image: radial-gradient(#58585a 40%, transparent 50%);
+    background-image: radial-gradient(#58585a 50%, transparent 60%);
+    background-image: -webkit-radial-gradient(#58585a 40%, transparent 50%);
+    background-image: -moz-radial-gradient(#58585a 40%, transparent 50%);
+    background-image: -ms-radial-gradient(#58585a 40%, transparent 50%);
     display: -webkit-flex;
     -webkit-flex-direction: column;
     -webkit-justify-content: center;
@@ -201,6 +204,9 @@ body {
 
 #about {
     background-image: radial-gradient(#58585a 50%, transparent 60%);
+    background-image: -webkit-radial-gradient(#58585a 50%, transparent 60%);
+    background-image: -moz-radial-gradient(#58585a 50%, transparent 60%);
+    background-image: -ms-radial-gradient(#58585a 50%, transparent 60%);
 }
 
 .about-container {
@@ -293,6 +299,9 @@ body {
 
 .benefits-content {
     background-image: radial-gradient(#58585a 60%, transparent 70%);
+    background-image: -webkit-radial-gradient(#58585a 60%, transparent 70%);
+    background-image: -moz-radial-gradient(#58585a 60%, transparent 70%);
+    background-image: -ms-radial-gradient(#58585a 60%, transparent 70%);
     padding: 60px 80px;
 }
 
@@ -396,6 +405,9 @@ body {
 .how-title {
     padding: 20px 80px;
     background-image: radial-gradient(#58585a 70%, transparent 80%);
+    background-image: -webkit-radial-gradient(#58585a 70%, transparent 80%);
+    background-image: -moz-radial-gradient(#58585a 70%, transparent 80%);
+    background-image: -ms-radial-gradient(#58585a 70%, transparent 80%);
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -1241,7 +1253,7 @@ input[type=submit] {
     height: 30px;
     justify-content: center;
     align-items: center;
-    background-color: deepskyblue;
+    background-color: #B3D234;
     color: white;
     font-family: futurarounddemi;
     font-size: 22px;
@@ -1361,7 +1373,7 @@ button.close {
     height: 150px;
     overflow: hidden;
     border-radius: 50%;
-    background-color: #e8e8e8;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
 }
@@ -1382,7 +1394,8 @@ button.close {
     /* background-color: yellow; */
     text-align: left;
     padding: 4px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
     border-radius: 5px;
 }
 
@@ -1424,25 +1437,23 @@ button.close {
 }
 
 .modal-content .modal-body {
-    padding: 0 1rem;
     font-family: futuraround;
 }
 
 .branch-card {
     width: 100%;
-    border-top: 1px solid #eaeaea;
-    height: auto;
+    border-bottom: 1px solid #e8e8e8;
     float: left;
+    padding: 0 12px;
 }
 
-.branch-card:first-child {
-    border-top: none;
+.branch-card:last-child {
+    border-bottom: none;
 }
 
 .branch-card-image-container {
-    width: 180px;
-    height: 180px;
-    float: left;
+    width: 90%;
+    margin: 12px auto;
     display: flex;
     align-items: center;
 }
@@ -1454,48 +1465,58 @@ button.close {
 }
 
 .branch-card-text-container {
-    float: left;
-    width: calc(100% - 180px);
-    margin: 12px 0;
-}
-
-.branch-card-title {
+    padding: 0 4px;
 }
 
 .branch-card-title h4 {
     line-height: 1;
-    font-size: 20px;
+    font-size: 22px;
     margin: 6px;
     font-family: futurarounddemi;
 }
 
 .branch-card-address {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    padding-left: 12px;
-    margin-bottom: 6px;
+    padding-left: 8px;
+    margin: 12px 0;
+    font-size: 18px;
 }
 
 .branch-card-bottom-container {
     width: 100%;
-    float: left;
 }
 
-.branch-card-working-time {
-    float: left;
-    width: 50%;
-    padding: 6px;
+.branch-card-bottom-container .card {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
 }
 
-.branch-card-working-time p {
-    text-align: left;
+.branch-card-working-time-header {
+    padding: 4px;
+    text-align: center;
+    font-family: futurarounddemi;
+    font-size: 18px;
 }
 
-.branch-card-phone-numbers {
-    float: left;
-    width: 50%;
-    padding: 6px;
+.wta {
+    display: flex;
+    padding-bottom: 6px;
+    justify-content: center;
+}
+
+.branch-card-phone-numbers-header {
+    padding: 4px;
+    text-align: center;
+    font-family: futurarounddemi;
+    font-size: 18px;
+}
+
+.pna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 6px;
 }
 
 .branch-card-phone-numbers img {
@@ -1522,6 +1543,9 @@ button.close {
     padding: 80px 20%;
     width: 100%;
     background-image: radial-gradient(#58585a 60%, transparent 70%);
+    background-image: -webkit-radial-gradient(#58585a 60%, transparent 70%);
+    background-image: -moz-radial-gradient(#58585a 60%, transparent 70%);
+    background-image: -ms-radial-gradient(#58585a 60%, transparent 70%);
 }
 
 .contacts-title {

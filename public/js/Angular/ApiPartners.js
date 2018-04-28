@@ -1,17 +1,15 @@
 let app = angular.module('ApiPartners', []);
 
 app.controller('Api', function($scope, $http) {
-    $http.post('https://panel.unicard.by/api/getcategories')
-        .then(function (response) {
-            $scope.categoriesApi = response.data.categories;
-            console.log(response.data.categories);
-        });
-    $http.post('https://panel.unicard.by/api/getpartners')
-        .then(function (response) {
-            $scope.partnersApi = response.data.partners;
-            console.log(response.data.partners);
-        });
-    $scope.getpartners = function (number) {
+    $scope.getpartners = function () {
+        if (!$scope.partnersApi)
+            $http.post('https://panel.unicard.by/api/getpartners')
+                .then(function (response) {
+                    $scope.partnersApi = response.data.partners;
+                });
+    };
+
+    $scope.getpartnersbycategory = function (number) {
         let id = undefined;
         switch (number) {
             case 1:
@@ -39,40 +37,83 @@ app.controller('Api', function($scope, $http) {
             $http.post('https://panel.unicard.by/api/getpartnerbycategory', {id: id})
                 .then(function (response) {
                     $scope.partnersApi = response.data.partners;
-                    console.log(response.data.partners);
                 });
         $('#restore').slideDown(400).css('display', 'flex');
     };
+
     $('#restore').click(function () {
-        $http.post('https://panel.unicard.by/api/getpartners')
-            .then(function (response) {
-                $scope.partnersApi = response.data.partners;
-                console.log(response.data.partners);
-                $('#restore').slideUp(600);
-            });
+        $scope.getpartners();
+        $('#restore').slideUp(600);
     });
-    $scope.openPartnerModal = function (id) {
-        $http.post('https://panel.unicard.by/api/getbranchesbypartner', {id: id})
-            .then(function (response) {
-                $scope.branchesApi = response.data.branches;
-                console.log(response.data.branches);
-                $scope.branchesApi.forEach((item) => {
-                    item.addressURL = "https://www.google.by/maps/search/" + item.address.replace(/\s/gi, '+');
-                    item.workingTimeParsed = parseWT(item.workingTime);
-                    console.log(item.workingTimeParsed);
-                    item.phoneNumbersParsed = parsePN(item.phoneNumbers);
-                    console.log(item.phoneNumbersParsed);
-                });
-            });
+
+    $scope.openModal = function(number) {
+        let id = undefined;
         return;
-        if (id !== undefined)
+        switch (number) {
+            case 1: break;
+            case 2: id = '5ad4c0b22c1f956a42bc2bd4'; break;
+            case 3: id = '5ade5cd91860dc0af74f664e'; break;
+            case 4: id = '5ae3799dae3cb2280f30aa27'; break;
+            case 5: id = '5ad9b142bea21f790334d47d'; break;
+            case 6: id = '5adaf0885eda087e04d7bf20'; break;
+            case 7: id = '5ad4b41bdf70e469da292597'; break;
+            case 8: id = '5ada64c6a030407c52b469f7'; break;
+            case 9: id = '5ada504f9717f27bfd341c85'; break;
+            case 10: id = '5ae3744b40edf527c0787704'; break;
+            case 11: id = '5ad9a5259e16ea78d459aaea'; break;
+            case 12: id = '5ad9771cf3ec7178829eb7c2'; break;
+            default: break;
+        }
+        if (id !== undefined) {
+            $http.post('https://panel.unicard.by/api/getbranchesbypartneranon', {id: id})
+                .then(function (response) {
+                    $scope.branchesApi = response.data.branches;
+                    $scope.branchesApi.forEach((item) => {
+                        item.addressURL = "https://www.google.by/maps/search/" + item.address.replace(/\s/gi, '+');
+                        item.workingTimeParsed = parseWT(item.workingTime);
+                        item.phoneNumbersParsed = parsePN(item.phoneNumbers);
+                        item.todayParsed = item.workingTimeParsed.shift();
+                    });
+                });
             $("#modal" + id).modal();
-    }
+        }
+    };
+
+    $scope.openPartnerModal = function (id) {
+        if (id !== undefined) {
+            $http.post('https://panel.unicard.by/api/getbranchesbypartneranon', {id: id})
+                .then(function (response) {
+                    $scope.branchesApi = response.data.branches;
+                    $scope.branchesApi.forEach((item) => {
+                        item.addressURL = "https://www.google.by/maps/search/" + item.address.replace(/\s/gi, '+');
+                        item.workingTimeParsed = parseWT(item.workingTime);
+                        item.phoneNumbersParsed = parsePN(item.phoneNumbers);
+                        item.todayParsed = item.workingTimeParsed.shift();
+                        item.toggleWT = function () {
+                            $("#wta" + item._id).slideToggle(300).css('display','flex');
+                        };
+                        item.togglePN = function () {
+                            $("#pna" + item._id).slideToggle(300).css('display','flex');
+                        };
+                    });
+                });
+            $("#modal" + id).modal();
+        }
+    };
+
+    $scope.toggleWT = function (id) {
+        $("#wta" + id).slideToggle(300).css('display','flex');
+    };
+    $scope.togglePN = function (id) {
+        $("#pna" + id).slideToggle(300).css('display','flex');
+    };
 });
 
 function parseWT(wt) {
     let wtp = [];
     if (!wt) return;
+    let d = new Date().getDay();
+    d = d - 1 < 0 ? 7 + d - 1 : d - 1;
     for (let i = 0; i < wt.length; i++) {
         if (wt[i][0] === "empty" && wt[i][1] === "empty")
             wtp.push({day: getWeekDay(i), time: "Закрыто"});
@@ -80,6 +121,11 @@ function parseWT(wt) {
             wtp.push({day: getWeekDay(i), time: "Круглосуточно"});
         else wtp.push({day: getWeekDay(i), time: parseTime(wt[i][0]) + "-" + parseTime(wt[i][1])});
     }
+    wtp.sort(function (a) {
+        let i = (wtp.indexOf(a) - d + 1);
+        return (i < 0 ? 7 + i : i)
+    });
+    wtp = wtp.reverse();
     return wtp;
 }
 
