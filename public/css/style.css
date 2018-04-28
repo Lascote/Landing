@@ -101,8 +101,6 @@ body {
     background: url(../img/home/background-3-01.png) repeat-y;
     background-size: 100%;
     font-family: futuraround;
-    /*background-size: 640px 480px;
-    background: #333333;*/
 }
 
 .main-container {
@@ -121,7 +119,6 @@ body {
 }
 
 /* home */
-
 
 .home-container {
     height: 100%;

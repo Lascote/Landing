@@ -42,7 +42,10 @@ app.controller('Api', function($scope, $http) {
     };
 
     $('#restore').click(function () {
-        $scope.getpartners();
+        $http.post('https://panel.unicard.by/api/getpartners')
+            .then(function (response) {
+                $scope.partnersApi = response.data.partners;
+            });
         $('#restore').slideUp(600);
     });
 
