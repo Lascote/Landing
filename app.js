@@ -1,6 +1,6 @@
-var express = require('express');
-var app = express();
-var data = require('./public/js/module/data');
+let express = require('express');
+let app = express();
+let data = require('./public/js/module/data');
 
 app.use(express.static('public'));
 
@@ -10,6 +10,10 @@ app.get('/project', (req, res) => {
 
 app.get('/partners', (req, res) => {
     res.sendFile('partners.html', { root: __dirname + '/public/'});
+});
+
+app.get('/useragreement', (req, res) => {
+    res.sendFile('useragreement.html', { root: __dirname + '/public/'});
 });
 
 app.listen(8081, function () {
