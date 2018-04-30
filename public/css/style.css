@@ -308,8 +308,8 @@ body {
     /*background-image: radial-gradient(#58585a 60%, transparent 70%);
     background-image: -webkit-radial-gradient(#58585a 60%, transparent 70%);
     background-image: -moz-radial-gradient(#58585a 60%, transparent 70%);
-    background-image: -ms-radial-gradient(#58585a 60%, transparent 70%);
-    padding: 60px 80px;*/
+    background-image: -ms-radial-gradient(#58585a 60%, transparent 70%);*/
+    padding: 60px 0;
 }
 
 .benefits-content p {

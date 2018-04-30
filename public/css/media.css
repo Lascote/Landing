@@ -304,10 +304,6 @@
         height: auto;
     }
 
-    .benefits-content {
-        padding: 80px 40px;
-    }
-
     .benefits-content p {
         max-width: 375px;
     }
@@ -636,8 +632,8 @@
     }
 
     .benefits-content {
-        /*padding: 40px 20px;
-        background: linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
+        padding: 40px 20px;
+        /*background: linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
         background: -webkit-linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
         background: -moz-linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);
         background: -ms-linear-gradient(to bottom, transparent, #58585a 20%, #58585a 80%, transparent);*/
