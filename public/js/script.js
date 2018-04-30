@@ -5,9 +5,8 @@ $(document).ready(function () {
     for (let i = 0; i < blocks.length; i++)
         heights.push({height: $("#" + blocks[i].id).offset().top, id: blocks[i].id});
 
-    $("#home-container").fadeIn(1500).css("display", "flex");
     $("#logo").fadeIn(1500);
-    $("#layoutmotto").delay(2500).fadeOut(1);
+    $("#layoutmotto").delay(2500).fadeOut(0);
     $("#motto").delay(2500).fadeIn(750);
     $("#arrow").delay(3500).fadeIn(1000);
 

@@ -283,6 +283,10 @@
         margin: 0.2em 0;
     }
 
+    .description-container {
+        margin-top: 0;
+    }
+
     .description {
         max-width: 550px;
         margin: 0 auto;

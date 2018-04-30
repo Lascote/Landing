@@ -147,7 +147,7 @@ body {
     padding: 0 20px 65px 20px;
 }
 
-#logo, #motto, #arrow, #home-container{
+#logo, #motto, #arrow {
     display: none;
 }
 
@@ -189,6 +189,13 @@ body {
     color: #fff;
     background-color: rgba(88, 88, 90, 0.8);
     box-shadow: 0 0 30px 10px rgba(88, 88, 90, 0.8);
+}
+
+.description-transparent {
+    text-align: center;
+    font-size: 32px;
+    margin: auto;
+    color: transparent;
 }
 
 .arrow-container {
