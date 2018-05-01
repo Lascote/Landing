@@ -1870,6 +1870,7 @@ footer {
 .footer-bottom-container p {
     margin-bottom: 2px;
     font-family: futuraround;
+    text-align: center;
     font-size: 16px;
 }
 
