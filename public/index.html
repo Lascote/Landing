@@ -15,11 +15,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="B5zVZDrDblw_3xX9dt_J-z_Pe0iwZcTQ1U_dQmrAAwM"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/media.css"/>
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon.png">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/normalize.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/media.css"/>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -28,18 +28,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/Angular/ApiPartners.js"></script>
 </head>
-<body>
+<body style="background: url(img/home/background-3-01.png) repeat-y; background-size: 100%">
 <section class="main-container" id="container">
     <section class="block" id="home">
         <section class="home-container">
             <section class="home-content">
-                <section class="logo">
-                    <img src="img/home/logo.png" alt="logo" class="responsive-logo" id="logo"/>
+                <section class="logo" id="logo">
+                    <img src="img/home/logo.png" alt="logo" class="responsive-logo"/>
                 </section>
                 <div class="description-container" >
-                    <p class="description-transparent text-md" id="layoutmotto">
-                        Халява пришла!
-                    </p>
                     <p class="description text-md" id="motto">
                         Халява пришла!
                     </p>
@@ -454,7 +451,7 @@
                             <div class="check-box-container">
                                 <input title="" class="check-box" type="checkbox" id="defaultCheck1">
                                 <span class="check-box-label">
-                                    Я прочитал и принимаю <a href="https://unicard.by/useragreement">Пользовательское соглашение</a>
+                                    Я прочитал и принимаю <a target="_blank" href="https://unicard.by/useragreement">Пользовательское соглашение</a>
                                 </span>
                             </div>
                             <input disabled type="submit" class="form-button disabled" value="Отправить"/>
@@ -727,15 +724,15 @@
             <!--<p><a href="">Где забрать карточку</a></p>
             <p><a href="">Контакты</a></p>-->
             <p><a href="https://unicard.by/partners">Партнерам</a></p>
-            <p><a href="https://unicard.by/useragreement">Пользовательское соглашение</a></p>
+            <p><a target="_blank" href="https://unicard.by/useragreement">Пользовательское соглашение</a></p>
         </div>
     </div>
     <div class="footer-bottom-container">
         <div class="footer-image-container">
             <img src="img/home/logo.png">
         </div>
-        <p>Copyright © UNI 2018</p>
-        <p>ИП Лаврецкий Д.О. УНП 93028902 </p>
+        <p>Все права защищены © UNI 2018</p>
+        <p>ИП Лаврецкий Д.О. УНП 193028902 </p>
     </div>
 </footer>
 
@@ -748,5 +745,3 @@
 
 </body>
 </html>
-
-

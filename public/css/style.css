@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'futuraroundbold';
     src: url('../fonts/a_futuraround-bold.ttf');
@@ -13,8 +17,13 @@
     src: url('../fonts/a_futuraround.ttf');
 }
 
-* {
-    box-sizing: border-box;
+body {
+    height: 100%;
+    font-family: futuraround;
+}
+
+html {
+    height: 100%;
 }
 
 html::-webkit-scrollbar {
@@ -55,16 +64,11 @@ p {
     top: -0.8em;
 }
 
-html {
-    height: 100%;
-}
-
 .title-lr {
     font-family: futuraroundbold;
     font-weight: 600;
     font-size: 80px;
 }
-
 
 .title-md {
     font-family: futuraroundbold;
@@ -94,13 +98,6 @@ html {
 
 .nav {
     display: none;
-}
-
-body {
-    height: 100%;
-    background: url(../img/home/background-3-01.png) repeat-y;
-    background-size: 100%;
-    font-family: futuraround;
 }
 
 .main-container {
@@ -148,7 +145,7 @@ body {
 }
 
 #logo, #motto, #arrow {
-    display: none;
+    opacity: 0;
 }
 
 .logo {
@@ -251,7 +248,7 @@ body {
     max-width: 640px;
     color: #fff;
     background-color: rgba(88, 88, 90, 0.8);
-    box-shadow: 0 0 30px 10px rgba(88,88,90,0.8);
+    box-shadow: 0 0 30px 10px rgba(88, 88, 90, 0.8);
 }
 
 .about-subtitle {
@@ -334,7 +331,7 @@ body {
     font-size: 60px;
     line-height: 1;
     background-color: rgba(88, 88, 90, 0.8);
-    box-shadow: 0 0 30px 10px rgba(88,88,90,0.8);
+    box-shadow: 0 0 30px 10px rgba(88, 88, 90, 0.8);
 }
 
 .benefits-table {
@@ -356,7 +353,7 @@ body {
     align-items: center;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 0 4px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .benefits-table-item:last-child {
@@ -781,7 +778,7 @@ body {
     display: none;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.54);
+    background-color: rgba(0, 0, 0, 0.54);
     position: fixed;
     top: 0;
     left: 0;
@@ -793,7 +790,7 @@ body {
     display: none;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.65);
+    background-color: rgba(0, 0, 0, 0.65);
     position: fixed;
     z-index: 2;
 }
@@ -802,7 +799,7 @@ body {
     max-width: 628px;
     margin: 10% auto 10% auto;
     width: 90%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: white;
     border-radius: 15px;
 }
@@ -899,15 +896,15 @@ input {
     box-sizing: border-box;
 }
 
-.error-input{
+.error-input {
     box-shadow: 0 0 2px 1px red;
 }
 
-.okay{
+.okay {
     box-shadow: 0 0 2px 1px green;
 }
 
-input:focus{
+input:focus {
     box-shadow: 0 0 2px 1px skyblue;
     outline: none;
 }
@@ -993,7 +990,6 @@ input[type=submit] {
 }
 
 /* partners */
-
 
 .partners-container {
     height: 100%;
@@ -1213,7 +1209,7 @@ input[type=submit] {
     height: 150px;
     width: 100%;
     padding: 15px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     border-left: 1px solid #e8e8e8;
     cursor: pointer;
     display: flex;
@@ -1222,7 +1218,7 @@ input[type=submit] {
 }
 
 .category-card:hover {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .category-background {
@@ -1230,12 +1226,35 @@ input[type=submit] {
     height: 100%;
 }
 
-#cat-1 {background: url("../img/categories/cat1.jpg")  no-repeat center; background-size: cover;}
-#cat-2 {background: url("../img/categories/cat2.jpg")  no-repeat center; background-size: cover;}
-#cat-3 {background: url("../img/categories/cat3.jpg")  no-repeat center; background-size: cover;}
-#cat-4 {background: url("../img/categories/cat4.jpg")  no-repeat center; background-size: cover;}
-#cat-5 {background: url("../img/categories/cat5.jpg")  no-repeat center; background-size: cover;}
-#cat-6 {background: url("../img/categories/cat6.png")  no-repeat center; background-size: cover;}
+#cat-1 {
+    background: url("../img/categories/cat1.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#cat-2 {
+    background: url("../img/categories/cat2.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#cat-3 {
+    background: url("../img/categories/cat3.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#cat-4 {
+    background: url("../img/categories/cat4.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#cat-5 {
+    background: url("../img/categories/cat5.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#cat-6 {
+    background: url("../img/categories/cat6.png") no-repeat center;
+    background-size: cover;
+}
 
 .category-icon {
     width: 75px;
@@ -1306,7 +1325,7 @@ input[type=submit] {
 }
 
 .partner-card:hover {
-    box-shadow: 0 0 16px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 0 16px 6px rgba(0, 0, 0, 0.2);
 }
 
 .partner-card-left {
@@ -1413,12 +1432,12 @@ button.close {
     height: 150px;
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
 }
 
-.modal-header-image-container img{
+.modal-header-image-container img {
     width: 100%;
     height: auto;
 }
@@ -1434,8 +1453,8 @@ button.close {
     /* background-color: yellow; */
     text-align: left;
     padding: 4px;
-    border: 1px solid rgba(0,0,0,0.4);
-    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 
@@ -1727,7 +1746,7 @@ ul a:hover .myPopover {
     z-index: 3;
     cursor: pointer;
     padding: 10px 12px;
-    background: rgba(200,200,200,0.5);
+    background: rgba(200, 200, 200, 0.5);
     border-radius: 50%;
     transition: 0.4s;
 }
@@ -1741,18 +1760,22 @@ ul a:hover .myPopover {
     transition: 0.4s;
 }
 
-.change { background: transparent; }
-
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-8px, 8px) ;
-    transform: rotate(-45deg) translate(-8px, 8px) ;
+.change {
+    background: transparent;
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 8px);
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
 
 .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .burger-content {

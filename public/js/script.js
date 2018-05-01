@@ -5,10 +5,9 @@ $(document).ready(function () {
     for (let i = 0; i < blocks.length; i++)
         heights.push({height: $("#" + blocks[i].id).offset().top, id: blocks[i].id});
 
-    $("#logo").fadeIn(1500);
-    $("#layoutmotto").delay(2500).fadeOut(0);
-    $("#motto").delay(2500).fadeIn(750);
-    $("#arrow").delay(3500).fadeIn(1000);
+    $("#logo").animate({opacity: 1}, 1500);
+    $("#motto").delay(2000).animate({opacity: 1}, 750);
+    $("#arrow").delay(3250).animate({opacity: 1}, 1000);
 
     $('a[href^="#"]').click(function () {
         let id = $(this).attr('href'),
