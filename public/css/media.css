@@ -537,17 +537,14 @@
     }
 }
 
+@media screen and (max-width: 575px) {
+}
+
 @media screen and (max-width: 560px) {
 
     .card-wrapper {
         width: 100%;
         padding: 24px 24px 0;
-    }
-}
-
-@media screen and (max-width: 535px) {
-    .benefits-content {
-        padding: 40px;
     }
 }
 
@@ -567,12 +564,21 @@
         margin: 0;
     }
 
-    .my-modal-header {
+    #partnerModal .modal-dialog {
+        margin: 0;
+    }
+
+    .modal-dialog .modal-content {
+        border-radius: 0;
+        padding: .5em;
+        border: none;
+    }
+
+    .modal-header-top-container {
         flex-direction: column;
     }
 
-    .my-modal-header .modal-header-website,
-    .my-modal-header .modal-header-discounts {
+    .modal-header-right-container .modal-header-website {
         display: block;
     }
 
@@ -580,12 +586,20 @@
         width: 100%;
     }
 
+    .modal-header-title, .modal-header-category {
+        padding-right: 0;
+    }
+
+    .modal-header-title {
+        text-align: center;
+    }
+
     .modal-header-right-container {
+        margin-top: 12px;
         margin-left: 0;
     }
 
-    .modal-header-left-container .modal-header-website,
-    .modal-header-left-container .modal-header-discounts {
+    .modal-header-left-container .modal-header-website {
         display: none;
     }
 

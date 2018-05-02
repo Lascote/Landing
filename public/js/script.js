@@ -87,7 +87,7 @@ $(document).ready(function () {
     let card = "";
     $(".options-button").on("click", (event) => {
         card = event.currentTarget.parentElement.id;
-        $(".overlay").fadeIn();
+        $("#overlay").fadeIn();
     });
 
     $(window).on("click", (event) => {
@@ -274,6 +274,10 @@ $(document).ready(function () {
             })
     });
 });
+
+function openWhereModal() {
+    $("#where").fadeIn();
+}
 
 function toggleCircle(currentPage) {
     const scrollBarLinks = $(".scroll-bar > ul > li > a");

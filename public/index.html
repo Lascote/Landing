@@ -5,7 +5,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118065662-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-118065662-1');
@@ -36,7 +38,7 @@
                 <section class="logo" id="logo">
                     <img src="img/home/logo.png" alt="logo" class="responsive-logo"/>
                 </section>
-                <div class="description-container" >
+                <div class="description-container">
                     <p class="description text-md" id="motto">
                         Халява пришла!
                     </p>
@@ -111,7 +113,8 @@
             <div class="slider-wrapper">
                 <div class="slider-container" id="slider-container" ng-app="ApiPartners" ng-controller="Api">
                     <div class="first-slide-container">
-                        <p class="partners-text text-md">Тут ты можешь выбрать скидку на свой вкус у наших партнеров.</p>
+                        <p class="partners-text text-md">Тут ты можешь выбрать скидку на свой вкус у наших
+                            партнеров.</p>
                         <div class="partners-row">
                             <div class="partner-icon-wrapper">
                                 <div class="partner-icon" onclick="openModal(1)">
@@ -125,7 +128,7 @@
                                 <div class="partner-icon" ng-click="openModal(2)">
                                     <img src="img/partners-logos/symbalby.png">
                                     <div class="hover-discount">
-                                        <div class="hover-discount-text" >10%</div>
+                                        <div class="hover-discount-text">10%</div>
                                     </div>
                                     <div class="strip-discount-text"><p>10%</p></div>
                                 </div>
@@ -222,7 +225,10 @@
                             </div>
                         </div>
                         <div class="slide-forward-container">
-                            <a ng-click="getpartners()" id="slide-forward" href="#partners">Подробнее</a>
+                            <a ng-click="getpartners()" id="slide-forward" href="">
+                                Подробнее
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </a>
                         </div>
                     </div>
                     <div class="second-slide-container">
@@ -283,7 +289,10 @@
                             </div>
                         </div>
                         <div class="slide-back-container">
-                            <a id="slide-back" href="#partners">Ой, нет, сложнааа!</a>
+                            <a id="slide-back" href="">
+                                <i class="material-icons">keyboard_arrow_left</i>
+                                Назад
+                            </a>
                         </div>
                     </div>
                     <div class="modal fade" id="partnerModal" tabindex="-1"
@@ -292,64 +301,68 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="my-modal-header">
-                                    <div class="modal-header-left-container">
-                                        <div class="modal-header-image-container">
-                                            <img src={{"https://panel.unicard.by/partner/"+curPartner.image}}>
+                                    <div class="modal-header-top-container">
+                                        <div class="modal-header-left-container">
+                                            <div class="modal-header-image-container">
+                                                <img src={{"https://panel.unicard.by/partner/"+curPartner.image}}>
+                                            </div>
+                                            <div class="modal-header-website">
+                                                <a href={{"http://"+curPartner.website}}>
+                                                    <span>{{curPartner.website}}</span>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="modal-header-website">
-                                            <a href={{"http://"+curPartner.website}}>
-                                                <span>{{curPartner.website}}</span>
-                                            </a>
+                                        <div class="modal-header-right-container">
+                                            <div class="modal-header-title">
+                                                <h3>{{curPartner.title}}</h3>
+                                            </div>
+                                            <div class="modal-header-category">
+                                                <p>{{curPartner.category.name}}</p>
+                                            </div>
+                                            <div class="modal-header-description">
+                                                <span>{{curPartner.description}}</span>
+                                            </div>
+                                            <div class="modal-header-website">
+                                                <a href={{"http://"+curPartner.website}}>
+                                                    <span>{{curPartner.website}}</span>
+                                                </a>
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="modal-header-bottom-container">
+
                                         <div class="modal-header-discounts">
                                             <div ng-repeat="discount in curPartner.discountValues">
                                                 <p><strong>{{discount.value}}%</strong> - {{discount.description}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal-header-right-container">
-                                        <div class="modal-header-title">
-                                            <h3>{{curPartner.title}}</h3>
-                                        </div>
-                                        <div class="modal-header-category">
-                                            <p>{{curPartner.category.name}}</p>
-                                        </div>
-                                        <div class="modal-header-description">
-                                            <span>{{curPartner.description}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="modal-header-website">
-                                        <a href={{"http://"+curPartner.website}}>
-                                            <span>{{curPartner.website}}</span>
-                                        </a>
-                                    </div>
-                                    <div class="modal-header-discounts">
-                                        <div ng-repeat="discount in curPartner.discountValues">
-                                            <p><strong>{{discount.value}}%</strong> - {{discount.description}}</p>
-                                        </div>
-                                    </div>
                                     <span class="close-button" data-dismiss="modal"
-                                            aria-label="Close">
+                                          aria-label="Close">
                                         &times;
                                     </span>
                                 </div>
                                 <div class="modal-body">
                                     <div ng-repeat="branch in branchesApi" class="branch-card">
+                                        <div class="branch-card-title">
+                                            <h4>{{branch.title}}</h4>
+                                        </div>
                                         <div class="branch-card-image-container">
                                             <img src={{"https://panel.unicard.by/branch/"+branch.image}}>
                                         </div>
                                         <div class="branch-card-text-container">
-                                            <div class="branch-card-title">
-                                                <h4>{{branch.title}}</h4>
-                                            </div>
                                             <div class="branch-card-address">
+                                                <span>{{branch.address}}</span>
+                                            </div>
+                                            <div class="som-button-container">
                                                 <a target="_blank" href={{branch.addressURL}}>
-                                                    <span>{{branch.address}}</span>
+                                                    <button>Показать на карте</button>
                                                 </a>
                                             </div>
                                             <div class="branch-card-bottom-container">
                                                 <div class="card">
-                                                    <div ng-click="branch.toggleWT()" class="branch-card-working-time-header">
+                                                    <div ng-click="branch.toggleWT()"
+                                                         class="branch-card-working-time-header">
                                                         {{branch.todayParsed.day + ": " + branch.todayParsed.time}}
                                                         <i id="wthi{{branch._id}}" class="material-icons">keyboard_arrow_down</i>
                                                     </div>
@@ -363,23 +376,28 @@
                                                     </div>
                                                 </div>
                                                 <div class="card ">
-                                                    <div ng-click="branch.togglePN()" class="branch-card-phone-numbers-header">
+                                                    <div ng-click="branch.togglePN()"
+                                                         class="branch-card-phone-numbers-header">
                                                         Номера телефонов
                                                         <i id="pnhi{{branch._id}}" class="material-icons">keyboard_arrow_down</i>
                                                     </div>
                                                     <div id="pna{{branch._id}}" class="branch-card-phone-numbers pna">
-                                                        <div ng-repeat="pn in branch.phoneNumbersParsed" ng-switch="pn.carrier">
+                                                        <div ng-repeat="pn in branch.phoneNumbersParsed"
+                                                             ng-switch="pn.carrier">
                                                             <div ng-switch-when="0">
-                                                                <span><img src="img/carriers/phone.svg"> {{pn.number}}</span>
+                                                                <span><img
+                                                                        src="img/carriers/phone.svg"> {{pn.number}}</span>
                                                             </div>
                                                             <div ng-switch-when="1">
                                                                 <span><img src="img/carriers/velcom.png"> {{pn.number}}</span>
                                                             </div>
                                                             <div ng-switch-when="2">
-                                                                <span><img src="img/carriers/mts.svg"> {{pn.number}}</span>
+                                                                <span><img
+                                                                        src="img/carriers/mts.svg"> {{pn.number}}</span>
                                                             </div>
                                                             <div ng-switch-when="3">
-                                                                <span><img src="img/carriers/life.png"> {{pn.number}}</span>
+                                                                <span><img
+                                                                        src="img/carriers/life.png"> {{pn.number}}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -457,10 +475,11 @@
                         <span class="close-button">&times;</span>
                         <section class="form-content">
                             <p class="title-md">Готово!</p>
-                            <p class="text-sm">Теперь осталось забрать свою карточку.<br>Это можно сделать двумя способами:</p>
+                            <p class="text-sm">Теперь осталось забрать свою карточку.<br>Это можно сделать двумя
+                                способами:</p>
                         </section>
                     </section>
-                    <section id="wicf" class="form">
+                    <section id="wicf" class="form wicf">
                         <p class="title-sm">Первый способ</p>
                         <p class="text-sm">Ты можешь забрать карточку у нас в офисе по адресу:<br>
                             г. Минск, ул. Ленина, 50, оф. 302<br>
@@ -479,12 +498,15 @@
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
                                             БГУ
                                         </button>
                                     </h5>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                     data-parent="#accordion">
                                     <div class="card-body">
                                         <p class="title-sm">Место №1</p>
                                         <strong>Где?</strong> Факультет журналистики, у печатного автомата<br>
@@ -498,14 +520,57 @@
                                 </div>
                             </div>
                             <div class="card">
+                                <div class="card-header" id="headingFive">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseFive" aria-expanded="true"
+                                                aria-controls="collapseFive">
+                                            БНТУ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                     data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="title-sm">Место №1</p>
+                                        <strong>Где?</strong> Общежитие №4, фойе<br>
+                                        <strong>Когда?</strong> Пн, Ср, Пт, 11:30-12:30<br>
+                                        <strong>У кого?</strong> Сергей, +375295216906<br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                            БГМУ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                     data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="title-sm">Место №1</p>
+                                        <strong>Где?</strong> Возле столовой<br>
+                                        <strong>Когда?</strong> Пн-Пт, 08:30-09:30<br>
+                                        <strong>У кого?</strong> Алана, +375299087662<br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
                                 <div class="card-header" id="headingTwo">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
                                             БГЭУ
                                         </button>
                                     </h5>
                                 </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                     data-parent="#accordion">
                                     <div class="card-body">
                                         <p class="title-sm">Место №1</p>
                                         <strong>Когда?</strong> Пн-Пт, 12:30-13:30<br>
@@ -516,12 +581,15 @@
                             <div class="card">
                                 <div class="card-header" id="headingThree">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
                                             МИУ
                                         </button>
                                     </h5>
                                 </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                     data-parent="#accordion">
                                     <div class="card-body">
                                         <p class="title-sm">Место №1</p>
                                         <strong>Когда?</strong> Пн, Чт, Сб<br>
@@ -529,25 +597,135 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="headingFour">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            БГМУ
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p class="title-sm">Место №1</p>
-                                        <strong>Где?</strong> Возле столовой<br>
-                                        <strong>Когда?</strong> Пн-Пт, 08:30-09:30<br>
-                                        <strong>У кого?</strong> Алана, +375299087662<br>
-                                    </div>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="overlay" id="where">
+        <section class="form-container">
+            <section class="form-wrap">
+                <section class="form-header fh2">
+                    <span class="close-button">&times;</span>
+                    <section class="form-content">
+                        <p class="title-md">Хей-хо!</p>
+                        <p class="text-sm">Уже заказал карточку, но забыл где её забрать?<br>
+                            Без проблем, напомним!<br>
+                            Карточку можно забрать двумя способами:
+                        </p>
+                    </section>
+                </section>
+                <section class="form wicf">
+                    <p class="title-sm">Первый способ</p>
+                    <p class="text-sm">Ты можешь забрать карточку у нас в офисе по адресу:<br>
+                        г. Минск, ул. Ленина, 50, оф. 302<br>
+                        Время работы: Пн-Вс 11:00-17:00 (начиная со 2-го мая)
+                    </p>
+                    <p class="title-sm">Обязательно возьми свой студенческий!</p>
+                    <section class="contacts-map">
+                        <iframe style="border:0; width:100%; height:100%"
+                                src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k"
+                                allowfullscreen></iframe>
+                    </section>
+                    <p class="title-sm">Второй способ</p>
+                    <p class="text-sm">Ты можешь забрать карточку у распространителя у тебя в университете.</p>
+                    <p class="title-sm">Не забудь о студенческом, это важно!</p>
+                    <div id="accordion1">
+                        <div class="card">
+                            <div class="card-header" id="heading1">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        БГУ
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p class="title-sm">Место №1</p>
+                                    <strong>Где?</strong> Факультет журналистики, у печатного автомата<br>
+                                    <strong>Когда?</strong> Пн-Пт, 15:00-16:00<br>
+                                    <strong>У кого?</strong> Катя, +375447541307<br>
+                                    <p class="title-sm">Место №2</p>
+                                    <strong>Где?</strong> Общежитие №4, к. 804 Б<br>
+                                    <strong>Когда?</strong> Пн-Пт, 21:00-22:00<br>
+                                    <strong>У кого?</strong> Катя, +375447541307<br>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                        <div class="card">
+                            <div class="card-header" id="heading5">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                        БНТУ
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p class="title-sm">Место №1</p>
+                                    <strong>Где?</strong> Общежитие №4, фойе<br>
+                                    <strong>Когда?</strong> Пн, Ср, Пт, 11:30-12:30<br>
+                                    <strong>У кого?</strong> Сергей, +375295216906<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading4">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        БГМУ
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p class="title-sm">Место №1</p>
+                                    <strong>Где?</strong> Возле столовой<br>
+                                    <strong>Когда?</strong> Пн-Пт, 08:30-09:30<br>
+                                    <strong>У кого?</strong> Алана, +375299087662<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading2">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        БГЭУ
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p class="title-sm">Место №1</p>
+                                    <strong>Когда?</strong> Пн-Пт, 12:30-13:30<br>
+                                    <strong>У кого?</strong> Ваня, +375447841066<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading3">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        МИУ
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p class="title-sm">Место №1</p>
+                                    <strong>Когда?</strong> Пн, Чт, Сб<br>
+                                    <strong>У кого?</strong> Илья, +375333511075<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </section>
             </section>
         </section>
@@ -716,11 +894,16 @@
 <footer>
     <div class="footer-column-container">
         <div class="footer-column">
-            <!--<p><a href="">Где забрать карточку</a></p>
-            <p><a href="">Контакты</a></p>-->
+            <p><a href="javascript:openWhereModal()">Где забрать карточку</a></p>
+            <!--<p><a href="">Контакты</a></p>-->
             <p><a href="https://unicard.by/partners">Партнерам</a></p>
             <p><a target="_blank" href="https://unicard.by/useragreement">Пользовательское соглашение</a></p>
+
         </div>
+    </div>
+    <div class="social-container">
+        <a href="https://vk.com/uni_card"><img src="img/contacts/vk.svg"></a>
+        <a style="display: none" href="https://instagram.com"><img src="img/contacts/instagram.svg"></a>
     </div>
     <div class="footer-bottom-container">
         <div class="footer-image-container">
