@@ -398,8 +398,13 @@
         align-items: center;
     }
 
-    .options-cost {
+    .old-price {
         font-size: 24px;
+    }
+
+    .new-price {
+        font-size: 42px;
+        margin-bottom: 18px;
     }
 
     .options-price-text {
@@ -435,12 +440,20 @@
     }
 
     .form-content {
-        padding: 25px 50px 25px;
+        padding: 25px;
     }
 
     .form-content p:first-child {
         font-size: 36px;
         line-height: 42px;
+    }
+
+    .wicf {
+        padding: 0 20px 40px;
+    }
+
+    .wicf .wicfh {
+        font-size: 18px;
     }
 
     input {

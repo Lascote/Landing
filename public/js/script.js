@@ -279,6 +279,14 @@ function openWhereModal() {
     $("#where").fadeIn();
 }
 
+function toggleContacts() {
+    $(".contacts-accordion").slideToggle(500);
+}
+
+function toggleContactMap() {
+    $("#cam").slideToggle(500);
+}
+
 function toggleCircle(currentPage) {
     const scrollBarLinks = $(".scroll-bar > ul > li > a");
     const id = currentPage;
