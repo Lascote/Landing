@@ -36,7 +36,7 @@ app.controller('Api', function($scope, $http) {
         if (id !== undefined)
             $http.post('https://panel.unicard.by/api/getpartnerbycategory', {id: id})
                 .then(function (response) {
-                    $scope.partnersApi = response.data.partners;
+                    $scope.partnersApi = response.data.partners.sort((a, b) => b.discountValues[0].value - a.discountValues[0].value);
                 });
         $('#restore').slideDown(400).css('display', 'flex');
     };
