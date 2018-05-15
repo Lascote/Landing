@@ -1182,6 +1182,7 @@ input[type=submit] {
     align-items: center;
     border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .partner-icon img {
@@ -1297,23 +1298,10 @@ input[type=submit] {
 
 .category-card {
     height: 150px;
-    width: 100%;
+    width: 16.666666%;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.4);
     border-left: 1px solid #e8e8e8;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
-}
-
-.category-card:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.category-background {
-    width: 16.666666%;
-    height: 100%;
 }
 
 #cat-1 {
@@ -1358,7 +1346,7 @@ input[type=submit] {
 }
 
 .category-name {
-    height: 45px;
+    height: 44px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1369,7 +1357,7 @@ input[type=submit] {
     font-family: futurarounddemi;
     font-size: 18px;
     line-height: 20px;
-    color: #fff;
+    color: #58585A;
 }
 
 .restore-category {
@@ -1801,7 +1789,7 @@ button.close {
     display: none;
     margin: 12px auto;
     width: 90%;
-    height: 480px;
+    height: 420px;
     max-width: 640px;
 }
 

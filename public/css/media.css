@@ -122,9 +122,6 @@
 
     .category-card {
         border-bottom: 1px solid #e8e8e8;
-    }
-
-    .category-background {
         float: left;
         width: 33.333333%;
     }
@@ -531,9 +528,6 @@
 
     .category-card {
         max-width: none;
-    }
-
-    .category-background {
         width: 50%;
     }
 

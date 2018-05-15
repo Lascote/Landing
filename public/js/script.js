@@ -9,7 +9,8 @@ $(document).ready(function () {
     $("#motto").delay(2000).animate({opacity: 1}, 750);
     $("#arrow").delay(3250).animate({opacity: 1}, 1000);
 
-    $('a[href^="#"]').click(function () {
+    $('a[href^="#"]').click(function (event) {
+        event.preventDefault();
         let id = $(this).attr('href'),
             top = $(id).offset().top;
         $('html, body').animate({scrollTop: top}, 1000);
@@ -284,6 +285,8 @@ function toggleContacts() {
 }
 
 function toggleContactMap() {
+    let txt = $('#csmb');
+    txt.text(txt.text() === 'Показать карту' ? 'Спрятать карту' : 'Показать карту');
     $("#cam").slideToggle(500);
 }
 
@@ -349,36 +352,4 @@ function clearAllInputClasses() {
     for (let i = 0; i < labels.length; i++) {
         $("#"+labels[i].id).css("display", "none");
     }
-}
-
-function clearAllInputClass() {
-    let wt = [];
-    for (let i = 0; i < days.length; i++) {
-        days[i].sort();
-        for (let j = 0; j < days[i].length; j++) {
-            wt[days[i][j]][0] = from[i] ? from[i] : "empty";
-            wt[days[i][j]][1] = to[i] ? to[i] : "empty";
-        }
-    }
-}
-
-function openModal(number) {
-    let id = 13;
-    switch (id){
-        case 1: id = '5326418161'; break;
-        case 2: id = "5ad4c0b22c1f956a42bc2bd4"; break;
-        case 3: id = '5326418161'; break;
-        case 4: id = '5326418161'; break;
-        case 5: id = '5326418161'; break;
-        case 6: id = '5326418161'; break;
-        case 7: id = '5326418161'; break;
-        case 8: id = '5326418161'; break;
-        case 9: id = '5326418161'; break;
-        case 10: id = '5326418161'; break;
-        case 11: id = '5326418161'; break;
-        case 12: id = '5326418161'; break;
-        default: break;
-    }
-    if (id !== undefined)
-        $("#modal"+id).modal();
 }

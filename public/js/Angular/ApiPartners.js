@@ -5,7 +5,7 @@ app.controller('Api', function($scope, $http) {
         if (!$scope.partnersApi)
             $http.post('https://panel.unicard.by/api/getpartners')
                 .then(function (response) {
-                    $scope.partnersApi = response.data.partners;
+                    $scope.partnersApi = response.data.partners.sort((a, b) => b.discountValues[0].value - a.discountValues[0].value);
                 });
     };
 
@@ -44,16 +44,15 @@ app.controller('Api', function($scope, $http) {
     $('#restore').click(function () {
         $http.post('https://panel.unicard.by/api/getpartners')
             .then(function (response) {
-                $scope.partnersApi = response.data.partners;
+                $scope.partnersApi = response.data.partners.sort((a, b) => b.discountValues[0].value - a.discountValues[0].value);
             });
         $('#restore').slideUp(600);
     });
 
     $scope.openModal = function(number) {
         let id = undefined;
-        return;
         switch (number) {
-            case 1: break;
+            case 1: id = '5af45515333bcc103cfdabac'; break;
             case 2: id = '5ad4c0b22c1f956a42bc2bd4'; break;
             case 3: id = '5ade5cd91860dc0af74f664e'; break;
             case 4: id = '5ae3799dae3cb2280f30aa27'; break;
@@ -61,15 +60,16 @@ app.controller('Api', function($scope, $http) {
             case 6: id = '5adaf0885eda087e04d7bf20'; break;
             case 7: id = '5ad4b41bdf70e469da292597'; break;
             case 8: id = '5ada64c6a030407c52b469f7'; break;
-            case 9: id = '5ada504f9717f27bfd341c85'; break;
+            case 9: id = '5ae36945c1edf7274d2ff3d6'; break;
             case 10: id = '5ae3744b40edf527c0787704'; break;
             case 11: id = '5ad9a5259e16ea78d459aaea'; break;
             case 12: id = '5ad9771cf3ec7178829eb7c2'; break;
             default: break;
         }
         if (id !== undefined) {
-            $http.post('https://panel.unicard.by/api/getbranchesbypartneranon', {id: id})
+            $http.post('https://panel.unicard.by/api/getpartnerandbranches', {id: id})
                 .then(function (response) {
+                    $scope.curPartner = response.data.partner;
                     $scope.branchesApi = response.data.branches;
                     $scope.branchesApi.forEach((item) => {
                         item.addressURL = "https://www.google.by/maps/search/" + item.address.replace(/\s/gi, '+');
@@ -77,8 +77,26 @@ app.controller('Api', function($scope, $http) {
                         item.phoneNumbersParsed = parsePN(item.phoneNumbers);
                         item.todayParsed = item.workingTimeParsed.shift();
                     });
+                    $("#partnerModal").modal();
+                    $scope.branchesApi.forEach((item) => {
+                        item.toggleWT = function () {
+                            let wthi = $("#wthi" + item._id);
+                            $("#wta" + item._id).slideToggle(300).css('display','flex');
+                            if (wthi.text() === 'keyboard_arrow_down')
+                                wthi.text('keyboard_arrow_up');
+                            else
+                                wthi.text('keyboard_arrow_down');
+                        };
+                        item.togglePN = function () {
+                            let pnhi = $("#pnhi" + item._id);
+                            $("#pna" + item._id).slideToggle(300).css('display','flex');
+                            if (pnhi.text() === 'keyboard_arrow_down')
+                                pnhi.text('keyboard_arrow_up');
+                            else
+                                pnhi.text('keyboard_arrow_down');
+                        };
+                    });
                 });
-            $("#modal" + id).modal();
         }
     };
 
