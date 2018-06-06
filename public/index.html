@@ -13,9 +13,9 @@
         gtag('config', 'UA-118065662-1');
     </script>
     <title>UNI — студенческая скидочная карточка</title>
-    <link rel="manifest" href="./manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#58585A">
     <meta name="google-site-verification" content="B5zVZDrDblw_3xX9dt_J-z_Pe0iwZcTQ1U_dQmrAAwM"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/media.css"/>
@@ -118,11 +118,11 @@
                         <div class="partners-row">
                             <div class="partner-icon-wrapper">
                                 <div class="partner-icon" ng-click="openModal(1)">
-                                    <img src="img/partners-logos/spa.png">
+                                    <img src="img/partners-logos/flowers.png">
                                     <div class="hover-discount">
-                                        <div class="hover-discount-text">20%</div>
+                                        <div class="hover-discount-text">40%</div>
                                     </div>
-                                    <div class="strip-discount-text"><p>20%</p></div>
+                                    <div class="strip-discount-text"><p>40%</p></div>
                                 </div>
                             </div>
                             <div class="partner-icon-wrapper">
@@ -154,11 +154,11 @@
                             </div>
                             <div class="partner-icon-wrapper">
                                 <div class="partner-icon" ng-click="openModal(5)">
-                                    <img src="img/partners-logos/dreamcafe.jpg">
+                                    <img src="img/partners-logos/spa.png">
                                     <div class="hover-discount">
-                                        <div class="hover-discount-text">10%</div>
+                                        <div class="hover-discount-text">20%</div>
                                     </div>
-                                    <div class="strip-discount-text"><p>10%</p></div>
+                                    <div class="strip-discount-text"><p>20%</p></div>
                                 </div>
                             </div>
                             <div class="partner-icon-wrapper">
@@ -207,12 +207,12 @@
                                 </div>
                             </div>
                             <div class="partner-icon-wrapper">
-                                <div class="partner-icon" ng-click="openModal(11)">
-                                    <img src="img/partners-logos/myway.png">
+                                <div class="partner-icon" ng-click="openModal(10)">
+                                    <img src="img/partners-logos/dreamcafe.jpg">
                                     <div class="hover-discount">
-                                        <div class="hover-discount-text">20%</div>
+                                        <div class="hover-discount-text">10%</div>
                                     </div>
-                                    <div class="strip-discount-text"><p>20%</p></div>
+                                    <div class="strip-discount-text"><p>10%</p></div>
                                 </div>
                             </div>
                             <div class="partner-icon-wrapper">
@@ -243,7 +243,7 @@
                             </div>
                             <div class="category-card" ng-click="getpartnersbycategory(2)">
                                 <div class="category-icon">
-                                    <img src="img/categories/muscles.svg">
+                                    <img src="img/categories/nail.svg">
                                 </div>
                                 <div class="category-name"><p>Заняться собой</p></div>
                             </div>
@@ -314,7 +314,7 @@
                                                 <img src={{"https://panel.unicard.by/partner/"+curPartner.image}}>
                                             </div>
                                             <div class="modal-header-website">
-                                                <a href={{"http://"+curPartner.website}}>
+                                                <a href={{"http://"+curPartner.website}} target="_blank">
                                                     <span>{{curPartner.website}}</span>
                                                 </a>
                                             </div>
@@ -330,7 +330,7 @@
                                                 <span>{{curPartner.description}}</span>
                                             </div>
                                             <div class="modal-header-website">
-                                                <a href={{"http://"+curPartner.website}}>
+                                                <a href={{"http://"+curPartner.website}} target="_blank">
                                                     <span>{{curPartner.website}}</span>
                                                 </a>
                                             </div>
@@ -479,7 +479,7 @@
                             <div class="check-box-container">
                                 <input title="" class="check-box" type="checkbox" id="defaultCheck1">
                                 <span class="check-box-label">
-                                    Я прочитал и принимаю <a target="_blank" href="https://unicard.by/useragreement">Пользовательское соглашение</a>
+                                    Я прочитал(-а) и принимаю <a target="_blank" href="https://unicard.by/useragreement">Пользовательское соглашение</a>
                                 </span>
                             </div>
                             <input disabled type="submit" class="form-button disabled" value="Отправить"/>
@@ -512,7 +512,7 @@
                         <p class="wicfn">Обязательно возьми свой студенческий!</p>
 
                         <section class="contacts-map">
-                            <iframe style="border:0; width:100%; height:100%;border-radius: 15px;"
+                            <iframe style="border:0; width:100%; height:100%;"
                                     src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k"
                                     allowfullscreen></iframe>
                         </section>
@@ -955,7 +955,7 @@
                     </tr>
                 </table>
                 <h4>Телефон:</h4>
-                <p>+375291828784 (vel)</p>
+                <p><img id="fctc" src="img/carriers/velcom.png">+375291828784</p>
             </div>
             <p><a href="https://unicard.by/partners">Партнерам</a></p>
             <p><a target="_blank" href="https://unicard.by/useragreement">Пользовательское соглашение</a></p>

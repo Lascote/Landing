@@ -1042,6 +1042,8 @@ input[type=submit] {
     margin-bottom: 40px;
     width: 100%;
     height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 #accordion {
@@ -1530,6 +1532,7 @@ button.close {
     font-size: 18px;
     margin: 4px 0 0;
     font-family: futuraround;
+    word-break: break-all;
 }
 
 .modal-header-discounts {
@@ -1754,6 +1757,12 @@ button.close {
     margin: 6px auto 12px;
 }
 
+#fctc {
+    height: 18px;
+    width: auto;
+    margin: 2px;
+}
+
 .contacts-accordion table {
     font-family: futurarounddemi;
     color: #000000;
@@ -1791,6 +1800,8 @@ button.close {
     width: 90%;
     height: 420px;
     max-width: 640px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .contacts-container {
@@ -1890,7 +1901,7 @@ button.close {
     background: #292929;
     border-radius: 3px;
     font-family: futurarounddemi;
-    font-size: 14px;
+    font-size: 18px;
     transform: translateX(-20%) translateY(-50%);
     margin-bottom: 10px;
     padding: 8px 18px;
@@ -2031,8 +2042,11 @@ footer {
 
 .footer-column {
     width: 100%;
-    padding: 12px 0;
     text-align: center;
+}
+
+.footer-column > p {
+    margin: 12px 0;
 }
 
 .footer-column a {

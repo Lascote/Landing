@@ -16,6 +16,10 @@ app.get('/useragreement', (req, res) => {
     res.sendFile('useragreement.html', { root: __dirname + '/public/'});
 });
 
+app.get('*', (req,res) => {
+    res.redirect('/');
+});
+
 app.listen(8081, function () {
   console.log('App listening on port 8081!');
 });
