@@ -164,7 +164,7 @@ $(document).ready(function () {
                     message = "Введите Ваш адрес электронной почты";
                     break;
                 }
-                if (current.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+                if (current.value.trim().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
                     valid = true;
                 }
                 else {
@@ -178,7 +178,7 @@ $(document).ready(function () {
                     message = "Введите Вашу фамилию";
                     break;
                 }
-                if (current.value.match(/^[- А-Яа-яЁё]{1,64}$/)) {
+                if (current.value.trim().match(/^[- А-Яа-яЁё]{1,64}$/)) {
                     valid = true;
                 }
                 else {
@@ -192,7 +192,7 @@ $(document).ready(function () {
                     message = "Введите Ваше имя";
                     break;
                 }
-                if (current.value.match(/^[- А-Яа-яЁё]{1,64}$/)) {
+                if (current.value.trim().match(/^[- А-Яа-яЁё]{1,64}$/)) {
                     valid = true;
                 }
                 else {
@@ -206,7 +206,7 @@ $(document).ready(function () {
                     message = "Введите Ваш мобильный телефон";
                     break;
                 }
-                if (current.value.match(/^(\+375)(29|25|44|33)(\d{7})$/)) {
+                if (current.value.trim().match(/^(\+375)(29|25|44|33)(\d{7})$/)) {
                     valid = true;
                 }
                 else {
@@ -251,11 +251,11 @@ $(document).ready(function () {
         }
 
         $.post('https://panel.unicard.by/api/addapplication', {
-            surname: $("#surname")['0'].value,
-            name: $("#name")['0'].value,
-            email: $("#email")['0'].value,
-            phoneNumber: $("#phone")['0'].value,
-            studyPlace: $("#studyPlace")['0'].value,
+            surname: $("#surname")['0'].value.trim(),
+            name: $("#name")['0'].value.trim(),
+            email: $("#email")['0'].value.trim(),
+            phoneNumber: $("#phone")['0'].value.trim(),
+            studyPlace: $("#studyPlace")['0'].value.trim(),
             chosenTariff: 12,
         })
             .done((data) => {
