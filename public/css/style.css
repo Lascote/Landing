@@ -1046,21 +1046,21 @@ input[type=submit] {
     overflow: hidden;
 }
 
-#accordion {
+#accordiontop {
     width: 100%;
 }
 
-#accordion .card {
+#accordiontop .card {
     margin: 8px 0;
     border-radius: 15px;
     overflow: hidden;
 }
 
-#accordion1 {
+#accordionbottom {
     width: 100%;
 }
 
-#accordion1 .card {
+#accordionbottom .card {
     margin: 8px 0;
     border-radius: 15px;
     overflow: hidden;

@@ -4,6 +4,10 @@ let data = require('./public/js/module/data');
 
 app.use(express.static('public'));
 
+app.get('/by', (req, res) => {
+    res.sendFile('belarusian.html', { root: __dirname + '/public/'});
+});
+
 app.get('/project', (req, res) => {
     res.sendFile('project.html', { root: __dirname + '/public/'});
 });
