@@ -74,8 +74,10 @@ app.controller('Api', function($scope, $http) {
                     $scope.branchesApi.forEach((item) => {
                         item.addressURL = "https://www.google.by/maps/search/" + item.address.replace(/\s/gi, '+');
                         item.workingTimeParsed = parseWT(item.workingTime);
+                        item.workingTimeParsedBel = parseWTB(item.workingTime);
                         item.phoneNumbersParsed = parsePN(item.phoneNumbers);
                         item.todayParsed = item.workingTimeParsed.shift();
+                        item.todayParsedBel = item.workingTimeParsedBel.shift();
                     });
                     $("#partnerModal").modal();
                     $scope.branchesApi.forEach((item) => {
@@ -109,8 +111,10 @@ app.controller('Api', function($scope, $http) {
                     $scope.branchesApi.forEach((item) => {
                         item.addressURL = "https://www.google.by/maps/search/" + item.address.replace(/\s/gi, '+');
                         item.workingTimeParsed = parseWT(item.workingTime);
+                        item.workingTimeParsedBel = parseWTB(item.workingTime);
                         item.phoneNumbersParsed = parsePN(item.phoneNumbers);
                         item.todayParsed = item.workingTimeParsed.shift();
+                        item.todayParsedBel = item.workingTimeParsedBel.shift();
                     });
                     $("#partnerModal").modal();
                     $scope.branchesApi.forEach((item) => {
@@ -156,6 +160,26 @@ function parseWT(wt) {
     return wtp;
 }
 
+function parseWTB(wt) {
+    let wtp = [];
+    if (!wt) return;
+    let d = new Date().getDay();
+    d = d - 1 < 0 ? 7 + d - 1 : d - 1;
+    for (let i = 0; i < wt.length; i++) {
+        if (wt[i][0] === "empty" && wt[i][1] === "empty")
+            wtp.push({day: getWeekDayBel(i), time: "Закрыта"});
+        else if (wt[i][0] !== "empty" && wt[i][1] === "empty")
+            wtp.push({day: getWeekDayBel(i), time: "Кругласутачна"});
+        else wtp.push({day: getWeekDayBel(i), time: parseTime(wt[i][0]) + "-" + parseTime(wt[i][1])});
+    }
+    wtp.sort(function (a) {
+        let i = (wtp.indexOf(a) - d + 1);
+        return (i < 0 ? 7 + i : i)
+    });
+    wtp = wtp.reverse();
+    return wtp;
+}
+
 function parseTime(t) {
     return (t.substr(0, 2) + ":" + t.substr(2, 2));
 }
@@ -169,6 +193,19 @@ function getWeekDay(i) {
         case 4: return 'Пт';
         case 5: return 'Сб';
         case 6: return 'Вс';
+        default: return 'Ош';
+    }
+}
+
+function getWeekDayBel(i) {
+    switch (i){
+        case 0: return 'Пн';
+        case 1: return 'Аў';
+        case 2: return 'Ср';
+        case 3: return 'Чц';
+        case 4: return 'Пт';
+        case 5: return 'Сб';
+        case 6: return 'Нд';
         default: return 'Ош';
     }
 }

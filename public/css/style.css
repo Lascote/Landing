@@ -4,17 +4,17 @@
 
 @font-face {
     font-family: 'futuraroundbold';
-    src: url('../fonts/a_futuraround-bold.ttf');
+    src: url('../fonts/AFuturaRoundBold.ttf');
 }
 
 @font-face {
     font-family: 'futurarounddemi';
-    src: url('../fonts/a_futurarounddemi.ttf');
+    src: url('../fonts/AFuturaRoundDemi.ttf');
 }
 
 @font-face {
     font-family: 'futuraround';
-    src: url('../fonts/a_futuraround.ttf');
+    src: url('../fonts/AFuturaRound.ttf');
 }
 
 body {

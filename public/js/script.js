@@ -125,26 +125,7 @@ $(document).ready(function () {
         if (event === undefined)
             return;
         let current = event.currentTarget,
-            message = "";
-        switch (current.id) {
-            case "email":
-                message = "Например, ivanov.ivan@mail.ru или ivan.ivanov@gmail.com";
-                break;
-            case "surname":
-                message = "Например, Иванов";
-                break;
-            case "name":
-                message = "Например, Иван";
-                break;
-            case "phone":
-                message = "Например, +375291234567 или +375337654321";
-                break;
-            case "studyPlace":
-                message = "Например, БГУ или БГПУ";
-                break;
-            default:
-                return;
-        }
+            message = getMessage(current.id, current.lang, 'help');
         let label = $("#" + current.id + "-msg");
         label.parent().slideDown(300,"linear");
         label.css("color", "skyblue");
@@ -161,7 +142,7 @@ $(document).ready(function () {
             case "email":
                 if (current.value === "") {
                     valid = false;
-                    message = "Введите Ваш адрес электронной почты";
+                    message = getMessage("email",current.lang,"empty");
                     break;
                 }
                 if (current.value.trim().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
@@ -169,13 +150,13 @@ $(document).ready(function () {
                 }
                 else {
                     valid = false;
-                    message = "Неправильно указан адрес электронной почты";
+                    message = getMessage("email",current.lang,"error");
                 }
                 break;
             case "surname":
                 if (current.value === "") {
                     valid = false;
-                    message = "Введите Вашу фамилию";
+                    message = getMessage("surname",current.lang,"empty");
                     break;
                 }
                 if (current.value.trim().match(/^[- А-Яа-яЁё]{1,64}$/)) {
@@ -183,13 +164,13 @@ $(document).ready(function () {
                 }
                 else {
                     valid = false;
-                    message = "Неправильно указана фамилия";
+                    message = getMessage("surname",current.lang,"error");
                 }
                 break;
             case "name":
                 if (current.value === "") {
                     valid = false;
-                    message = "Введите Ваше имя";
+                    message = getMessage("name",current.lang,"empty");
                     break;
                 }
                 if (current.value.trim().match(/^[- А-Яа-яЁё]{1,64}$/)) {
@@ -197,13 +178,13 @@ $(document).ready(function () {
                 }
                 else {
                     valid = false;
-                    message = "Неправильно указано имя";
+                    message = getMessage("name",current.lang,"error");
                 }
                 break;
             case "phone":
                 if (current.value === "") {
                     valid = false;
-                    message = "Введите Ваш мобильный телефон";
+                    message = getMessage("phone",current.lang,"empty");
                     break;
                 }
                 if (current.value.trim().match(/^(\+375)(29|25|44|33)(\d{7})$/)) {
@@ -211,7 +192,7 @@ $(document).ready(function () {
                 }
                 else {
                     valid = false;
-                    message = "Неправильно указан номер мобильного телефона";
+                    message = getMessage("phone",current.lang,"error");
                 }
                 break;
             case "studyPlace":
@@ -286,7 +267,10 @@ function toggleContacts() {
 
 function toggleContactMap() {
     let txt = $('#csmb');
-    txt.text(txt.text() === 'Показать карту' ? 'Спрятать карту' : 'Показать карту');
+    if (txt[0].lang === 'by')
+        txt.text(txt.text() === 'Паказаць мапу' ? 'Схаваць карту' : 'Паказаць мапу');
+    else
+        txt.text(txt.text() === 'Показать карту' ? 'Спрятать карту' : 'Показать карту');
     $("#cam").slideToggle(500);
 }
 
@@ -320,23 +304,9 @@ function checkEmptyness() {
             continue;
         if (inputs[i].value === "") {
             let label = $("#" + inputs[i].id + "-msg"),
-                message = "";
-            switch (inputs[i].id) {
-                case "surname":
-                    message = "Введите Вашу фамилию";
-                    break;
-                case "name":
-                    message = "Введите Ваше имя";
-                    break;
-                case "email":
-                    message = "Введите Ваш адрес электронной почты";
-                    break;
-                case "phone":
-                    message = "Введите Ваш мобильный телефон";
-                    break;
-            }
-            label.css("display","block");
-            label.css("color","red");
+                message = getMessage(inputs[i].id, inputs[i].lang, 'empty');
+            label.css("display", "block");
+            label.css("color", "red");
             label.text(message);
             $("#" + inputs[i].id).addClass("error-input");
         }
@@ -351,5 +321,132 @@ function clearAllInputClasses() {
     }
     for (let i = 0; i < labels.length; i++) {
         $("#"+labels[i].id).css("display", "none");
+    }
+}
+
+function setCookie(cname, cvalue, exdays) {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    let user = getCookie("username");
+    if (user !== "") {
+        alert("Welcome again " + user);
+    } else {
+        user = prompt("Please enter your name:", "");
+        if (user !== "" && user !== null) {
+            setCookie("username", user, 365);
+        }
+    }
+}
+
+function getMessage(field, lang, type) {
+    switch (field) {
+        case "surname":
+            if (lang === 'ru'){
+                switch (type){
+                    case 'help': return "Например, Иванов";
+                    case 'error': return "Неправильно указана фамилия";
+                    case 'empty': return "Введите Вашу фамилию";
+                    default: return "ERROR";
+                }
+            }
+            else if (lang === 'by') {
+                switch (type){
+                    case 'help': return "Напрыклад, Іваноў";
+                    case 'error': return "Няправільна паказана прозвішча";
+                    case 'empty': return "Увядзіце Ваша прозвішча";
+                    default: return "ERROR";
+                }
+            }
+            break;
+        case "name":
+            if (lang === 'ru'){
+                switch (type){
+                    case 'help': return "Например, Иван";
+                    case 'error': return "Неправильно указано имя";
+                    case 'empty': return "Введите Ваше имя";
+                    default: return "ERROR";
+                }
+            }
+            else if (lang === 'by') {
+                switch (type){
+                    case 'help': return "Напрыклад, Іван";
+                    case 'error': return "Няправільна паказана імя";
+                    case 'empty': return "Увядзіце Ваша імя";
+                    default: return "ERROR";
+                }
+            }
+            break;
+        case "studyPlace":
+            if (lang === 'ru'){
+                switch (type){
+                    case 'help': return "Например, БГУ или БГПУ";
+                    default: return "ERROR";
+                }
+            }
+            else if (lang === 'by') {
+                switch (type){
+                    case 'help': return "Напрыклад, БДУ ці БДПУ";
+                    default: return "ERROR";
+                }
+            }
+            break;
+        case "email":
+            if (lang === 'ru'){
+                switch (type){
+                    case 'help': return "Например, ivanov.ivan@mail.ru или ivan.ivanov@gmail.com";
+                    case 'error': return "Неправильно указан адрес электронной почты";
+                    case 'empty': return "Введите Ваш адрес электронной почты";
+                    default: return "ERROR";
+                }
+            }
+            else if (lang === 'by') {
+                switch (type){
+                    case 'help': return "Напрыклад, ivanov.ivan@mail.ru ці ivan.ivanov@gmail.com";
+                    case 'error': return "Няправільна паказаны адрас электроннай пошты";
+                    case 'empty': return "Увядзіце Ваш адрас электроннай пошты";
+                    default: return "ERROR";
+                }
+            }
+            break;
+        case "phone":
+            if (lang === 'ru'){
+                switch (type){
+                    case 'help': return "Например, +375291234567 или +375337654321";
+                    case 'error': return "Неправильно указан номер мобильного телефона";
+                    case 'empty': return "Введите Ваш мобильный телефон";
+                    default: return "ERROR";
+                }
+            }
+            else if (lang === 'by') {
+                switch (type){
+                    case 'help': return "Напрыклад, +375291234567 ці +375337654321";
+                    case 'error': return "Няправільна паказаны нумар мабільнага тэлефона";
+                    case 'empty': return "Увядзіце Ваш мабільны тэлефон";
+                    default: return "ERROR";
+                }
+            }
+            break;
+        default:
+            return "ERROR";
     }
 }

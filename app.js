@@ -4,7 +4,7 @@ let data = require('./public/js/module/data');
 
 app.use(express.static('public'));
 
-app.get('/by', (req, res) => {
+app.get('/bel', (req, res) => {
     res.sendFile('belarusian.html', { root: __dirname + '/public/'});
 });
 

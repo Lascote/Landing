@@ -38,6 +38,7 @@
 <body style="background: url(img/home/background-3-01.png) repeat-y; background-size: 100%">
 <section class="main-container" id="container">
     <section class="block" id="home">
+        <div></div>
         <section class="home-container">
             <section class="home-content">
                 <section class="logo" id="logo">
@@ -78,7 +79,7 @@
 
             <section class="benefits-table">
                 <div class="benefits-table-item" id="benefit-1-mobile">
-                    <img src="img/benefits/40percent.svg" alt="">
+                    <img src="img/benefits/40percentbel.svg" alt="">
                     <p class="benefits-table-title title-sm">Зніжкі да 40%!</p>
                     <p class="benefits-table-text text-sm">
                         Нашы Партнёры прадастаўляюць табе зніжку аж да 40%.
@@ -89,15 +90,15 @@
                     <img src="img/benefits/partners.png" alt="">
                     <p class="benefits-table-title title-sm">Больш за 30 Партнёраў</p>
                     <p class="benefits-table-text text-sm">
-                        Ужо цяпер у цябе ёсць магчымасць атрымаць зніжку ў больш чым 20 месцах.
+                        Ужо цяпер у цябе ёсць магчымасць атрымаць зніжку ў больш чым 30 месцах.
                     </p>
                 </div>
 
                 <div class="benefits-table-item" id="benefit-1-desktop">
-                    <img src="img/benefits/40percent.svg" alt="">
+                    <img src="img/benefits/40percentbel.svg" alt="">
                     <p class="benefits-table-title title-sm">Зніжкі да 40%!</p>
                     <p class="benefits-table-text text-sm">
-                        І ў гэтых месцах ты атрымаеш зніжкі ад 5% да цэлых 50%.
+                        І ў гэтых месцах ты атрымаеш зніжкі ад 5% да цэлых 40%.
                     </p>
                 </div>
 
@@ -368,19 +369,19 @@
                                             </div>
                                             <div class="som-button-container">
                                                 <a target="_blank" href={{branch.addressURL}}>
-                                                    <button>Показать на карте</button>
+                                                    <button>Паказаць на мапе</button>
                                                 </a>
                                             </div>
                                             <div class="branch-card-bottom-container">
                                                 <div class="card">
                                                     <div ng-click="branch.toggleWT()"
                                                          class="branch-card-working-time-header">
-                                                        {{branch.todayParsed.day + ": " + branch.todayParsed.time}}
+                                                        {{branch.todayParsedBel.day + ": " + branch.todayParsedBel.time}}
                                                         <i id="wthi{{branch._id}}" class="material-icons">keyboard_arrow_down</i>
                                                     </div>
                                                     <div id="wta{{branch._id}}" class="wta">
                                                         <table class="branch-card-working-time">
-                                                            <tr ng-repeat="wt in branch.workingTimeParsed">
+                                                            <tr ng-repeat="wt in branch.workingTimeParsedBel">
                                                                 <td><strong>{{wt.day}}:</strong></td>
                                                                 <td>{{wt.time}}</td>
                                                             </tr>
@@ -390,7 +391,7 @@
                                                 <div class="card ">
                                                     <div ng-click="branch.togglePN()"
                                                          class="branch-card-phone-numbers-header">
-                                                        Номера телефонов
+                                                        Нумары тэлефонаў
                                                         <i id="pnhi{{branch._id}}" class="material-icons">keyboard_arrow_down</i>
                                                     </div>
                                                     <div id="pna{{branch._id}}" class="branch-card-phone-numbers pna">
@@ -470,15 +471,15 @@
                     <section id="f1" class="form">
                         <form id="form">
 
-                            <input type="text" id="surname" placeholder="Прозвішча *"/>
+                            <input lang="by" type="text" id="surname" placeholder="Прозвішча *"/>
                             <div class="int"><label id="surname-msg">error</label></div>
-                            <input type="text" id="name" placeholder="Імя *"/>
+                            <input lang="by" type="text" id="name" placeholder="Імя *"/>
                             <div class="int"><label id="name-msg">error</label></div>
-                            <input type="text" id="studyPlace" placeholder="Месца вучобы"/>
+                            <input lang="by" type="text" id="studyPlace" placeholder="Месца вучобы"/>
                             <div class="int"><label id="studyPlace-msg">error</label></div>
-                            <input type="text" id="email" placeholder="Email *"/>
+                            <input lang="by" type="text" id="email" placeholder="Email *"/>
                             <div class="int"><label id="email-msg">error</label></div>
-                            <input type="text" id="phone" placeholder="Нумар тэлефона *"/>
+                            <input lang="by" type="text" id="phone" placeholder="Нумар тэлефона *"/>
                             <div class="int"><label id="phone-msg">error</label></div>
                             <div class="notification"><span>* Абавязковыя палі</span></div>
                             <div class="check-box-container">
@@ -646,7 +647,7 @@
                 </section>
                 <section class="form wicf">
                     <p class="title-sm">Першы спосаб</p>
-                    <p class="wicfh">Ты можаш забраць картку ў нас на офісе па адрасе:</p>
+                    <p class="wicfh">Ты можаш забраць картку ў нас у офісе па адрасе:</p>
                     <p class="wicft">г. Мінск, вул. Леніна, 50, оф. 302</p>
                     <p class="wicfh">Час працы:</p>
                     <table class="wicft">
@@ -943,7 +944,7 @@
             <div class="contacts-accordion">
                 <h4>Адрас:</h4>
                 <p>вул. Леніна, 50, оф. 302</p>
-                <button id="csmb" onclick="toggleContactMap()">Паказаць мапу</button>
+                <button lang="by" id="csmb" onclick="toggleContactMap()">Паказаць мапу</button>
                 <section id="cam">
                     <iframe style="border:0; width:100%; height:100%; border-radius: 15px"
                             src="https://www.google.com/maps/embed/v1/place?q=Ulitsa%20Lenina%2050%2C%20Minsk%20220030&key=AIzaSyAAkFle3Yg2eKZFT9_RacjZAjW0SOpF_-k&zoom=17"
@@ -965,7 +966,7 @@
             </div>
             <p><a href="https://unicard.by/partners">Партнёрам</a></p>
             <p><a target="_blank" href="https://unicard.by/useragreement">Карыстацкае пагадненне</a></p>
-
+            <p><a target="_blank" href="https://unicard.by">Русский язык</a></p>
         </div>
     </div>
     <div class="social-container">
