@@ -68,13 +68,13 @@ $(document).ready(function () {
         }
     });
 
-    $.post('https://panel.unicard.by/api/showclientscount')
+    /*$.post('https://panel.unicard.by/api/showclientscount')
         .done((data) => {
             $('#count').text(500 - data.count);
         })
         .fail((err) => {
             console.error("Ошибка соединения с сервером.")
-        });
+        });*/
 
     $(".circle").click(function (event) {
         const circles = $(".circle");
@@ -88,6 +88,7 @@ $(document).ready(function () {
     let card = "";
     $(".options-button").on("click", (event) => {
         card = event.currentTarget.parentElement.id;
+        console.log(card);
         $("#overlay").fadeIn();
     });
 

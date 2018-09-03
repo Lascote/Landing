@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118065662-1"></script>
@@ -16,6 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#58585A">
+    <meta property="og:image" content="" />
     <meta name="google-site-verification" content="B5zVZDrDblw_3xX9dt_J-z_Pe0iwZcTQ1U_dQmrAAwM"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/media.css"/>
@@ -29,11 +31,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/Angular/ApiPartners.js"></script>
-    <script src="libs/inputmask/dependencyLibs/inputmask.dependencyLib.js"></script>
-    <script src="libs/inputmask/inputmask.js"></script>
-    <script src="libs/inputmask/inputmask.phone.extensions.js"></script>
-    <script src="libs/inputmask/phone-codes/phone.js"></script>
-    <script src="libs/inputmask/bindings/inputmask.binding.js"></script>
 </head>
 <body style="background: url(img/home/background-3-01.png) repeat-y; background-size: 100%">
 <section class="main-container" id="container">
@@ -428,28 +425,26 @@
         </section>
     </section>
 
-    <section class="block" id="options">
+    <section class="fluid-block" id="options">
         <section class="options-container">
             <section class="options-content">
-                <p class="options-title title-md">Закажи карту</p>
+                <p class="options-title title-md">Выбери карточку</p>
                 <p class="options-text text-md">
-                    Успей купить карточку UNI по суперкрутой цене! Предложение ограничено, только первые 500 карточек
-                    доступны по цене 1<sup>99</sup> рублей.
+                    Теперь ты можешь купить карточку UNI на весь срок обучения всего за 4<sup>99</sup> рубля!<br><br>
+                    Но если у тебя почему-то не хватает денег на бессрочную карточку, ты можешь купить карточку на год
+                    за 3<sup>99</sup> рубля.
                 </p>
-                <p class="options-text text-md">Осталось <strong id="count">500</strong> карточек со скидкой 50%!</p>
             </section>
             <section class="price">
                 <section class="options-substrate" id="yearcard">
-                    <p class="options-cost title-sm old-price">4<sup>00</sup> <sub>BYN</sub>
-                        <svg>
-                            <line x1="0" y1="80%" x2="100%" y2="20%">
-                            Sorry, your browser does not support inline SVG.
-                            </line>
-                        </svg>
-                    </p>
-                    <p class="options-cost title-sm new-price">1<sup>99</sup> <sub>BYN</sub></p>
-                    <p class="options-price-text text-sm">Купить карточку на год!</p>
-                    <a class="options-button"><p>Нажми меня!</p></a>
+                    <p class="options-cost title-sm new-price">3<sup>99</sup> <sub>BYN</sub></p>
+                    <p class="options-price-text text-sm">Купить карточку на год.</p>
+                    <a class="options-button"><p>На год</p></a>
+                </section>
+                <section class="options-substrate" id="infinitycard">
+                    <p class="options-cost title-sm new-price">4<sup>99</sup> <sub>BYN</sub></p>
+                    <p class="options-price-text text-sm">Купить карточку на весь срок обучения!</p>
+                    <a class="options-button"><p>На всё время</p></a>
                 </section>
             </section>
         </section>
@@ -862,7 +857,7 @@
         <li data-menuanchor="options">
             <a href="#options">
                 <div class="myPopover">
-                    Заказать карточку
+                    Выбрать карточку
                 </div>
                 <div class="circle"></div>
             </a>
@@ -919,7 +914,7 @@
             <li data-menuanchor="options">
                 <a href="#options">
                     <div class="">
-                        Заказать карточку
+                        Выбрать карточку
                     </div>
                 </a>
             </li>
