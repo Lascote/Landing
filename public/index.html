@@ -34,7 +34,7 @@
 </head>
 <body style="background: url(img/home/background-3-01.png) repeat-y; background-size: 100%">
 <section class="main-container" id="container">
-    <section class="block" id="home">
+    <section class="block full-screen" id="home">
         <section class="home-container">
             <section class="home-content">
                 <section class="logo" id="logo">
@@ -55,7 +55,7 @@
     </section>
 
 
-    <section class="block" id="about">
+    <section class="block full-screen" id="about">
         <section class="about-container">
             <p class="about-title title-lr">Что это такое?</p>
             <p class="about-text text-md">
@@ -67,7 +67,7 @@
     </section>
 
 
-    <section class="block" id="benefits">
+    <section class="block full-screen" id="benefits">
         <section class="benefits-container">
             <section class="benefits-content">
                 <p class="benefits-title title-lr">И что я получаю?</p>
@@ -83,10 +83,10 @@
                 </div>
 
                 <div class="benefits-table-item">
-                    <img src="img/benefits/partners.png" alt="">
-                    <p class="benefits-table-title title-sm">Более 30 Партнеров</p>
+                    <img src="img/benefits/shop.svg" alt="">
+                    <p class="benefits-table-title title-sm">Более 40 Партнеров</p>
                     <p class="benefits-table-text text-sm">
-                        Уже сейчас у тебя есть возможность получить скидку в более чем 30 местах.
+                        Уже сейчас у тебя есть возможность получить скидку в более чем 40 местах!
                     </p>
                 </div>
 
@@ -100,16 +100,16 @@
 
                 <div class="benefits-table-item">
                     <img src="img/benefits/cheeseburger.svg" alt="">
-                    <p class="benefits-table-title title-sm">По цене чизбургера</p>
+                    <p class="benefits-table-title title-sm">Дешевле Биг Мака</p>
                     <p class="benefits-table-text text-sm">
-                        Да-да, карточка UNI стоит всего 1<sup>99</sup> руб, что почти равно цене чизбургера!
+                        Да-да, карточка UNI стоит всего 3<sup>99</sup> руб, это даже дешевле Биг Мака!
                     </p>
                 </div>
             </section>
         </section>
     </section>
 
-    <section style="height: auto;" class="block" id="partners">
+    <section style="height: auto;" class="block full-screen" id="partners">
         <section class="partners-container">
             <p class="title-md">Наши Партнёры</p>
             <div class="slider-wrapper">
@@ -425,7 +425,7 @@
         </section>
     </section>
 
-    <section class="fluid-block" id="options">
+    <section class="block" id="options">
         <section class="options-container">
             <section class="options-content">
                 <p class="options-title title-md">Выбери карточку</p>
@@ -475,6 +475,8 @@
                             <div class="int"><label id="email-msg">error</label></div>
                             <input lang="ru" type="text" id="phone" placeholder="Номер телефона *"/>
                             <div class="int"><label id="phone-msg">error</label></div>
+                            <input lang="ru" type="text" id="promocode" placeholder="Промокод (если есть)"/>
+                            <div class="int"><label id="promocode-msg">error</label></div>
                             <div class="notification"><span>* Обязатльные поля</span></div>
                             <div class="check-box-container">
                                 <input title="" class="check-box" type="checkbox" id="defaultCheck1">
@@ -531,8 +533,6 @@
                                 </div>
                                 <div id="collapsetop1" class="collapse" aria-labelledby="headingtop1" data-parent="#accordiontop">
                                     <div class="card-body">
-                                        <p class="title-sm">Ян Майсак</p>
-                                        <strong>Номер:</strong> +375447415515<br>
                                         <p class="title-sm">Катя Воронкова</p>
                                         <strong>Номер:</strong> +375447541307<br>
                                     </div>
@@ -551,8 +551,6 @@
                                     <div class="card-body">
                                         <p class="title-sm">Сергей Дубина</p>
                                         <strong>Номер:</strong> +375295216906<br>
-                                        <p class="title-sm">Влад Лазакович</p>
-                                        <strong>Номер:</strong> +375336526341<br>
                                     </div>
                                 </div>
                             </div>
@@ -609,14 +607,14 @@
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed" data-toggle="collapse"
                                                 data-target="#collapsetop6" aria-expanded="false" aria-controls="collapsetop6">
-                                            БГПУ
+                                            БГУКИ
                                         </button>
                                     </h5>
                                 </div>
                                 <div id="collapsetop6" class="collapse" aria-labelledby="headingtop6" data-parent="#accordiontop">
                                     <div class="card-body">
-                                        <p class="title-sm">Яна Яковлева</p>
-                                        <strong>Номер:</strong> +375333511075<br>
+                                        <p class="title-sm">Карина Лиходиевская</p>
+                                        <strong>Номер:</strong> +375293901450<br>
                                     </div>
                                 </div>
                             </div>
@@ -675,8 +673,6 @@
                             </div>
                             <div id="collapsebottom1" class="collapse" aria-labelledby="headingbottom1" data-parent="#accordionbottom">
                                 <div class="card-body">
-                                    <p class="title-sm">Ян Майсак</p>
-                                    <strong>Номер:</strong> +375447415515<br>
                                     <p class="title-sm">Катя Воронкова</p>
                                     <strong>Номер:</strong> +375447541307<br>
                                 </div>
@@ -695,8 +691,6 @@
                                 <div class="card-body">
                                     <p class="title-sm">Сергей Дубина</p>
                                     <strong>Номер:</strong> +375295216906<br>
-                                    <p class="title-sm">Влад Лазакович</p>
-                                    <strong>Номер:</strong> +375336526341<br>
                                 </div>
                             </div>
                         </div>
@@ -753,14 +747,14 @@
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
                                             data-target="#collapsebottom6" aria-expanded="false" aria-controls="collapsebottom6">
-                                        БГПУ
+                                        БГУКИ
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapsebottom6" class="collapse" aria-labelledby="headingbottom6" data-parent="#accordionbottom">
                                 <div class="card-body">
-                                    <p class="title-sm">Яна Яковлева</p>
-                                    <strong>Номер:</strong> +375333511075<br>
+                                    <p class="title-sm">Карина Лиходиевская</p>
+                                    <strong>Номер:</strong> +375293901450<br>
                                 </div>
                             </div>
                         </div>

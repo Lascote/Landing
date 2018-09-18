@@ -85,10 +85,11 @@ $(document).ready(function () {
         }
     });
 
-    let card = "";
+    let card = "", period = 0;
     $(".options-button").on("click", (event) => {
         card = event.currentTarget.parentElement.id;
-        console.log(card);
+        if (card === "yearcard") period = 12;
+        else if (card === "infinitycard") period = 0;
         $("#overlay").fadeIn();
     });
 
@@ -109,6 +110,7 @@ $(document).ready(function () {
     validMap.set('email', false);
     validMap.set('phone', false);
     validMap.set('studyPlace', false);
+    validMap.set('promocode', false);
 
     $('#defaultCheck1').on("click", (event) => {
         let isChecked = event.currentTarget.checked,
@@ -199,6 +201,9 @@ $(document).ready(function () {
             case "studyPlace":
                 valid = true;
                 break;
+            case "promocode":
+                valid = true;
+                break;
             default:
                 return;
         }
@@ -238,7 +243,8 @@ $(document).ready(function () {
             email: $("#email")['0'].value.trim(),
             phoneNumber: $("#phone")['0'].value.trim(),
             studyPlace: $("#studyPlace")['0'].value.trim(),
-            chosenTariff: 12,
+            chosenTariff: period,
+            promocode: $("#promocode")['0'].value.trim(),
         })
             .done((data) => {
                 let fbe = $('#form-button-msg');
@@ -407,6 +413,20 @@ function getMessage(field, lang, type) {
             else if (lang === 'by') {
                 switch (type){
                     case 'help': return "Напрыклад, БДУ ці БДПУ";
+                    default: return "ERROR";
+                }
+            }
+            break;
+        case "promocode":
+            if (lang === 'ru'){
+                switch (type){
+                    case 'help': return "Например, ЮНИ или БГУФК";
+                    default: return "ERROR";
+                }
+            }
+            else if (lang === 'by') {
+                switch (type){
+                    case 'help': return "Напрыклад, ЮНІ ці БДУФК";
                     default: return "ERROR";
                 }
             }

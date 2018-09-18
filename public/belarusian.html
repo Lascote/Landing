@@ -37,7 +37,7 @@
 </head>
 <body style="background: url(img/home/background-3-01.png) repeat-y; background-size: 100%">
 <section class="main-container" id="container">
-    <section class="block" id="home">
+    <section class="block full-screen" id="home">
         <div></div>
         <section class="home-container">
             <section class="home-content">
@@ -59,7 +59,7 @@
     </section>
 
 
-    <section class="block" id="about">
+    <section class="block full-screen" id="about">
         <section class="about-container">
             <p class="about-title title-lr">Што гэта такое?</p>
             <p class="about-text text-md">
@@ -71,7 +71,7 @@
     </section>
 
 
-    <section class="block" id="benefits">
+    <section class="block full-screen" id="benefits">
         <section class="benefits-container">
             <section class="benefits-content">
                 <p class="benefits-title title-lr">І што я атрымліваю?</p>
@@ -88,9 +88,9 @@
 
                 <div class="benefits-table-item">
                     <img src="img/benefits/partners.png" alt="">
-                    <p class="benefits-table-title title-sm">Больш за 30 Партнёраў</p>
+                    <p class="benefits-table-title title-sm">Больш за 40 Партнёраў</p>
                     <p class="benefits-table-text text-sm">
-                        Ужо цяпер у цябе ёсць магчымасць атрымаць зніжку ў больш чым 30 месцах.
+                        Ужо цяпер у цябе ёсць магчымасць атрымаць зніжку ў больш чым 40 месцах!
                     </p>
                 </div>
 
@@ -104,16 +104,16 @@
 
                 <div class="benefits-table-item">
                     <img src="img/benefits/cheeseburger.svg" alt="">
-                    <p class="benefits-table-title title-sm">Па цане чызбургера</p>
+                    <p class="benefits-table-title title-sm">Танней за Біг Мак</p>
                     <p class="benefits-table-text text-sm">
-                        Так-так, картка UNI каштуе ўсяго 1<sup>99</sup> руб,  што амаль роўна цане чызбургера!
+                        Так-так, картка UNI каштуе ўсяго 3<sup>99</sup> руб, гэта нават танней за Біг Мак!
                     </p>
                 </div>
             </section>
         </section>
     </section>
 
-    <section style="height: auto;" class="block" id="partners">
+    <section style="height: auto;" class="block full-screen" id="partners">
         <section class="partners-container">
             <p class="title-md">Нашы Партнёры</p>
             <div class="slider-wrapper">
@@ -432,25 +432,23 @@
     <section class="block" id="options">
         <section class="options-container">
             <section class="options-content">
-                <p class="options-title title-md">Замові картку</p>
+                <p class="options-title title-md">Абяры картку</p>
                 <p class="options-text text-md">
-                    Паспей купіць картку UNI па суперкрутой цане! Прапанова абмежавана, толькі першыя 500 картак
-                    даступныя па цане 1<sup>99</sup> рублёў.
+                    Цяпер ты можаш набыць картку UNI на ўвесь тэрмін навучання ўсяго за 4<sup>99</sup> рублі!<br><br>
+                    Але калі ў цябе чамусьці не хапае грошай на бестэрміновую картку, ты можаш набыць картку на год за
+                    3<sup>99</sup> рублі.
                 </p>
-                <p class="options-text text-md">Засталося <strong id="count">500</strong> картак са зніжкай 50%!</p>
             </section>
             <section class="price">
                 <section class="options-substrate" id="yearcard">
-                    <p class="options-cost title-sm old-price">4<sup>00</sup> <sub>BYN</sub>
-                        <svg>
-                            <line x1="0" y1="80%" x2="100%" y2="20%">
-                            Sorry, your browser does not support inline SVG.
-                            </line>
-                        </svg>
-                    </p>
-                    <p class="options-cost title-sm new-price">1<sup>99</sup> <sub>BYN</sub></p>
-                    <p class="options-price-text text-sm">Купіць картку на год!</p>
-                    <a class="options-button"><p>Націсні мяне!</p></a>
+                    <p class="options-cost title-sm new-price">3<sup>99</sup> <sub>BYN</sub></p>
+                    <p class="options-price-text text-sm">Набыць картку на год.</p>
+                    <a class="options-button"><p>На год</p></a>
+                </section>
+                <section class="options-substrate" id="infinitycard">
+                    <p class="options-cost title-sm new-price">4<sup>99</sup> <sub>BYN</sub></p>
+                    <p class="options-price-text text-sm">Набыць картку на ўвесь тэрмін навучання!</p>
+                    <a class="options-button"><p>На ўвесь час</p></a>
                 </section>
             </section>
         </section>
@@ -481,11 +479,13 @@
                             <div class="int"><label id="email-msg">error</label></div>
                             <input lang="by" type="text" id="phone" placeholder="Нумар тэлефона *"/>
                             <div class="int"><label id="phone-msg">error</label></div>
+                            <input lang="by" type="text" id="promocode" placeholder="Промакод (калі ёсць)"/>
+                            <div class="int"><label id="promocode-msg">error</label></div>
                             <div class="notification"><span>* Абавязковыя палі</span></div>
                             <div class="check-box-container">
                                 <input title="" class="check-box" type="checkbox" id="defaultCheck1">
                                 <span class="check-box-label">
-                                    Я прачытаў(-ла) і прымаю <a target="_blank" href="https://unicard.by/useragreement">Карыстацкае пагадненне</a>
+                                    Я прачытаў(-ла) і прымаю <a target="_blank" href="https://unicard.by/useragreement">Карыстальніцкае пагадненне</a>
                                 </span>
                             </div>
                             <input disabled type="submit" class="form-button disabled" value="Даслаць"/>
@@ -537,8 +537,6 @@
                                 </div>
                                 <div id="collapsetop1" class="collapse" aria-labelledby="headingtop1" data-parent="#accordiontop">
                                     <div class="card-body">
-                                        <p class="title-sm">Ян Майсак</p>
-                                        <strong>Нумар:</strong> +375447415515<br>
                                         <p class="title-sm">Каця Варанкова</p>
                                         <strong>Нумар:</strong> +375447541307<br>
                                     </div>
@@ -557,8 +555,6 @@
                                     <div class="card-body">
                                         <p class="title-sm">Сяргей Дубіна</p>
                                         <strong>Нумар:</strong> +375295216906<br>
-                                        <p class="title-sm">Влад Лазаковіч</p>
-                                        <strong>Нумар:</strong> +375336526341<br>
                                     </div>
                                 </div>
                             </div>
@@ -615,14 +611,14 @@
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed" data-toggle="collapse"
                                                 data-target="#collapsetop6" aria-expanded="false" aria-controls="collapsetop6">
-                                            БДПУ
+                                            БДУКМ
                                         </button>
                                     </h5>
                                 </div>
                                 <div id="collapsetop6" class="collapse" aria-labelledby="headingtop6" data-parent="#accordiontop">
                                     <div class="card-body">
-                                        <p class="title-sm">Яна Якаўлева</p>
-                                        <strong>Нумар:</strong> +375333511075<br>
+                                        <p class="title-sm">Карына Ліхадыеўская</p>
+                                        <strong>Номер:</strong> +375293901450<br>
                                     </div>
                                 </div>
                             </div>
@@ -681,8 +677,6 @@
                             </div>
                             <div id="collapsebottom1" class="collapse" aria-labelledby="headingbottom1" data-parent="#accordionbottom">
                                 <div class="card-body">
-                                    <p class="title-sm">Ян Майсак</p>
-                                    <strong>Нумар:</strong> +375447415515<br>
                                     <p class="title-sm">Каця Варанкова</p>
                                     <strong>Нумар:</strong> +375447541307<br>
                                 </div>
@@ -701,8 +695,6 @@
                                 <div class="card-body">
                                     <p class="title-sm">Сяргей Дубіна</p>
                                     <strong>Нумар:</strong> +375295216906<br>
-                                    <p class="title-sm">Влад Лазаковіч</p>
-                                    <strong>Нумар:</strong> +375336526341<br>
                                 </div>
                             </div>
                         </div>
@@ -759,14 +751,14 @@
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
                                             data-target="#collapsebottom6" aria-expanded="false" aria-controls="collapsebottom6">
-                                        БДПУ
+                                        БДУКМ
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapsebottom6" class="collapse" aria-labelledby="headingbottom6" data-parent="#accordionbottom">
                                 <div class="card-body">
-                                    <p class="title-sm">Яна Якаўлева</p>
-                                    <strong>Нумар:</strong> +375333511075<br>
+                                    <p class="title-sm">Карына Ліхадыеўская</p>
+                                    <strong>Номер:</strong> +375293901450<br>
                                 </div>
                             </div>
                         </div>
@@ -863,7 +855,7 @@
         <li data-menuanchor="options">
             <a href="#options">
                 <div class="myPopover">
-                    Замовіць картку
+                    Абраць картку
                 </div>
                 <div class="circle"></div>
             </a>
@@ -920,7 +912,7 @@
             <li data-menuanchor="options">
                 <a href="#options">
                     <div class="">
-                        Замовіць картку
+                        Абраць картку
                     </div>
                 </a>
             </li>
@@ -965,7 +957,7 @@
                 <p><img id="fctc" src="img/carriers/velcom.png">+375291828784</p>
             </div>
             <p><a href="https://unicard.by/partners">Партнёрам</a></p>
-            <p><a target="_blank" href="https://unicard.by/useragreement">Карыстацкае пагадненне</a></p>
+            <p><a target="_blank" href="https://unicard.by/useragreement">Карыстальніцкае пагадненне</a></p>
             <p><a target="_blank" href="https://unicard.by">Русский язык</a></p>
         </div>
     </div>
