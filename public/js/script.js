@@ -421,13 +421,13 @@ function getMessage(field, lang, type) {
             if (lang === 'ru'){
                 switch (type){
                     case 'help': return "Например, ЮНИ или БГУФК";
-                    default: return "ERROR";
+                    default: return "";
                 }
             }
             else if (lang === 'by') {
                 switch (type){
                     case 'help': return "Напрыклад, ЮНІ ці БДУФК";
-                    default: return "ERROR";
+                    default: return "";
                 }
             }
             break;
