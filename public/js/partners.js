@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
 
     /*TODO: Change path!!!*/
-    $.post('http://localhost:8080/api/getpartners')
+    $.post('https://panel.unicard.by/api/getpartners')
         .done((data) => {
         $('#partnersCounter').text(data.partners.length);
         })
