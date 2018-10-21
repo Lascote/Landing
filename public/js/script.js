@@ -307,7 +307,7 @@ function toggleIcon(burger) {
 function checkEmptyness() {
     const inputs = $('input[type^="text"]');
     for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].id === 'studyPlace')
+        if (inputs[i].id === 'studyPlace' || inputs[i].id === 'promocode')
             continue;
         if (inputs[i].value === "") {
             let label = $("#" + inputs[i].id + "-msg"),
