@@ -162,7 +162,7 @@ $(document).ready(function () {
                     message = getMessage("surname",current.lang,"empty");
                     break;
                 }
-                if (current.value.trim().match(/^[- А-Яа-яЁё]{1,64}$/)) {
+                if (current.value.trim().match(/^[- А-Яа-яЁёЎўІі']{1,64}$/)) {
                     valid = true;
                 }
                 else {
@@ -176,7 +176,7 @@ $(document).ready(function () {
                     message = getMessage("name",current.lang,"empty");
                     break;
                 }
-                if (current.value.trim().match(/^[- А-Яа-яЁё]{1,64}$/)) {
+                if (current.value.trim().match(/^[- А-Яа-яЁёЎўІі']{1,64}$/)) {
                     valid = true;
                 }
                 else {
