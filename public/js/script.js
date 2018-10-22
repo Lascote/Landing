@@ -109,8 +109,8 @@ $(document).ready(function () {
     validMap.set('name', false);
     validMap.set('email', false);
     validMap.set('phone', false);
-    validMap.set('studyPlace', false);
-    validMap.set('promocode', false);
+    validMap.set('studyPlace', true);
+    validMap.set('promocode', true);
 
     $('#defaultCheck1').on("click", (event) => {
         let isChecked = event.currentTarget.checked,
