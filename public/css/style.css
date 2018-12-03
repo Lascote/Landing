@@ -1071,6 +1071,10 @@ input[type=submit] {
     overflow: hidden;
 }
 
+.card-body a {
+    color: #585858;
+}
+
 /* partners */
 
 .partners-container {
@@ -2043,6 +2047,20 @@ footer {
     margin: auto;
     display: flex;
     justify-content: center;
+}
+
+.footer-column .contact {
+    font-family: futurarounddemi;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer-column .contact a {
+    color: #808080;
+    text-decoration: none;
 }
 
 .footer-column {
